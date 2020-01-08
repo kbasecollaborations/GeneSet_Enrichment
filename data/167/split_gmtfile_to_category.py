@@ -31,10 +31,10 @@ try:
      id = line.split("\t")
      feature_id = id[1]
      num_fields = len(id)
-     outfile = gocateg[feature_id] + "_" + association_file
+     outfile = association_file.split(".")[0] + "_" + gocateg[feature_id] + ".gmt" 
      try:
         foutput = open(outfile, "a")
-        foutput.write(line)
+        foutput.write(line + "\n")
         foutput.close() 
      except IOError:
        print ('cannot open', outfile)

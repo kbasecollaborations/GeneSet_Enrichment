@@ -6,6 +6,7 @@ from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
 import os
+import uuid
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 #END_HEADER
@@ -69,9 +70,16 @@ class GeneSet_Enrichment:
         self.gu.download_genelist(params['genelist'], genelist_file)
  
         workspace = params['workspace_name']
-        outputdir = self.gs.run_gsea("/kb/module/data/167/167_go.gmt", "/kb/module/work/tmp/gene_list.csv")
+        featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther']
+       
+        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
+        os.mkdir(outputdir)
+        for feature in featurelist: 
+          print(feature)
+          outputdir = self.gs.run_gsea(feature, "/kb/module/work/tmp/gene_list.csv", outputdir)
+          #self.fu.covert_csv_to_excel(feature, outputdir)
+
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
-        self.fu.covert_csv_to_excel(outputdir)
         report = KBaseReport(self.callback_url)
         #END run_GeneSet_Enrichment
 

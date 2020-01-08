@@ -9,6 +9,15 @@ from shutil import copyfile
 class htmlreportutils:
     def __init__(self):
         pass
+     
+    def listToString(self, s):  
+        str1 = " " 
+        return (str1.join(s))    
+
+    def format_files_to_html_report(self, output_dir):
+        print (output_dir)
+        arr = os.listdir()
+        print("\n****"+ self.listToString(arr) + "*****\n")
 
     def create_html_report(self, callback_url, output_dir , workspace_name):
         '''
@@ -18,6 +27,7 @@ class htmlreportutils:
         report = KBaseReport(callback_url)
         #copyfile(os.path.join(os.path.dirname(__file__), 'index.html'), 
         #         os.path.join(output_dir, 'index.html'))
+        self.format_files_to_html_report(output_dir)
 
         report_shock_id = dfu.file_to_shock({'file_path': output_dir,
                                             'pack': 'zip'})['shock_id']

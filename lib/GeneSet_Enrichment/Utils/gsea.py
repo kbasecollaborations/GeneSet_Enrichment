@@ -8,7 +8,7 @@ class gsea:
   def __init__(self):
       pass
 
-  def create_index_html(self,outdirectory):
+  def create_index_html(self, outdirectory):
       htmlstring = "<html><body>";
       directory_list = os.listdir(outdirectory)
 
@@ -17,10 +17,11 @@ class gsea:
       htmlstring += "</body></html>";
       return (htmlstring)
 
-  def run_gsea(self, association_file, gene_file):       #change gene_file later to object from narrative 
-      outdirectory='/kb/module/work/tmp/' + str(uuid.uuid1())
+  def run_gsea(self, featurename, gene_file, outdirectory):       #change gene_file later to object from narrative 
+      association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
+      #outdirectory='/kb/module/work/tmp/' + str(uuid.uuid1())
       #TODO: Make sure you test for success of creatinga  directory
-      os.mkdir(outdirectory)
+      #os.mkdir(outdirectory)
 
       #outdirectory='/kb/module/work/tmp/'
       #command = "Rscript /kb/module/lib/kb_gsea/Utils/run_Ath_Kbase.R "+ outdirectory
@@ -74,7 +75,7 @@ class gsea:
                   else:
                      featurefreq[feature] = 1
 
-         fout= open(outdirectory + "/output.txt","a")
+         fout= open(outdirectory + "/" + featurename + "_output.txt","a")
          for feature_key, frequency in featurefreq.items():
              k = frequency
              K = feature_dict[feature_key]
