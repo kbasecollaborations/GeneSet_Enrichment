@@ -8,9 +8,16 @@ module GeneSet_Enrichment {
         string report_ref;
     } ReportResults;
 
+    typedef structure{
+        string obj_name;
+        string workspace_name; 
+        string expression_matrix;
+        int permutation_number;
+      } gseaparams;
+ 
     /*
         This example function accepts any number of parameters and returns results in a KBaseReport
     */
-    funcdef run_GeneSet_Enrichment(mapping<string,UnspecifiedObject> params) returns (ReportResults output) authentication required;
+    funcdef run_GeneSet_Enrichment(gseaparams params) returns (ReportResults output) authentication required;
 
 };
