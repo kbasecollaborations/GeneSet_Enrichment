@@ -87,16 +87,14 @@ class gsea:
               print ('cannot open', gene_file)
               fgene.close()
       
-
+      
       #TODO: Try to fihure out how to put logs 
-      print (command)
-      os.system(command)
       htmlstring = self.create_index_html(outdirectory)
       index_file_path = outdirectory + "/index.html"
       html_file = open(index_file_path, "wt")
       n = html_file.write(htmlstring)
       html_file.close()
-
+      
       return (outdirectory)
 
       

@@ -71,13 +71,6 @@ class GeneSet_Enrichment:
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
  
         report = KBaseReport(self.callback_url)
-        report_info = report.create({'report': {'objects_created':[],
-                                                'text_message': params['parameter_1']},
-                                                'workspace_name': params['workspace_name']})
-        output = {
-            'report_name': report_info['name'],
-            'report_ref': report_info['ref'],
-        }
         #END run_GeneSet_Enrichment
 
         # At some point might do deeper type checking...
