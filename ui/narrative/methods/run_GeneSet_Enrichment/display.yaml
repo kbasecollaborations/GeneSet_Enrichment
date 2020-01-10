@@ -5,7 +5,7 @@ name: Gene Set Enrichment
 
 
 tooltip: |
-    Perform some kind of method
+    Use Hypergeometric test for Gene Set Enrichment Analysis
 
 screenshots: []
 
@@ -17,19 +17,24 @@ icon: icon.png
 suggestions:
     apps:
         related:
-            [app1, app2]
+            []
         next:
-            [app3, app4]
+            []
+    methods:
+        related:
+            []
+        next:
+            []    
 
 #
 # Configure the display and description of parameters
 #
 parameters :
-    parameter_1 :
+    genelist :
         ui-name : |
-            First parameter
+            Gene List
         short-hint : |
-            The first parameter
+            Input Gene List for enrichment
         long-hint  : |
             The first parameter that needs to be entered to drive the method. This might be the first of many.
 
