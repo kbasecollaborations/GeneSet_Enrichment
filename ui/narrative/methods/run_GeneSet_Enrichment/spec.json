@@ -37,7 +37,7 @@
                     "target_property": "workspace_id"
                 },{
                     "input_parameter": "genelist",
-                    "target_property": "genelist"
+                    "target_property": "genelist",
 		    "target_type_transform": "resolved-ref"
                 }
             ],
