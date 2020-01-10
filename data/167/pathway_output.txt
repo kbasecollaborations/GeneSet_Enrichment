@@ -1,48 +1,49 @@
-Feature Id = PWY-7420	N = 2520	K = 23	n = 194	k = 1	Hypergeometric(p value) = 0.3042276467306381
-Feature Id = PWY-7055	N = 2520	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.3836859428166392
-Feature Id = PWY4FS-2	N = 2520	K = 10	n = 194	k = 2	Hypergeometric(p value) = 0.14059674223076152
-Feature Id = PWY-3561	N = 2520	K = 16	n = 194	k = 3	Hypergeometric(p value) = 0.09005323617672419
-Feature Id = PWY4FS-6	N = 2520	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.3338670638674683
-Feature Id = PWY3O-450	N = 2520	K = 5	n = 194	k = 2	Hypergeometric(p value) = 0.046488929296545876
-Feature Id = PWY-5337	N = 2520	K = 13	n = 194	k = 2	Hypergeometric(p value) = 0.19192584094282022
-Feature Id = PWY-841	N = 2520	K = 56	n = 194	k = 1	Hypergeometric(p value) = 0.05116886141709834
-Feature Id = PWY-6121	N = 2520	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.3338670638674683
-Feature Id = ANAGLYCOLYSIS-PWY	N = 2520	K = 61	n = 194	k = 2	Hypergeometric(p value) = 0.09464698367645309
-Feature Id = PWY-5464	N = 2520	K = 115	n = 194	k = 3	Hypergeometric(p value) = 0.013061603604719568
-Feature Id = PWY-1042	N = 2520	K = 56	n = 194	k = 3	Hypergeometric(p value) = 0.18174468842968505
-Feature Id = ANAEROFRUCAT-PWY	N = 2520	K = 62	n = 194	k = 2	Hypergeometric(p value) = 0.09016546118801107
-Feature Id = PWY-5723	N = 2520	K = 41	n = 194	k = 1	Hypergeometric(p value) = 0.12681349099967748
-Feature Id = PWY66-21	N = 2520	K = 22	n = 194	k = 1	Hypergeometric(p value) = 0.31536611437617673
-Feature Id = PWY-5751	N = 2520	K = 21	n = 194	k = 1	Hypergeometric(p value) = 0.32622601743339286
-Feature Id = PWY66-389	N = 2520	K = 29	n = 194	k = 1	Hypergeometric(p value) = 0.2366102524824968
-Feature Id = PWY-5486	N = 2520	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.3836859428166392
-Feature Id = PWY-6802	N = 2520	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.38103411772494583
-Feature Id = PWY-7039	N = 2520	K = 35	n = 194	k = 5	Hypergeometric(p value) = 0.07916954647420943
-Feature Id = LIPASYN-PWY	N = 2520	K = 52	n = 194	k = 4	Hypergeometric(p value) = 0.205444094639736
-Feature Id = PWY-6527	N = 2520	K = 17	n = 194	k = 1	Hypergeometric(p value) = 0.3641084555279391
-Feature Id = PWY-7238	N = 2520	K = 32	n = 194	k = 2	Hypergeometric(p value) = 0.26704693322268663
-Feature Id = PWY-3801	N = 2520	K = 33	n = 194	k = 2	Hypergeometric(p value) = 0.262338087807548
-Feature Id = SUCSYN-PWY	N = 2520	K = 40	n = 194	k = 2	Hypergeometric(p value) = 0.22068001729249945
-Feature Id = PWY-7343	N = 2520	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.37524841507243223
-Feature Id = SALVADEHYPOX-PWY	N = 2520	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.2929179703225403
-Feature Id = PWY-6609	N = 2520	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.3836859428166392
-Feature Id = PWY-7179	N = 2520	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.3836986919760634
-Feature Id = PWY-5695	N = 2520	K = 25	n = 194	k = 1	Hypergeometric(p value) = 0.2815296497948002
-Feature Id = PWY-1081	N = 2520	K = 151	n = 194	k = 2	Hypergeometric(p value) = 0.00033775080875239724
-Feature Id = PWY-5466	N = 2520	K = 104	n = 194	k = 1	Hypergeometric(p value) = 0.0018213505755115024
-Feature Id = PWY-1061	N = 2520	K = 25	n = 194	k = 1	Hypergeometric(p value) = 0.2815296497948002
-Feature Id = ARGININE-SYN4-PWY	N = 2520	K = 6	n = 194	k = 2	Hypergeometric(p value) = 0.06440981078888249
-Feature Id = CITRULBIO-PWY	N = 2520	K = 26	n = 194	k = 2	Hypergeometric(p value) = 0.2831093752856716
-Feature Id = PWY-3341	N = 2520	K = 4	n = 194	k = 2	Hypergeometric(p value) = 0.030197800200651194
-Feature Id = PWY-6922	N = 2520	K = 7	n = 194	k = 2	Hypergeometric(p value) = 0.08328695819917036
-Feature Id = PROSYN-PWY	N = 2520	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.19691156244838945
-Feature Id = PWY-4821	N = 2520	K = 14	n = 194	k = 1	Hypergeometric(p value) = 0.38139025508460317
-Feature Id = PWY-6363	N = 2520	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.3713096230880524
-Feature Id = PWY-4841	N = 2520	K = 7	n = 194	k = 3	Hypergeometric(p value) = 0.011477961508896461
-Feature Id = PWY-4781	N = 2520	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.14217155963904185
-Feature Id = SER-GLYSYN-PWY	N = 2520	K = 17	n = 194	k = 1	Hypergeometric(p value) = 0.3641084555279391
-Feature Id = SERSYN-PWY	N = 2520	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.37524841507243223
-Feature Id = PWY-6348	N = 2520	K = 32	n = 194	k = 1	Hypergeometric(p value) = 0.2049606413775501
-Feature Id = PWY-6367	N = 2520	K = 14	n = 194	k = 3	Hypergeometric(p value) = 0.06859415775212599
-Feature Id = PWY-6351	N = 2520	K = 48	n = 194	k = 3	Hypergeometric(p value) = 0.2159794380114991
-Feature Id = PWY66-422	N = 2520	K = 16	n = 194	k = 4	Hypergeometric(p value) = 0.024157539480035746
+ID	Term	N	K	n	k	pval
+PWY-7420	monoacylglycerol metabolism (yeast)	2520	23	194	1	0.304
+PWY-7055	daphnetin modification	2520	13	194	1	0.384
+PWY4FS-2	phosphatidylcholine biosynthesis II	2520	10	194	2	0.141
+PWY-3561	choline biosynthesis III	2520	16	194	3	0.0901
+PWY4FS-6	phosphatidylethanolamine biosynthesis II	2520	7	194	1	0.334
+PWY3O-450	phosphatidylcholine biosynthesis I	2520	5	194	2	0.0465
+PWY-5337	stachyose biosynthesis	2520	13	194	2	0.192
+PWY-841	superpathway of purine nucleotides <i>de novo</i> biosynthesis I	2520	56	194	1	0.0512
+PWY-6121	5-aminoimidazole ribonucleotide biosynthesis I	2520	7	194	1	0.334
+ANAGLYCOLYSIS-PWY	glycolysis III (from glucose)	2520	61	194	2	0.0946
+PWY-5464	superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle	2520	115	194	3	0.0131
+PWY-1042	glycolysis IV (plant cytosol)	2520	56	194	3	0.182
+ANAEROFRUCAT-PWY	homolactic fermentation	2520	62	194	2	0.0902
+PWY-5723	Rubisco shunt	2520	41	194	1	0.127
+PWY66-21	ethanol degradation II	2520	22	194	1	0.315
+PWY-5751	phenylethanol biosynthesis	2520	21	194	1	0.326
+PWY66-389	phytol degradation	2520	29	194	1	0.237
+PWY-5486	pyruvate fermentation to ethanol II	2520	13	194	1	0.384
+PWY-6802	salidroside biosynthesis	2520	11	194	1	0.381
+PWY-7039	phosphatidate metabolism, as a signaling molecule	2520	35	194	5	0.0792
+LIPASYN-PWY	phospholipases	2520	52	194	4	0.205
+PWY-6527	stachyose degradation	2520	17	194	1	0.364
+PWY-7238	sucrose biosynthesis II	2520	32	194	2	0.267
+PWY-3801	sucrose degradation II (sucrose synthase)	2520	33	194	2	0.262
+SUCSYN-PWY	sucrose biosynthesis I (from photosynthesis)	2520	40	194	2	0.221
+PWY-7343	UDP-glucose biosynthesis	2520	10	194	1	0.375
+SALVADEHYPOX-PWY	adenosine nucleotides degradation II	2520	24	194	1	0.293
+PWY-6609	adenine and adenosine salvage III	2520	13	194	1	0.384
+PWY-7179	purine deoxyribonucleosides degradation I	2520	12	194	1	0.384
+PWY-5695	urate biosynthesis/inosine 5'-phosphate degradation	2520	25	194	1	0.282
+PWY-1081	homogalacturonan degradation	2520	151	194	2	0.000338
+PWY-5466	matairesinol biosynthesis	2520	104	194	1	0.00182
+PWY-1061	homogalacturonan biosynthesis	2520	25	194	1	0.282
+ARGININE-SYN4-PWY	L-ornithine biosynthesis II	2520	6	194	2	0.0644
+CITRULBIO-PWY	L-citrulline biosynthesis	2520	26	194	2	0.283
+PWY-3341	L-proline biosynthesis III	2520	4	194	2	0.0302
+PWY-6922	L-<i>N<sup>&delta;</sup></i>-acetylornithine biosynthesis	2520	7	194	2	0.0833
+PROSYN-PWY	L-proline biosynthesis I	2520	3	194	1	0.197
+PWY-4821	UDP-D-xylose biosynthesis	2520	14	194	1	0.381
+PWY-6363	D-<i>myo</i>-inositol (1,4,5)-trisphosphate degradation	2520	16	194	1	0.371
+PWY-4841	UDP-&alpha;-D-glucuronate biosynthesis (from <i>myo</i>-inositol)	2520	7	194	3	0.0115
+PWY-4781	phytate degradation II	2520	2	194	1	0.142
+SER-GLYSYN-PWY	superpathway of L-serine and glycine biosynthesis I	2520	17	194	1	0.364
+SERSYN-PWY	L-serine biosynthesis	2520	10	194	1	0.375
+PWY-6348	phosphate acquisition	2520	32	194	1	0.205
+PWY-6367	D-<i>myo</i>-inositol-5-phosphate metabolism	2520	14	194	3	0.0686
+PWY-6351	D-<i>myo</i>-inositol (1,4,5)-trisphosphate biosynthesis	2520	48	194	3	0.216
+PWY66-422	D-galactose degradation V (Leloir pathway)	2520	16	194	4	0.0242

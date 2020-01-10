@@ -1,55 +1,56 @@
-Feature Id = GO:0009507	N = 25275	K = 3762	n = 194	k = 25	Hypergeometric(p value) = 0.06207473262260661
-Feature Id = GO:0009535	N = 25275	K = 315	n = 194	k = 2	Hypergeometric(p value) = 0.26247450970648867
-Feature Id = GO:0009570	N = 25275	K = 589	n = 194	k = 5	Hypergeometric(p value) = 0.17406148121492782
-Feature Id = GO:0005829	N = 25275	K = 1494	n = 194	k = 27	Hypergeometric(p value) = 1.9561755599407798e-05
-Feature Id = GO:0005634	N = 25275	K = 9360	n = 194	k = 67	Hypergeometric(p value) = 0.04637454250015732
-Feature Id = GO:0046658	N = 25275	K = 69	n = 194	k = 1	Hypergeometric(p value) = 0.31425113852252307
-Feature Id = GO:0048046	N = 25275	K = 378	n = 194	k = 6	Hypergeometric(p value) = 0.044860964139429735
-Feature Id = GO:0031225	N = 25275	K = 238	n = 194	k = 1	Hypergeometric(p value) = 0.2944162681264891
-Feature Id = GO:0005886	N = 25275	K = 3173	n = 194	k = 46	Hypergeometric(p value) = 7.290237436582311e-06
-Feature Id = GO:0005773	N = 25275	K = 535	n = 194	k = 8	Hypergeometric(p value) = 0.032163387003002274
-Feature Id = GO:0009506	N = 25275	K = 852	n = 194	k = 17	Hypergeometric(p value) = 0.00021826429635661898
-Feature Id = GO:0005739	N = 25275	K = 3518	n = 194	k = 19	Hypergeometric(p value) = 0.020967304784700224
-Feature Id = GO:0005794	N = 25275	K = 888	n = 194	k = 9	Hypergeometric(p value) = 0.09717665508177388
-Feature Id = GO:0005783	N = 25275	K = 528	n = 194	k = 7	Hypergeometric(p value) = 0.061502643701898445
-Feature Id = GO:0005774	N = 25275	K = 432	n = 194	k = 6	Hypergeometric(p value) = 0.06668746704673878
-Feature Id = GO:0005576	N = 25275	K = 2583	n = 194	k = 17	Hypergeometric(p value) = 0.07985588913504847
-Feature Id = GO:0016020	N = 25275	K = 1996	n = 194	k = 18	Hypergeometric(p value) = 0.07733939272943532
-Feature Id = GO:0005737	N = 25275	K = 3508	n = 194	k = 47	Hypergeometric(p value) = 3.9733703148390384e-05
-Feature Id = GO:0015629	N = 25275	K = 35	n = 194	k = 1	Hypergeometric(p value) = 0.2069730708180288
-Feature Id = GO:0009505	N = 25275	K = 266	n = 194	k = 7	Hypergeometric(p value) = 0.0035148851554125545
-Feature Id = GO:0005618	N = 25275	K = 468	n = 194	k = 8	Hypergeometric(p value) = 0.018134172866174022
-Feature Id = GO:0005615	N = 25275	K = 28	n = 194	k = 1	Hypergeometric(p value) = 0.174717160183024
-Feature Id = GO:0009941	N = 25275	K = 536	n = 194	k = 4	Hypergeometric(p value) = 0.1978263087655188
-Feature Id = GO:0005789	N = 25275	K = 65	n = 194	k = 2	Hypergeometric(p value) = 0.07536107602544394
-Feature Id = GO:0071782	N = 25275	K = 5	n = 194	k = 2	Hypergeometric(p value) = 0.0005728720729801858
-Feature Id = GO:0071458	N = 25275	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.037218875250330845
-Feature Id = GO:0043231	N = 25275	K = 32	n = 194	k = 2	Hypergeometric(p value) = 0.02312383311361201
-Feature Id = GO:0005575	N = 25275	K = 1224	n = 194	k = 3	Hypergeometric(p value) = 0.010212153735758366
-Feature Id = GO:0005743	N = 25275	K = 94	n = 194	k = 3	Hypergeometric(p value) = 0.02988993171394502
-Feature Id = GO:0031966	N = 25275	K = 29	n = 194	k = 1	Hypergeometric(p value) = 0.17957373748885758
-Feature Id = GO:0009532	N = 25275	K = 20	n = 194	k = 1	Hypergeometric(p value) = 0.13269801084575444
-Feature Id = GO:0016021	N = 25275	K = 943	n = 194	k = 9	Hypergeometric(p value) = 0.1099992294968493
-Feature Id = GO:0005730	N = 25275	K = 291	n = 194	k = 2	Hypergeometric(p value) = 0.2695162086581005
-Feature Id = GO:0005681	N = 25275	K = 22	n = 194	k = 1	Hypergeometric(p value) = 0.14374530580277545
-Feature Id = GO:0016607	N = 25275	K = 25	n = 194	k = 1	Hypergeometric(p value) = 0.1596301292840826
-Feature Id = GO:0005795	N = 25275	K = 18	n = 194	k = 1	Hypergeometric(p value) = 0.12127459120773222
-Feature Id = GO:0022626	N = 25275	K = 193	n = 194	k = 2	Hypergeometric(p value) = 0.2516755899822626
-Feature Id = GO:0030136	N = 25275	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.10341461657147691
-Feature Id = GO:0005635	N = 25275	K = 50	n = 194	k = 1	Hypergeometric(p value) = 0.2635101537500044
-Feature Id = GO:0000815	N = 25275	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.06497051483877168
-Feature Id = GO:0005771	N = 25275	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.05131352198075471
-Feature Id = GO:0019031	N = 25275	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.06497051483877168
-Feature Id = GO:0009536	N = 25275	K = 285	n = 194	k = 1	Hypergeometric(p value) = 0.2449783614856076
-Feature Id = GO:0090406	N = 25275	K = 42	n = 194	k = 1	Hypergeometric(p value) = 0.235373118234057
-Feature Id = GO:0005874	N = 25275	K = 48	n = 194	k = 1	Hypergeometric(p value) = 0.25688540993361986
-Feature Id = GO:0045298	N = 25275	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.09101135757351225
-Feature Id = GO:0000930	N = 25275	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.09101135757351225
-Feature Id = GO:0005622	N = 25275	K = 499	n = 194	k = 2	Hypergeometric(p value) = 0.15842532347391497
-Feature Id = GO:0005768	N = 25275	K = 232	n = 194	k = 3	Hypergeometric(p value) = 0.15972632647499935
-Feature Id = GO:0005802	N = 25275	K = 221	n = 194	k = 3	Hypergeometric(p value) = 0.15009771208552847
-Feature Id = GO:0005945	N = 25275	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.05131352198075471
-Feature Id = GO:0031012	N = 25275	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.10946610477342311
-Feature Id = GO:0030173	N = 25275	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.037218875250330845
-Feature Id = GO:0000786	N = 25275	K = 62	n = 194	k = 1	Hypergeometric(p value) = 0.2979770241073681
-Feature Id = GO:0000785	N = 25275	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.10341461657147691
+ID	Term	N	K	n	k	pval
+GO:0009507	chloroplast	25275	3762	194	25	0.0621
+GO:0009535	chloroplast thylakoid membrane	25275	315	194	2	0.262
+GO:0009570	chloroplast stroma	25275	589	194	5	0.174
+GO:0005829	cytosol	25275	1494	194	27	1.96e-05
+GO:0005634	nucleus	25275	9360	194	67	0.0464
+GO:0046658	anchored component of plasma membrane	25275	69	194	1	0.314
+GO:0048046	apoplast	25275	378	194	6	0.0449
+GO:0031225	anchored component of membrane	25275	238	194	1	0.294
+GO:0005886	plasma membrane	25275	3173	194	46	7.29e-06
+GO:0005773	vacuole	25275	535	194	8	0.0322
+GO:0009506	plasmodesma	25275	852	194	17	0.000218
+GO:0005739	mitochondrion	25275	3518	194	19	0.021
+GO:0005794	Golgi apparatus	25275	888	194	9	0.0972
+GO:0005783	endoplasmic reticulum	25275	528	194	7	0.0615
+GO:0005774	vacuolar membrane	25275	432	194	6	0.0667
+GO:0005576	extracellular region	25275	2583	194	17	0.0799
+GO:0016020	membrane	25275	1996	194	18	0.0773
+GO:0005737	cytoplasm	25275	3508	194	47	3.97e-05
+GO:0015629	actin cytoskeleton	25275	35	194	1	0.207
+GO:0009505	plant-type cell wall	25275	266	194	7	0.00351
+GO:0005618	cell wall	25275	468	194	8	0.0181
+GO:0005615	extracellular space	25275	28	194	1	0.175
+GO:0009941	chloroplast envelope	25275	536	194	4	0.198
+GO:0005789	endoplasmic reticulum membrane	25275	65	194	2	0.0754
+GO:0071782	endoplasmic reticulum tubular network	25275	5	194	2	0.000573
+GO:0071458	integral component of cytoplasmic side of endoplasmic reticulum membrane	25275	5	194	1	0.0372
+GO:0043231	intracellular membrane-bounded organelle	25275	32	194	2	0.0231
+GO:0005575	cellular	25275	1224	194	3	0.0102
+GO:0005743	mitochondrial inner membrane	25275	94	194	3	0.0299
+GO:0031966	mitochondrial membrane	25275	29	194	1	0.18
+GO:0009532	plastid stroma	25275	20	194	1	0.133
+GO:0016021	integral component of membrane	25275	943	194	9	0.11
+GO:0005730	nucleolus	25275	291	194	2	0.27
+GO:0005681	spliceosomal complex	25275	22	194	1	0.144
+GO:0016607	nuclear speck	25275	25	194	1	0.16
+GO:0005795	Golgi stack	25275	18	194	1	0.121
+GO:0022626	cytosolic ribosome	25275	193	194	2	0.252
+GO:0030136	clathrin-coated vesicle	25275	15	194	1	0.103
+GO:0005635	nuclear envelope	25275	50	194	1	0.264
+GO:0000815	ESCRT III complex	25275	9	194	1	0.065
+GO:0005771	multivesicular body	25275	7	194	1	0.0513
+GO:0019031	viral envelope	25275	9	194	1	0.065
+GO:0009536	plastid	25275	285	194	1	0.245
+GO:0090406	pollen tube	25275	42	194	1	0.235
+GO:0005874	microtubule	25275	48	194	1	0.257
+GO:0045298	tubulin complex	25275	13	194	1	0.091
+GO:0000930	gamma-tubulin complex	25275	13	194	1	0.091
+GO:0005622	intracellular	25275	499	194	2	0.158
+GO:0005768	endosome	25275	232	194	3	0.16
+GO:0005802	trans-Golgi network	25275	221	194	3	0.15
+GO:0005945	6-phosphofructokinase complex	25275	7	194	1	0.0513
+GO:0031012	extracellular matrix	25275	16	194	1	0.109
+GO:0030173	integral component of Golgi membrane	25275	5	194	1	0.0372
+GO:0000786	nucleosome	25275	62	194	1	0.298
+GO:0000785	chromatin	25275	15	194	1	0.103

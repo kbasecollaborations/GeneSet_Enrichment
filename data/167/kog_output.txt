@@ -1,47 +1,48 @@
-Feature Id = KOG1455	N = 6538	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.29244859606765755
-Feature Id = KOG1192	N = 6538	K = 72	n = 194	k = 2	Hypergeometric(p value) = 0.2746526935606241
-Feature Id = KOG2392	N = 6538	K = 8	n = 194	k = 1	Hypergeometric(p value) = 0.19244079980295242
-Feature Id = KOG0014	N = 6538	K = 98	n = 194	k = 1	Hypergeometric(p value) = 0.15545051297382767
-Feature Id = KOG1792	N = 6538	K = 17	n = 194	k = 2	Hypergeometric(p value) = 0.0761430091769572
-Feature Id = KOG1626	N = 6538	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.1532538133869957
-Feature Id = KOG2246	N = 6538	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.25601084195993257
-Feature Id = KOG0759	N = 6538	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.10848377967456066
-Feature Id = KOG0858	N = 6538	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.08383887182763632
-Feature Id = KOG0106	N = 6538	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.1532538133869957
-Feature Id = KOG0583	N = 6538	K = 44	n = 194	k = 3	Hypergeometric(p value) = 0.10062763922628937
-Feature Id = KOG1603	N = 6538	K = 56	n = 194	k = 1	Hypergeometric(p value) = 0.3174565504943695
-Feature Id = KOG1629	N = 6538	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.08383887182763632
-Feature Id = KOG3230	N = 6538	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.08383887182763632
-Feature Id = KOG0254	N = 6538	K = 51	n = 194	k = 1	Hypergeometric(p value) = 0.3362581176687786
-Feature Id = KOG0752	N = 6538	K = 14	n = 194	k = 1	Hypergeometric(p value) = 0.28127294234795475
-Feature Id = KOG1520	N = 6538	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.29244859606765755
-Feature Id = KOG0865	N = 6538	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.21009716950838953
-Feature Id = KOG1595	N = 6538	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.10848377967456066
-Feature Id = KOG1601	N = 6538	K = 29	n = 194	k = 1	Hypergeometric(p value) = 0.37115894685616585
-Feature Id = KOG1651	N = 6538	K = 8	n = 194	k = 1	Hypergeometric(p value) = 0.19244079980295242
-Feature Id = KOG2399	N = 6538	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.13159925905082115
-Feature Id = KOG1303	N = 6538	K = 37	n = 194	k = 1	Hypergeometric(p value) = 0.3721596854096538
-Feature Id = KOG0773	N = 6538	K = 21	n = 194	k = 1	Hypergeometric(p value) = 0.34188897678787156
-Feature Id = KOG2804	N = 6538	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05759323834770649
-Feature Id = KOG3173	N = 6538	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.22654067596135918
-Feature Id = KOG0714	N = 6538	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.26914287219833477
-Feature Id = KOG0223	N = 6538	K = 35	n = 194	k = 1	Hypergeometric(p value) = 0.3739094821124231
-Feature Id = KOG3070	N = 6538	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.08383887182763632
-Feature Id = KOG1950	N = 6538	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.29244859606765755
-Feature Id = KOG0698	N = 6538	K = 57	n = 194	k = 1	Hypergeometric(p value) = 0.31350443543171663
-Feature Id = KOG1471	N = 6538	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.3570288929907221
-Feature Id = KOG0027	N = 6538	K = 52	n = 194	k = 1	Hypergeometric(p value) = 0.33265096351303597
-Feature Id = KOG0032	N = 6538	K = 45	n = 194	k = 1	Hypergeometric(p value) = 0.35561083862437404
-Feature Id = KOG4758	N = 6538	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05759323834770649
-Feature Id = KOG1043	N = 6538	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.10848377967456066
-Feature Id = KOG0431	N = 6538	K = 8	n = 194	k = 1	Hypergeometric(p value) = 0.19244079980295242
-Feature Id = KOG1021	N = 6538	K = 40	n = 194	k = 1	Hypergeometric(p value) = 0.36754965175846777
-Feature Id = KOG1528	N = 6538	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05759323834770649
-Feature Id = KOG0472	N = 6538	K = 54	n = 194	k = 1	Hypergeometric(p value) = 0.32519115372480867
-Feature Id = KOG1573	N = 6538	K = 4	n = 194	k = 3	Hypergeometric(p value) = 9.993149776455985e-05
-Feature Id = KOG4306	N = 6538	K = 3	n = 194	k = 2	Hypergeometric(p value) = 0.002550985694881887
-Feature Id = KOG1594	N = 6538	K = 4	n = 194	k = 2	Hypergeometric(p value) = 0.0049520741431932705
-Feature Id = KOG1604	N = 6538	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05759323834770649
-Feature Id = KOG0853	N = 6538	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.21009716950838953
-Feature Id = KOG1187	N = 6538	K = 613	n = 194	k = 1	Hypergeometric(p value) = 7.776606462449889e-08
-Feature Id = KOG0381	N = 6538	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.25601084195993257
+ID	Term	N	K	n	k	pval
+KOG1455	Lysophospholipase	6538	15	194	1	0.292
+KOG1192	UDP-glucuronosyl and UDP-glucosyl transferase	6538	72	194	2	0.275
+KOG2392	Serpin	6538	8	194	1	0.192
+KOG0014	MADS box transcription factor	6538	98	194	1	0.155
+KOG1792	Reticulon	6538	17	194	2	0.0761
+KOG1626	Inorganic pyrophosphatase/Nucleosome remodeling factor, subunit NURF38	6538	6	194	1	0.153
+KOG2246	Galactosyltransferases	6538	12	194	1	0.256
+KOG0759	Mitochondrial oxoglutarate/malate carrier proteins	6538	4	194	1	0.108
+KOG0858	Predicted membrane protein	6538	3	194	1	0.0838
+KOG0106	Alternative splicing factor SRp55/B52/SRp75 (RRM superfamily)	6538	6	194	1	0.153
+KOG0583	Serine/threonine protein kinase	6538	44	194	3	0.101
+KOG1603	Copper chaperone	6538	56	194	1	0.317
+KOG1629	Bax-mediated apoptosis inhibitor TEGT/BI-1	6538	3	194	1	0.0838
+KOG3230	Vacuolar assembly/sorting protein DID4	6538	3	194	1	0.0838
+KOG0254	Predicted transporter (major facilitator superfamily)	6538	51	194	1	0.336
+KOG0752	Mitochondrial solute carrier protein	6538	14	194	1	0.281
+KOG1520	Predicted alkaloid synthase/Surface mucin Hemomucin	6538	15	194	1	0.292
+KOG0865	Cyclophilin type peptidyl-prolyl cis-trans isomerase	6538	9	194	1	0.21
+KOG1595	CCCH-type Zn-finger protein	6538	4	194	1	0.108
+KOG1601	GATA-4/5/6 transcription factors	6538	29	194	1	0.371
+KOG1651	Glutathione peroxidase	6538	8	194	1	0.192
+KOG2399	K+-dependent Na+:Ca2+ antiporter	6538	5	194	1	0.132
+KOG1303	Amino acid transporters	6538	37	194	1	0.372
+KOG0773	Transcription factor MEIS1 and related HOX domain proteins	6538	21	194	1	0.342
+KOG2804	Phosphorylcholine transferase/cholinephosphate cytidylyltransferase	6538	2	194	1	0.0576
+KOG3173	Predicted Zn-finger protein	6538	10	194	1	0.227
+KOG0714	Molecular chaperone (DnaJ superfamily)	6538	13	194	1	0.269
+KOG0223	Aquaporin (major intrinsic protein family)	6538	35	194	1	0.374
+KOG3070	Predicted RNA-binding protein containing PIN domain and invovled in translation or RNA processing	6538	3	194	1	0.0838
+KOG1950	Glycosyl transferase, family 8 - glycogenin	6538	15	194	1	0.292
+KOG0698	Serine/threonine protein phosphatase	6538	57	194	1	0.314
+KOG1471	Phosphatidylinositol transfer protein SEC14 and related proteins	6538	24	194	1	0.357
+KOG0027	Calmodulin and related proteins (EF-Hand superfamily)	6538	52	194	1	0.333
+KOG0032	Ca2+/calmodulin-dependent protein kinase, EF-Hand protein superfamily	6538	45	194	1	0.356
+KOG4758	Predicted membrane protein	6538	2	194	1	0.0576
+KOG1043	Ca2+-binding transmembrane protein LETM1/MRS7	6538	4	194	1	0.108
+KOG0431	Auxilin-like protein and related proteins containing DnaJ domain	6538	8	194	1	0.192
+KOG1021	Acetylglucosaminyltransferase EXT1/exostosin 1	6538	40	194	1	0.368
+KOG1528	Salt-sensitive 3'-phosphoadenosine-5'-phosphatase HAL2/SAL1	6538	2	194	1	0.0576
+KOG0472	Leucine-rich repeat protein	6538	54	194	1	0.325
+KOG1573	Aldehyde reductase	6538	4	194	3	9.99e-05
+KOG4306	Glycosylphosphatidylinositol-specific phospholipase C	6538	3	194	2	0.00255
+KOG1594	Uncharacterized enzymes related to aldose 1-epimerase	6538	4	194	2	0.00495
+KOG1604	Predicted mutarotase	6538	2	194	1	0.0576
+KOG0853	Glycosyltransferase	6538	9	194	1	0.21
+KOG1187	Serine/threonine protein kinase	6538	613	194	1	7.78e-08
+KOG0381	HMG box-containing protein	6538	12	194	1	0.256

@@ -1,47 +1,48 @@
-Feature Id = 1.13.11.51	N = 6365	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.15676896686255215
-Feature Id = 1.14.13.90	N = 6365	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.11115603195953583
-Feature Id = 2.3.1.22	N = 6365	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.30709976784547227
-Feature Id = 2.7.8.1	N = 6365	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05910969154246556
-Feature Id = 2.7.8.2	N = 6365	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05910969154246556
-Feature Id = 3.3.1.1	N = 6365	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05910969154246556
-Feature Id = 3.6.1.1	N = 6365	K = 13	n = 194	k = 2	Hypergeometric(p value) = 0.05145623311140231
-Feature Id = 2.4.1.222	N = 6365	K = 8	n = 194	k = 1	Hypergeometric(p value) = 0.19652874717985813
-Feature Id = 2.4.1.82	N = 6365	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.1347292888553972
-Feature Id = 3.1.3.12	N = 6365	K = 17	n = 194	k = 2	Hypergeometric(p value) = 0.07935063303753172
-Feature Id = 2.4.2.14	N = 6365	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.08597519962683935
-Feature Id = 2.7.1.40	N = 6365	K = 14	n = 194	k = 1	Hypergeometric(p value) = 0.2858212676483051
-Feature Id = 1.1.1.1	N = 6365	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.2143823497388548
-Feature Id = 2.7.11.1	N = 6365	K = 936	n = 194	k = 5	Hypergeometric(p value) = 9.262531521887741e-09
-Feature Id = 5.4.99.30	N = 6365	K = 5	n = 194	k = 2	Hypergeometric(p value) = 0.008431502188467289
-Feature Id = 3.1.4.4	N = 6365	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.26058306015062055
-Feature Id = 3.6.4.13	N = 6365	K = 104	n = 194	k = 2	Hypergeometric(p value) = 0.21201298331200982
-Feature Id = 2.4.2.1	N = 6365	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.24635059792667546
-Feature Id = 4.3.3.2	N = 6365	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.2969308600731313
-Feature Id = 3.1.1.11	N = 6365	K = 95	n = 194	k = 2	Hypergeometric(p value) = 0.23387499975855838
-Feature Id = 1.10.3.2	N = 6365	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.35979649159898575
-Feature Id = 2.7.11.22	N = 6365	K = 36	n = 194	k = 1	Hypergeometric(p value) = 0.3723225776613191
-Feature Id = 5.2.1.8	N = 6365	K = 63	n = 194	k = 1	Hypergeometric(p value) = 0.2818737148095901
-Feature Id = 1.11.1.12	N = 6365	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.11115603195953583
-Feature Id = 2.1.1.112	N = 6365	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.15676896686255215
-Feature Id = 2.4.1.43	N = 6365	K = 25	n = 194	k = 1	Hypergeometric(p value) = 0.3633806494684121
-Feature Id = 2.4.1.13	N = 6365	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.15676896686255215
-Feature Id = 6.3.2.19	N = 6365	K = 256	n = 194	k = 2	Hypergeometric(p value) = 0.010706069904360948
-Feature Id = 2.4.1.15	N = 6365	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.24635059792667546
-Feature Id = 3.4.22.34	N = 6365	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.1347292888553972
-Feature Id = 1.2.1.41	N = 6365	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05910969154246556
-Feature Id = 2.7.2.11	N = 6365	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05910969154246556
-Feature Id = 3.1.3.16	N = 6365	K = 155	n = 194	k = 1	Hypergeometric(p value) = 0.038822212776582724
-Feature Id = 3.6.3.8	N = 6365	K = 17	n = 194	k = 1	Hypergeometric(p value) = 0.3163746742117796
-Feature Id = 4.2.2.2	N = 6365	K = 26	n = 194	k = 1	Hypergeometric(p value) = 0.3664114962746143
-Feature Id = 1.1.1.22	N = 6365	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.1347292888553972
-Feature Id = 3.1.3.57	N = 6365	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.1347292888553972
-Feature Id = 3.1.3.7	N = 6365	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.17734607505812772
-Feature Id = 1.13.99.1	N = 6365	K = 4	n = 194	k = 3	Hypergeometric(p value) = 0.00010821604021354447
-Feature Id = 3.1.3.2	N = 6365	K = 32	n = 194	k = 1	Hypergeometric(p value) = 0.37457971602084134
-Feature Id = 3.1.3.62	N = 6365	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.05910969154246556
-Feature Id = 3.1.3.3	N = 6365	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.1347292888553972
-Feature Id = 4.6.1.13	N = 6365	K = 3	n = 194	k = 2	Hypergeometric(p value) = 0.0026893376868903727
-Feature Id = 3.1.4.11	N = 6365	K = 12	n = 194	k = 3	Hypergeometric(p value) = 0.004663084115780045
-Feature Id = 5.1.3.15	N = 6365	K = 7	n = 194	k = 6	Hypergeometric(p value) = 5.049020374870934e-09
-Feature Id = 5.1.3.3	N = 6365	K = 4	n = 194	k = 3	Hypergeometric(p value) = 0.00010821604021354447
-Feature Id = 2.3.1.48	N = 6365	K = 28	n = 194	k = 1	Hypergeometric(p value) = 0.3709327943519269
+ID	Term	N	K	n	k	pval
+1.13.11.51	9-cis-epoxycarotenoid dioxygenase.	6365	6	194	1	0.157
+1.14.13.90	Zeaxanthin epoxidase.	6365	4	194	1	0.111
+2.3.1.22	2-acylglycerol O-acyltransferase.	6365	16	194	1	0.307
+2.7.8.1	Ethanolaminephosphotransferase.	6365	2	194	1	0.0591
+2.7.8.2	Diacylglycerol cholinephosphotransferase.	6365	2	194	1	0.0591
+3.3.1.1	Adenosylhomocysteinase.	6365	2	194	1	0.0591
+3.6.1.1	Inorganic diphosphatase.	6365	13	194	2	0.0515
+2.4.1.222	O-fucosylpeptide 3-beta-N-acetylglucosaminyltransferase.	6365	8	194	1	0.197
+2.4.1.82	Galactinol--sucrose galactosyltransferase.	6365	5	194	1	0.135
+3.1.3.12	Trehalose-phosphatase.	6365	17	194	2	0.0794
+2.4.2.14	Amidophosphoribosyltransferase.	6365	3	194	1	0.086
+2.7.1.40	Pyruvate kinase.	6365	14	194	1	0.286
+1.1.1.1	Alcohol dehydrogenase.	6365	9	194	1	0.214
+2.7.11.1	Non-specific serine/threonine protein kinase.	6365	936	194	5	9.26e-09
+5.4.99.30	UDP-arabinopyranose mutase.	6365	5	194	2	0.00843
+3.1.4.4	Phospholipase D.	6365	12	194	1	0.261
+3.6.4.13	RNA helicase.	6365	104	194	2	0.212
+2.4.2.1	Purine-nucleoside phosphorylase.	6365	11	194	1	0.246
+4.3.3.2	Strictosidine synthase.	6365	15	194	1	0.297
+3.1.1.11	Pectinesterase.	6365	95	194	2	0.234
+1.10.3.2	Laccase.	6365	24	194	1	0.36
+2.7.11.22	Cyclin-dependent kinase.	6365	36	194	1	0.372
+5.2.1.8	Peptidylprolyl isomerase.	6365	63	194	1	0.282
+1.11.1.12	Phospholipid-hydroperoxide glutathione peroxidase.	6365	4	194	1	0.111
+2.1.1.112	Glucuronoxylan 4-O-methyltransferase.	6365	6	194	1	0.157
+2.4.1.43	Polygalacturonate 4-alpha-galacturonosyltransferase.	6365	25	194	1	0.363
+2.4.1.13	Sucrose synthase.	6365	6	194	1	0.157
+6.3.2.19	Ubiquitin--protein ligase.	6365	256	194	2	0.0107
+2.4.1.15	Alpha,alpha-trehalose-phosphate synthase (UDP-forming).	6365	11	194	1	0.246
+3.4.22.34	Legumain.	6365	5	194	1	0.135
+1.2.1.41	Glutamate-5-semialdehyde dehydrogenase.	6365	2	194	1	0.0591
+2.7.2.11	Glutamate 5-kinase.	6365	2	194	1	0.0591
+3.1.3.16	Phosphoprotein phosphatase.	6365	155	194	1	0.0388
+3.6.3.8	Calcium-transporting ATPase.	6365	17	194	1	0.316
+4.2.2.2	Pectate lyase.	6365	26	194	1	0.366
+1.1.1.22	UDP-glucose 6-dehydrogenase.	6365	5	194	1	0.135
+3.1.3.57	Inositol-1,4-bisphosphate 1-phosphatase.	6365	5	194	1	0.135
+3.1.3.7	3'(2'),5'-bisphosphate nucleotidase.	6365	7	194	1	0.177
+1.13.99.1	Inositol oxygenase.	6365	4	194	3	0.000108
+3.1.3.2	Acid phosphatase.	6365	32	194	1	0.375
+3.1.3.62	Multiple inositol-polyphosphate phosphatase.	6365	2	194	1	0.0591
+3.1.3.3	Phosphoserine phosphatase.	6365	5	194	1	0.135
+4.6.1.13	Phosphatidylinositol diacylglycerol-lyase.	6365	3	194	2	0.00269
+3.1.4.11	Phosphoinositide phospholipase C.	6365	12	194	3	0.00466
+5.1.3.15	Glucose-6-phosphate 1-epimerase.	6365	7	194	6	5.05e-09
+5.1.3.3	Aldose 1-epimerase.	6365	4	194	3	0.000108
+2.3.1.48	Histone acetyltransferase.	6365	28	194	1	0.371

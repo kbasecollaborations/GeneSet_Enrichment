@@ -1,118 +1,119 @@
-Feature Id = GO:0003674	N = 23936	K = 7410	n = 194	k = 38	Hypergeometric(p value) = 0.00011575403225777339
-Feature Id = GO:0009055	N = 23936	K = 185	n = 194	k = 1	Hypergeometric(p value) = 0.33609157486234986
-Feature Id = GO:0005507	N = 23936	K = 239	n = 194	k = 3	Hypergeometric(p value) = 0.17612243026265817
-Feature Id = GO:0005215	N = 23936	K = 361	n = 194	k = 4	Hypergeometric(p value) = 0.16558691594882288
-Feature Id = GO:0003779	N = 23936	K = 57	n = 194	k = 1	Hypergeometric(p value) = 0.2934230056463248
-Feature Id = GO:0005509	N = 23936	K = 260	n = 194	k = 8	Hypergeometric(p value) = 0.001036243683256821
-Feature Id = GO:0030414	N = 23936	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.04670025727577426
-Feature Id = GO:0016787	N = 23936	K = 370	n = 194	k = 2	Hypergeometric(p value) = 0.22500960847681295
-Feature Id = GO:0016758	N = 23936	K = 174	n = 194	k = 6	Hypergeometric(p value) = 0.0024518986132963673
-Feature Id = GO:0016757	N = 23936	K = 450	n = 194	k = 9	Hypergeometric(p value) = 0.007608761244917183
-Feature Id = GO:0035251	N = 23936	K = 23	n = 194	k = 2	Hypergeometric(p value) = 0.013960661975321373
-Feature Id = GO:0008194	N = 23936	K = 100	n = 194	k = 5	Hypergeometric(p value) = 0.0011757369366535038
-Feature Id = GO:0005515	N = 23936	K = 5123	n = 194	k = 28	Hypergeometric(p value) = 0.003691038611945712
-Feature Id = GO:0030598	N = 23936	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.02392428672354734
-Feature Id = GO:0010279	N = 23936	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.04670025727577426
-Feature Id = GO:0016780	N = 23936	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.05404421262201824
-Feature Id = GO:0051536	N = 23936	K = 58	n = 194	k = 2	Hypergeometric(p value) = 0.06877543291365586
-Feature Id = GO:0016168	N = 23936	K = 34	n = 194	k = 1	Hypergeometric(p value) = 0.21092049971406968
-Feature Id = GO:0004867	N = 23936	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.16145557204997768
-Feature Id = GO:0004869	N = 23936	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.08221951071379777
-Feature Id = GO:0008134	N = 23936	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.0889704612537228
-Feature Id = GO:0003677	N = 23936	K = 1902	n = 194	k = 13	Hypergeometric(p value) = 0.09184665052954265
-Feature Id = GO:0003700	N = 23936	K = 1691	n = 194	k = 12	Hypergeometric(p value) = 0.10512337503396009
-Feature Id = GO:0046983	N = 23936	K = 351	n = 194	k = 1	Hypergeometric(p value) = 0.16379995976051587
-Feature Id = GO:0051287	N = 23936	K = 65	n = 194	k = 2	Hypergeometric(p value) = 0.08178565893353855
-Feature Id = GO:0004427	N = 23936	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.07535284637780965
-Feature Id = GO:0000287	N = 23936	K = 126	n = 194	k = 2	Hypergeometric(p value) = 0.18908252494967348
-Feature Id = GO:0004553	N = 23936	K = 281	n = 194	k = 1	Hypergeometric(p value) = 0.23288042107140502
-Feature Id = GO:0005310	N = 23936	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.031641809319589057
-Feature Id = GO:0017077	N = 23936	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.03923329179644338
-Feature Id = GO:0004805	N = 23936	K = 15	n = 194	k = 2	Hypergeometric(p value) = 0.006179851818224188
-Feature Id = GO:0003824	N = 23936	K = 1110	n = 194	k = 21	Hypergeometric(p value) = 0.00017625863353625318
-Feature Id = GO:0008270	N = 23936	K = 1258	n = 194	k = 9	Hypergeometric(p value) = 0.1253040473080404
-Feature Id = GO:0046872	N = 23936	K = 478	n = 194	k = 6	Hypergeometric(p value) = 0.09805051145908504
-Feature Id = GO:0003676	N = 23936	K = 852	n = 194	k = 10	Hypergeometric(p value) = 0.06814528038164717
-Feature Id = GO:0004044	N = 23936	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.02392428672354734
-Feature Id = GO:0004190	N = 23936	K = 78	n = 194	k = 1	Hypergeometric(p value) = 0.33858689680602144
-Feature Id = GO:0008233	N = 23936	K = 72	n = 194	k = 2	Hypergeometric(p value) = 0.09497751146301081
-Feature Id = GO:0004743	N = 23936	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.11484515418665467
-Feature Id = GO:0030955	N = 23936	K = 19	n = 194	k = 1	Hypergeometric(p value) = 0.13310391057907842
-Feature Id = GO:0016491	N = 23936	K = 678	n = 194	k = 7	Hypergeometric(p value) = 0.12524393346464105
-Feature Id = GO:0004022	N = 23936	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.08221951071379777
-Feature Id = GO:0000166	N = 23936	K = 558	n = 194	k = 3	Hypergeometric(p value) = 0.16782808649557115
-Feature Id = GO:0003723	N = 23936	K = 537	n = 194	k = 5	Hypergeometric(p value) = 0.17032190066723343
-Feature Id = GO:0005524	N = 23936	K = 1941	n = 194	k = 11	Hypergeometric(p value) = 0.0519219889507828
-Feature Id = GO:0004672	N = 23936	K = 1048	n = 194	k = 6	Hypergeometric(p value) = 0.10664142672813692
-Feature Id = GO:0016301	N = 23936	K = 941	n = 194	k = 8	Hypergeometric(p value) = 0.14181773085459765
-Feature Id = GO:0004713	N = 23936	K = 686	n = 194	k = 6	Hypergeometric(p value) = 0.1610166504040451
-Feature Id = GO:0016866	N = 23936	K = 19	n = 194	k = 2	Hypergeometric(p value) = 0.009745057646994843
-Feature Id = GO:0016760	N = 23936	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.06836904018492444
-Feature Id = GO:0052691	N = 23936	K = 3	n = 194	k = 1	Hypergeometric(p value) = 0.02392428672354734
-Feature Id = GO:0004630	N = 23936	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.0889704612537228
-Feature Id = GO:0080043	N = 23936	K = 23	n = 194	k = 2	Hypergeometric(p value) = 0.013960661975321373
-Feature Id = GO:0046789	N = 23936	K = 8	n = 194	k = 1	Hypergeometric(p value) = 0.06126664863743566
-Feature Id = GO:0043565	N = 23936	K = 296	n = 194	k = 1	Hypergeometric(p value) = 0.2169370227188391
-Feature Id = GO:0005337	N = 23936	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.08221951071379777
-Feature Id = GO:0022857	N = 23936	K = 100	n = 194	k = 1	Hypergeometric(p value) = 0.3630242779393434
-Feature Id = GO:0005351	N = 23936	K = 95	n = 194	k = 1	Hypergeometric(p value) = 0.3591790666480626
-Feature Id = GO:0015144	N = 23936	K = 89	n = 194	k = 1	Hypergeometric(p value) = 0.3533089210890978
-Feature Id = GO:0004143	N = 23936	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.07535284637780965
-Feature Id = GO:0070569	N = 23936	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.05404421262201824
-Feature Id = GO:0003983	N = 23936	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.031641809319589057
-Feature Id = GO:0005200	N = 23936	K = 36	n = 194	k = 1	Hypergeometric(p value) = 0.21973549510198295
-Feature Id = GO:0005525	N = 23936	K = 262	n = 194	k = 2	Hypergeometric(p value) = 0.27210249466809244
-Feature Id = GO:0003924	N = 23936	K = 145	n = 194	k = 1	Hypergeometric(p value) = 0.3649811955392322
-Feature Id = GO:0005198	N = 23936	K = 61	n = 194	k = 1	Hypergeometric(p value) = 0.3039839186048307
-Feature Id = GO:0016844	N = 23936	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.09560711073693079
-Feature Id = GO:0030599	N = 23936	K = 70	n = 194	k = 1	Hypergeometric(p value) = 0.3242563163765361
-Feature Id = GO:0004857	N = 23936	K = 129	n = 194	k = 2	Hypergeometric(p value) = 0.19347338878501347
-Feature Id = GO:0003755	N = 23936	K = 58	n = 194	k = 1	Hypergeometric(p value) = 0.2961576045813402
-Feature Id = GO:0004602	N = 23936	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.07535284637780965
-Feature Id = GO:0016209	N = 23936	K = 21	n = 194	k = 1	Hypergeometric(p value) = 0.14475007082388217
-Feature Id = GO:0015171	N = 23936	K = 63	n = 194	k = 1	Hypergeometric(p value) = 0.3088952061230348
-Feature Id = GO:0047262	N = 23936	K = 26	n = 194	k = 1	Hypergeometric(p value) = 0.17209804715655203
-Feature Id = GO:0016157	N = 23936	K = 10	n = 194	k = 2	Hypergeometric(p value) = 0.00275739222545726
-Feature Id = GO:0003872	N = 23936	K = 11	n = 194	k = 1	Hypergeometric(p value) = 0.08221951071379777
-Feature Id = GO:0016627	N = 23936	K = 32	n = 194	k = 1	Hypergeometric(p value) = 0.2017583046822257
-Feature Id = GO:0003865	N = 23936	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.031641809319589057
-Feature Id = GO:0020037	N = 23936	K = 398	n = 194	k = 1	Hypergeometric(p value) = 0.1261840916033422
-Feature Id = GO:0016705	N = 23936	K = 282	n = 194	k = 1	Hypergeometric(p value) = 0.23180235514912445
-Feature Id = GO:0005506	N = 23936	K = 366	n = 194	k = 5	Hypergeometric(p value) = 0.09887278120236374
-Feature Id = GO:0004842	N = 23936	K = 343	n = 194	k = 2	Hypergeometric(p value) = 0.24108074865469492
-Feature Id = GO:0005488	N = 23936	K = 310	n = 194	k = 1	Hypergeometric(p value) = 0.2025569967701708
-Feature Id = GO:0015250	N = 23936	K = 37	n = 194	k = 1	Hypergeometric(p value) = 0.2240155359685419
-Feature Id = GO:0003697	N = 23936	K = 35	n = 194	k = 2	Hypergeometric(p value) = 0.029804367323319546
-Feature Id = GO:0003690	N = 23936	K = 54	n = 194	k = 2	Hypergeometric(p value) = 0.061492695492201724
-Feature Id = GO:0047216	N = 23936	K = 6	n = 194	k = 1	Hypergeometric(p value) = 0.04670025727577426
-Feature Id = GO:0008289	N = 23936	K = 143	n = 194	k = 1	Hypergeometric(p value) = 0.36585843910789284
-Feature Id = GO:0008271	N = 23936	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.0889704612537228
-Feature Id = GO:0015116	N = 23936	K = 14	n = 194	k = 1	Hypergeometric(p value) = 0.1021308567863746
-Feature Id = GO:0008083	N = 23936	K = 15	n = 194	k = 1	Hypergeometric(p value) = 0.10854308201007126
-Feature Id = GO:0004197	N = 23936	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.16145557204997768
-Feature Id = GO:0004350	N = 23936	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.016079184489802837
-Feature Id = GO:0016620	N = 23936	K = 25	n = 194	k = 2	Hypergeometric(p value) = 0.016289376361750405
-Feature Id = GO:0004386	N = 23936	K = 55	n = 194	k = 1	Hypergeometric(p value) = 0.2877599649141034
-Feature Id = GO:0004722	N = 23936	K = 144	n = 194	k = 2	Hypergeometric(p value) = 0.21367498296811588
-Feature Id = GO:0005516	N = 23936	K = 190	n = 194	k = 2	Hypergeometric(p value) = 0.25659313670316103
-Feature Id = GO:0043621	N = 23936	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.16145557204997768
-Feature Id = GO:0005388	N = 23936	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.11484515418665467
-Feature Id = GO:0004683	N = 23936	K = 35	n = 194	k = 1	Hypergeometric(p value) = 0.21537084574483445
-Feature Id = GO:0030570	N = 23936	K = 26	n = 194	k = 1	Hypergeometric(p value) = 0.17209804715655203
-Feature Id = GO:0016829	N = 23936	K = 83	n = 194	k = 1	Hypergeometric(p value) = 0.34595094778840974
-Feature Id = GO:0046910	N = 23936	K = 64	n = 194	k = 1	Hypergeometric(p value) = 0.3112614189174184
-Feature Id = GO:0046982	N = 23936	K = 136	n = 194	k = 1	Hypergeometric(p value) = 0.36835975948168964
-Feature Id = GO:0003979	N = 23936	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.031641809319589057
-Feature Id = GO:0008441	N = 23936	K = 9	n = 194	k = 1	Hypergeometric(p value) = 0.06836904018492444
-Feature Id = GO:0050113	N = 23936	K = 4	n = 194	k = 3	Hypergeometric(p value) = 2.080367804801413e-06
-Feature Id = GO:0003993	N = 23936	K = 46	n = 194	k = 2	Hypergeometric(p value) = 0.047442111319926164
-Feature Id = GO:0008081	N = 23936	K = 41	n = 194	k = 3	Hypergeometric(p value) = 0.004120790327487963
-Feature Id = GO:0016853	N = 23936	K = 28	n = 194	k = 11	Hypergeometric(p value) = 1.402976161772911e-16
-Feature Id = GO:0004034	N = 23936	K = 11	n = 194	k = 10	Hypergeometric(p value) = 1.0566566278310526e-20
-Feature Id = GO:0030246	N = 23936	K = 195	n = 194	k = 11	Hypergeometric(p value) = 5.252561823674864e-07
-Feature Id = GO:0008886	N = 23936	K = 2	n = 194	k = 1	Hypergeometric(p value) = 0.016079184489802837
-Feature Id = GO:0004028	N = 23936	K = 14	n = 194	k = 1	Hypergeometric(p value) = 0.1021308567863746
-Feature Id = GO:0046524	N = 23936	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.031641809319589057
-Feature Id = GO:0004674	N = 23936	K = 312	n = 194	k = 1	Hypergeometric(p value) = 0.20054663709563725
-Feature Id = GO:0003682	N = 23936	K = 52	n = 194	k = 1	Hypergeometric(p value) = 0.2787677178872942
-Feature Id = GO:0030527	N = 23936	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.03923329179644338
+ID	Term	N	K	n	k	pval
+GO:0003674	molecular	23936	7410	194	38	0.000116
+GO:0009055	electron transfer activity	23936	185	194	1	0.336
+GO:0005507	copper ion binding	23936	239	194	3	0.176
+GO:0005215	transporter activity	23936	361	194	4	0.166
+GO:0003779	actin binding	23936	57	194	1	0.293
+GO:0005509	calcium ion binding	23936	260	194	8	0.00104
+GO:0030414	peptidase inhibitor activity	23936	6	194	1	0.0467
+GO:0016787	hydrolase activity	23936	370	194	2	0.225
+GO:0016758	transferase activity, transferring hexosyl groups	23936	174	194	6	0.00245
+GO:0016757	transferase activity, transferring glycosyl groups	23936	450	194	9	0.00761
+GO:0035251	UDP-glucosyltransferase activity	23936	23	194	2	0.014
+GO:0008194	UDP-glycosyltransferase activity	23936	100	194	5	0.00118
+GO:0005515	protein binding	23936	5123	194	28	0.00369
+GO:0030598	rRNA N-glycosylase activity	23936	3	194	1	0.0239
+GO:0010279	indole-3-acetic acid amido synthetase activity	23936	6	194	1	0.0467
+GO:0016780	phosphotransferase activity, for other substituted phosphate groups	23936	7	194	1	0.054
+GO:0051536	iron-sulfur cluster binding	23936	58	194	2	0.0688
+GO:0016168	chlorophyll binding	23936	34	194	1	0.211
+GO:0004867	serine-type endopeptidase inhibitor activity	23936	24	194	1	0.161
+GO:0004869	cysteine-type endopeptidase inhibitor activity	23936	11	194	1	0.0822
+GO:0008134	transcription factor binding	23936	12	194	1	0.089
+GO:0003677	DNA binding	23936	1902	194	13	0.0918
+GO:0003700	DNA-binding transcription factor activity	23936	1691	194	12	0.105
+GO:0046983	protein dimerization activity	23936	351	194	1	0.164
+GO:0051287	NAD binding	23936	65	194	2	0.0818
+GO:0004427	inorganic diphosphatase activity	23936	10	194	1	0.0754
+GO:0000287	magnesium ion binding	23936	126	194	2	0.189
+GO:0004553	hydrolase activity, hydrolyzing O-glycosyl compounds	23936	281	194	1	0.233
+GO:0005310	dicarboxylic acid transmembrane transporter activity	23936	4	194	1	0.0316
+GO:0017077	oxidative phosphorylation uncoupler activity	23936	5	194	1	0.0392
+GO:0004805	trehalose-phosphatase activity	23936	15	194	2	0.00618
+GO:0003824	catalytic activity	23936	1110	194	21	0.000176
+GO:0008270	zinc ion binding	23936	1258	194	9	0.125
+GO:0046872	metal ion binding	23936	478	194	6	0.0981
+GO:0003676	nucleic acid binding	23936	852	194	10	0.0681
+GO:0004044	amidophosphoribosyltransferase activity	23936	3	194	1	0.0239
+GO:0004190	aspartic-type endopeptidase activity	23936	78	194	1	0.339
+GO:0008233	peptidase activity	23936	72	194	2	0.095
+GO:0004743	pyruvate kinase activity	23936	16	194	1	0.115
+GO:0030955	potassium ion binding	23936	19	194	1	0.133
+GO:0016491	oxidoreductase activity	23936	678	194	7	0.125
+GO:0004022	alcohol dehydrogenase (NAD+) activity	23936	11	194	1	0.0822
+GO:0000166	nucleotide binding	23936	558	194	3	0.168
+GO:0003723	RNA binding	23936	537	194	5	0.17
+GO:0005524	ATP binding	23936	1941	194	11	0.0519
+GO:0004672	protein kinase activity	23936	1048	194	6	0.107
+GO:0016301	kinase activity	23936	941	194	8	0.142
+GO:0004713	protein tyrosine kinase activity	23936	686	194	6	0.161
+GO:0016866	intramolecular transferase activity	23936	19	194	2	0.00975
+GO:0016760	cellulose synthase (UDP-forming) activity	23936	9	194	1	0.0684
+GO:0052691	UDP-arabinopyranose mutase activity	23936	3	194	1	0.0239
+GO:0004630	phospholipase D activity	23936	12	194	1	0.089
+GO:0080043	quercetin 3-O-glucosyltransferase activity	23936	23	194	2	0.014
+GO:0046789	host cell surface receptor binding	23936	8	194	1	0.0613
+GO:0043565	sequence-specific DNA binding	23936	296	194	1	0.217
+GO:0005337	nucleoside transmembrane transporter activity	23936	11	194	1	0.0822
+GO:0022857	transmembrane transporter activity	23936	100	194	1	0.363
+GO:0005351	carbohydrate:proton symporter activity	23936	95	194	1	0.359
+GO:0015144	carbohydrate transmembrane transporter activity	23936	89	194	1	0.353
+GO:0004143	diacylglycerol kinase activity	23936	10	194	1	0.0754
+GO:0070569	uridylyltransferase activity	23936	7	194	1	0.054
+GO:0003983	UTP:glucose-1-phosphate uridylyltransferase activity	23936	4	194	1	0.0316
+GO:0005200	structural constituent of cytoskeleton	23936	36	194	1	0.22
+GO:0005525	GTP binding	23936	262	194	2	0.272
+GO:0003924	GTPase activity	23936	145	194	1	0.365
+GO:0005198	structural molecule activity	23936	61	194	1	0.304
+GO:0016844	strictosidine synthase activity	23936	13	194	1	0.0956
+GO:0030599	pectinesterase activity	23936	70	194	1	0.324
+GO:0004857	enzyme inhibitor activity	23936	129	194	2	0.193
+GO:0003755	peptidyl-prolyl cis-trans isomerase activity	23936	58	194	1	0.296
+GO:0004602	glutathione peroxidase activity	23936	10	194	1	0.0754
+GO:0016209	antioxidant activity	23936	21	194	1	0.145
+GO:0015171	amino acid transmembrane transporter activity	23936	63	194	1	0.309
+GO:0047262	polygalacturonate 4-alpha-galacturonosyltransferase activity	23936	26	194	1	0.172
+GO:0016157	sucrose synthase activity	23936	10	194	2	0.00276
+GO:0003872	6-phosphofructokinase activity	23936	11	194	1	0.0822
+GO:0016627	oxidoreductase activity, acting on the CH-CH group of donors	23936	32	194	1	0.202
+GO:0003865	3-oxo-5-alpha-steroid 4-dehydrogenase activity	23936	4	194	1	0.0316
+GO:0020037	heme binding	23936	398	194	1	0.126
+GO:0016705	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen	23936	282	194	1	0.232
+GO:0005506	iron ion binding	23936	366	194	5	0.0989
+GO:0004842	ubiquitin-protein transferase activity	23936	343	194	2	0.241
+GO:0005488	binding	23936	310	194	1	0.203
+GO:0015250	water channel activity	23936	37	194	1	0.224
+GO:0003697	single-stranded DNA binding	23936	35	194	2	0.0298
+GO:0003690	double-stranded DNA binding	23936	54	194	2	0.0615
+GO:0047216	inositol 3-alpha-galactosyltransferase activity	23936	6	194	1	0.0467
+GO:0008289	lipid binding	23936	143	194	1	0.366
+GO:0008271	secondary active sulfate transmembrane transporter activity	23936	12	194	1	0.089
+GO:0015116	sulfate transmembrane transporter activity	23936	14	194	1	0.102
+GO:0008083	growth factor activity	23936	15	194	1	0.109
+GO:0004197	cysteine-type endopeptidase activity	23936	24	194	1	0.161
+GO:0004350	glutamate-5-semialdehyde dehydrogenase activity	23936	2	194	1	0.0161
+GO:0016620	oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor	23936	25	194	2	0.0163
+GO:0004386	helicase activity	23936	55	194	1	0.288
+GO:0004722	protein serine/threonine phosphatase activity	23936	144	194	2	0.214
+GO:0005516	calmodulin binding	23936	190	194	2	0.257
+GO:0043621	protein self-association	23936	24	194	1	0.161
+GO:0005388	calcium transmembrane transporter activity, phosphorylative mechanism	23936	16	194	1	0.115
+GO:0004683	calmodulin-dependent protein kinase activity	23936	35	194	1	0.215
+GO:0030570	pectate lyase activity	23936	26	194	1	0.172
+GO:0016829	lyase activity	23936	83	194	1	0.346
+GO:0046910	pectinesterase inhibitor activity	23936	64	194	1	0.311
+GO:0046982	protein heterodimerization activity	23936	136	194	1	0.368
+GO:0003979	UDP-glucose 6-dehydrogenase activity	23936	4	194	1	0.0316
+GO:0008441	3'(2'),5'-bisphosphate nucleotidase activity	23936	9	194	1	0.0684
+GO:0050113	inositol oxygenase activity	23936	4	194	3	2.08e-06
+GO:0003993	acid phosphatase activity	23936	46	194	2	0.0474
+GO:0008081	phosphoric diester hydrolase activity	23936	41	194	3	0.00412
+GO:0016853	isomerase activity	23936	28	194	11	1.4e-16
+GO:0004034	aldose 1-epimerase activity	23936	11	194	10	1.06e-20
+GO:0030246	carbohydrate binding	23936	195	194	11	5.25e-07
+GO:0008886	glyceraldehyde-3-phosphate dehydrogenase (NADP+) (non-phosphorylating) activity	23936	2	194	1	0.0161
+GO:0004028	3-chloroallyl aldehyde dehydrogenase activity	23936	14	194	1	0.102
+GO:0046524	sucrose-phosphate synthase activity	23936	4	194	1	0.0316
+GO:0004674	protein serine/threonine kinase activity	23936	312	194	1	0.201
+GO:0003682	chromatin binding	23936	52	194	1	0.279
+GO:0030527	structural constituent of chromatin	23936	5	194	1	0.0392

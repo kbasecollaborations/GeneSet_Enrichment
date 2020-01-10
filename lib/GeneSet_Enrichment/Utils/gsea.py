@@ -28,6 +28,7 @@ class gsea:
 
       feature_dict = {}
       gene_feature = {}
+      feature_term = {}
       try:
          fassoc = open(association_file, "r")
          
@@ -37,7 +38,7 @@ class gsea:
            feature_id = id[1]
            num_fields = len(id)
            feature_dict[feature_id] = num_fields - 2
-
+           feature_term[feature_id] = id[0]
            for i in range(3, num_fields):
                gene_id = id[i]
 
@@ -76,12 +77,13 @@ class gsea:
                      featurefreq[feature] = 1
 
          fout= open(outdirectory + "/" + featurename + "_output.txt","a")
+         fout.write("ID\tTerm\tN\tK\tn\tk\tpval\n")
          for feature_key, frequency in featurefreq.items():
              k = frequency
              K = feature_dict[feature_key]
              prb = hypergeom.pmf(k, N, K, n)
-       
-             fout.write ("Feature Id = " + feature_key + "\tN = " + str(N) + "\tK = " + str(K) + "\tn = " + str(n) + "\tk = " + str(k) + "\tHypergeometric(p value) = " +str(prb) + "\n")
+           
+             fout.write (feature_key + "\t"+ (feature_term[feature_key]).split("_")[1] +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k) + "\t" +str(format(prb, '.3g')) + "\n")
          fout.close()
          fgene.close()
     

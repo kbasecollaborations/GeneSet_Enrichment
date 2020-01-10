@@ -1,46 +1,47 @@
-Feature Id = SM00769	N = 7704	K = 5	n = 194	k = 1	Hypergeometric(p value) = 0.11375406381611629
-Feature Id = SM00505	N = 7704	K = 22	n = 194	k = 1	Hypergeometric(p value) = 0.32492575698552006
-Feature Id = SM00093	N = 7704	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.20037964755883367
-Feature Id = SM00355	N = 7704	K = 77	n = 194	k = 2	Hypergeometric(p value) = 0.2753988720712167
-Feature Id = SM00730	N = 7704	K = 8	n = 194	k = 1	Hypergeometric(p value) = 0.16865735002223828
-Feature Id = SM00360	N = 7704	K = 234	n = 194	k = 2	Hypergeometric(p value) = 0.044930738376363175
-Feature Id = SM00220	N = 7704	K = 1011	n = 194	k = 6	Hypergeometric(p value) = 9.210520850555866e-07
-Feature Id = SM00219	N = 7704	K = 990	n = 194	k = 6	Hypergeometric(p value) = 1.4752410461526318e-06
-Feature Id = SM00239	N = 7704	K = 96	n = 194	k = 1	Hypergeometric(p value) = 0.21376515971254545
-Feature Id = SM00155	N = 7704	K = 12	n = 194	k = 1	Hypergeometric(p value) = 0.228542707929806
-Feature Id = SM00054	N = 7704	K = 126	n = 194	k = 5	Hypergeometric(p value) = 0.11341714305418461
-Feature Id = SM00415	N = 7704	K = 24	n = 194	k = 1	Hypergeometric(p value) = 0.33687617603661196
-Feature Id = SM00028	N = 7704	K = 102	n = 194	k = 1	Hypergeometric(p value) = 0.19466482024869722
-Feature Id = SM00386	N = 7704	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.2752667125998314
-Feature Id = SM00109	N = 7704	K = 28	n = 194	k = 1	Hypergeometric(p value) = 0.3549725674158938
-Feature Id = SM00045	N = 7704	K = 7	n = 194	k = 1	Hypergeometric(p value) = 0.1513707582932873
-Feature Id = SM00487	N = 7704	K = 151	n = 194	k = 2	Hypergeometric(p value) = 0.1600822124024893
-Feature Id = SM00490	N = 7704	K = 147	n = 194	k = 2	Hypergeometric(p value) = 0.16813601037140968
-Feature Id = SM00865	N = 7704	K = 20	n = 194	k = 1	Hypergeometric(p value) = 0.31080502294188
-Feature Id = SM00864	N = 7704	K = 20	n = 194	k = 1	Hypergeometric(p value) = 0.31080502294188
-Feature Id = SM00856	N = 7704	K = 120	n = 194	k = 2	Hypergeometric(p value) = 0.22383291453707793
-Feature Id = SM00666	N = 7704	K = 38	n = 194	k = 1	Hypergeometric(p value) = 0.37338978037754744
-Feature Id = SM00356	N = 7704	K = 57	n = 194	k = 1	Hypergeometric(p value) = 0.34482620689998167
-Feature Id = SM00336	N = 7704	K = 31	n = 194	k = 1	Hypergeometric(p value) = 0.3640964235308111
-Feature Id = SM00451	N = 7704	K = 14	n = 194	k = 1	Hypergeometric(p value) = 0.25341998524134796
-Feature Id = SM00574	N = 7704	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.2413757038494789
-Feature Id = SM00389	N = 7704	K = 94	n = 194	k = 1	Hypergeometric(p value) = 0.2203473261794495
-Feature Id = SM00154	N = 7704	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.2413757038494789
-Feature Id = SM00259	N = 7704	K = 10	n = 194	k = 1	Hypergeometric(p value) = 0.20037964755883367
-Feature Id = SM00271	N = 7704	K = 98	n = 194	k = 1	Hypergeometric(p value) = 0.20728676944830027
-Feature Id = SM00504	N = 7704	K = 63	n = 194	k = 1	Hypergeometric(p value) = 0.3269141208370971
-Feature Id = SM00185	N = 7704	K = 77	n = 194	k = 2	Hypergeometric(p value) = 0.2753988720712167
-Feature Id = SM00343	N = 7704	K = 37	n = 194	k = 2	Hypergeometric(p value) = 0.1733291237617458
-Feature Id = SM00357	N = 7704	K = 4	n = 194	k = 1	Hypergeometric(p value) = 0.0933428843876176
-Feature Id = SM00499	N = 7704	K = 83	n = 194	k = 1	Hypergeometric(p value) = 0.2580359806633775
-Feature Id = SM00332	N = 7704	K = 81	n = 194	k = 1	Hypergeometric(p value) = 0.2650714092594381
-Feature Id = SM00516	N = 7704	K = 35	n = 194	k = 1	Hypergeometric(p value) = 0.3712441312836849
-Feature Id = SM00248	N = 7704	K = 105	n = 194	k = 1	Hypergeometric(p value) = 0.18550999914301447
-Feature Id = SM00015	N = 7704	K = 50	n = 194	k = 1	Hypergeometric(p value) = 0.3617147173671237
-Feature Id = SM00831	N = 7704	K = 25	n = 194	k = 1	Hypergeometric(p value) = 0.3420941745324422
-Feature Id = SM00380	N = 7704	K = 146	n = 194	k = 1	Hypergeometric(p value) = 0.08958245859394318
-Feature Id = SM00414	N = 7704	K = 13	n = 194	k = 1	Hypergeometric(p value) = 0.2413757038494789
-Feature Id = SM00369	N = 7704	K = 171	n = 194	k = 1	Hypergeometric(p value) = 0.054898451686531194
-Feature Id = SM00148	N = 7704	K = 11	n = 194	k = 2	Hypergeometric(p value) = 0.027645307497480703
-Feature Id = SM00249	N = 7704	K = 136	n = 194	k = 1	Hypergeometric(p value) = 0.10806066945856488
-Feature Id = SM00398	N = 7704	K = 16	n = 194	k = 1	Hypergeometric(p value) = 0.2752667125998314
+ID	Term	N	K	n	k	pval
+SM00769	Water Stress and Hypersensitive response	7704	5	194	1	0.114
+SM00505	Knottins	7704	22	194	1	0.325
+SM00093	SERine  Proteinase INhibitors	7704	10	194	1	0.2
+SM00355	zinc finger	7704	77	194	2	0.275
+SM00730	Presenilin, signal peptide peptidase, family	7704	8	194	1	0.169
+SM00360	RNA recognition motif	7704	234	194	2	0.0449
+SM00220	Serine/Threonine protein kinases, catalytic domain	7704	1011	194	6	9.21e-07
+SM00219	Tyrosine kinase, catalytic domain	7704	990	194	6	1.48e-06
+SM00239	Protein kinase C conserved region 2 (CalB)	7704	96	194	1	0.214
+SM00155	Phospholipase D. Active site motifs.	7704	12	194	1	0.229
+SM00054	EF-hand, calcium binding motif	7704	126	194	5	0.113
+SM00415	heat shock factor	7704	24	194	1	0.337
+SM00028	Tetratricopeptide repeats	7704	102	194	1	0.195
+SM00386	HAT (Half-A-TPR) repeats	7704	16	194	1	0.275
+SM00109	Protein kinase C conserved region 1 (C1) domains (Cysteine-rich domains)	7704	28	194	1	0.355
+SM00045	Diacylglycerol kinase accessory domain (presumed)	7704	7	194	1	0.151
+SM00487	DEAD-like helicases superfamily	7704	151	194	2	0.16
+SM00490	helicase superfamily c-terminal domain	7704	147	194	2	0.168
+SM00865	Tubulin/FtsZ family, C-terminal domain	7704	20	194	1	0.311
+SM00864	Tubulin/FtsZ family, GTPase domain	7704	20	194	1	0.311
+SM00856	Plant invertase/pectin methylesterase inhibitor	7704	120	194	2	0.224
+SM00666	PB1 domain 	7704	38	194	1	0.373
+SM00356	zinc finger	7704	57	194	1	0.345
+SM00336	B-Box-type zinc finger	7704	31	194	1	0.364
+SM00451	U1-like zinc finger	7704	14	194	1	0.253
+SM00574	domain associated with HOX domains	7704	13	194	1	0.241
+SM00389	Homeodomain	7704	94	194	1	0.22
+SM00154	AN1-like Zinc finger	7704	13	194	1	0.241
+SM00259	A20-like zinc fingers	7704	10	194	1	0.2
+SM00271	DnaJ molecular chaperone homology domain	7704	98	194	1	0.207
+SM00504	Modified RING finger domain	7704	63	194	1	0.327
+SM00185	Armadillo/beta-catenin-like repeats	7704	77	194	2	0.275
+SM00343	zinc finger	7704	37	194	2	0.173
+SM00357	Cold shock protein domain	7704	4	194	1	0.0933
+SM00499	Plant lipid transfer protein / seed storage protein / trypsin-alpha amylase inhibitor domain family	7704	83	194	1	0.258
+SM00332	Serine/threonine phosphatases, family 2C, catalytic domain	7704	81	194	1	0.265
+SM00516	Domain in homologues of a S. cerevisiae phosphatidylinositol transfer protein (Sec14p)	7704	35	194	1	0.371
+SM00248	ankyrin repeats	7704	105	194	1	0.186
+SM00015	Short calmodulin-binding motif containing conserved Ile and Gln residues.	7704	50	194	1	0.362
+SM00831	Cation transporter/ATPase, N-terminus	7704	25	194	1	0.342
+SM00380	DNA-binding domain in plant proteins such as APETALA2 and EREBPs	7704	146	194	1	0.0896
+SM00414	Histone 2A	7704	13	194	1	0.241
+SM00369	Leucine-rich repeats, typical (most populated) subfamily	7704	171	194	1	0.0549
+SM00148	Phospholipase C, catalytic domain (part); domain X	7704	11	194	2	0.0276
+SM00249	PHD zinc finger	7704	136	194	1	0.108
+SM00398	high mobility group	7704	16	194	1	0.275
