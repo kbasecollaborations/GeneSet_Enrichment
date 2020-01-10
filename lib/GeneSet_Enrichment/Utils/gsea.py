@@ -4,10 +4,12 @@ import json
 from scipy.stats import hypergeom
 import uuid
 
+
 class gsea:
   def __init__(self):
       pass
 
+  
   def create_index_html(self, outdirectory):
       htmlstring = "<html><body>";
       directory_list = os.listdir(outdirectory)
@@ -16,6 +18,8 @@ class gsea:
           htmlstring += "<a href=" + file_name + ">"+file_name+"</a></br>"
       htmlstring += "</body></html>";
       return (htmlstring)
+
+  
 
   def run_gsea(self, featurename, gene_file, outdirectory):       #change gene_file later to object from narrative 
       association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
@@ -91,13 +95,12 @@ class gsea:
               print ('cannot open', gene_file)
               fgene.close()
       
-      
       #TODO: Try to fihure out how to put logs 
-      htmlstring = self.create_index_html(outdirectory)
+      '''htmlstring = self.create_index_html(outdirectory)
       index_file_path = outdirectory + "/index.html"
       html_file = open(index_file_path, "wt")
       n = html_file.write(htmlstring)
-      html_file.close()
+      html_file.close()'''
       
       return (outdirectory)
 

@@ -1,7 +1,6 @@
 import pandas as pd 
 
 def create_table( filename, caption):
-    #print(filename)
     id = filename.split(".")[0]
     data = pd.read_csv(filename, sep='\t')
     sorteddf = data.sort_values('pval',ascending=True)
@@ -13,7 +12,6 @@ def create_table( filename, caption):
        term = row['Term']
        matches = row['k']
        pvalue = format(row["pval"], '.3g')
-       #print(pvalue)
        htmlout += "<tr><td>" + feature + "</td><td>" + term + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
     htmlout += "</tbody><tfoot><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></tfoot></table></div>"
     return htmlout
@@ -44,6 +42,6 @@ def create_html():
    
    return output
 
-#create_html()
+
 print(create_html())
 
