@@ -68,11 +68,8 @@ class htmlreportutils:
 
     def create_html_report(self, callback_url, output_dir , workspace_name):
         '''
+         function for creating html report
         '''
-        output = self.create_html(output_dir)
-        foutput = open(output_dir + "/output.html", "w")
-        foutput.write(output+"\n")
-        foutput.close()
 
         dfu = DataFileUtil(callback_url)
         report_name = 'kb_gsea_report_' + str(uuid.uuid4())

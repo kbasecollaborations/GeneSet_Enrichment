@@ -89,7 +89,12 @@ class GeneSet_Enrichment:
         for i in range(len(params['genelist'])): 
            geneset_dir = ""
            geneset_dir = geneset_dir + "/output"+ str(i)
-           output = self.hr.create_html_report(self.callback_url, geneset_dir, workspace)
+           output = self.hr.create_html(geneset_dir)
+           foutput = open(geneset_dir + "/output.html", "w")
+           foutput.write(output+"\n")
+           foutput.close()
+
+        output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
         report = KBaseReport(self.callback_url)
         #END run_GeneSet_Enrichment
 
