@@ -35,6 +35,7 @@ class htmlreportutils:
             term = row['Term']
             matches = row['k']
             pvalue = format(row["pval"], '.3g')
+            #print (pvalue)
             htmlout += "<tr><td>" + feature + "</td><td>" + term + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
         htmlout += "</tbody><tfoot><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></tfoot></table></div>"
         return htmlout

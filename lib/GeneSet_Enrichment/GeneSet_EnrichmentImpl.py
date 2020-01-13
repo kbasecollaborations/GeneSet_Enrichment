@@ -64,22 +64,32 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN run_GeneSet_Enrichment
-        genelist_file_name = 'gene_list.csv'
+        #genelist_file_name = 'gene_list.csv'
+        genelist_file_name = ['gene_list.csv', 'gene_list2.csv']
         result_directory = "/kb/module/work/tmp/"
-        genelist_file = os.path.join(result_directory, genelist_file_name)
-        self.gu.download_genelist(params['genelist'], genelist_file)
- 
+        
+        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
+        os.mkdir(outputdir)
+        for i in range(len(params['genelist'])):
+           genelist_file = os.path.join(result_directory, genelist_file_name[i])
+           self.gu.download_genelist(params['genelist'][i], genelist_file)
+           
         workspace = params['workspace_name']
         featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther']
        
-        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
-        os.mkdir(outputdir)
-        for feature in featurelist: 
-          print(feature)
-          outputdir = self.gs.run_gsea(feature, "/kb/module/work/tmp/gene_list.csv", outputdir)
+        
+        for i in range(len(params['genelist'])): 
+           geneset_dir = ""
+           geneset_dir = outputdir + "/output"+ str(i)
+           os.mkdir(geneset_dir)
+           for feature in featurelist:
+             outputdir = self.gs.run_gsea(feature, "/kb/module/work/tmp/"+ genelist_file_name[i], geneset_dir)
+             #output = self.hr.create_html_report(self.callback_url, geneset_dir, workspace)
           #self.fu.covert_csv_to_excel(feature, outputdir)
-
-        output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
+        for i in range(len(params['genelist'])): 
+           geneset_dir = ""
+           geneset_dir = geneset_dir + "/output"+ str(i)
+           output = self.hr.create_html_report(self.callback_url, geneset_dir, workspace)
         report = KBaseReport(self.callback_url)
         #END run_GeneSet_Enrichment
 
@@ -89,6 +99,7 @@ class GeneSet_Enrichment:
                              'output is not type dict as required.')
         # return the results
         return [output]
+
     def status(self, ctx):
         #BEGIN_STATUS
         returnVal = {'state': "OK",

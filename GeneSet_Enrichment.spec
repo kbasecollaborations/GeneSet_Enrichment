@@ -11,7 +11,7 @@ module GeneSet_Enrichment {
     typedef structure{
         string obj_name;
         string workspace_name; 
-        string genelist;
+        list<string> genelist;
       } gseaparams;
  
     /*
