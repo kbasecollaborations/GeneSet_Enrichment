@@ -64,13 +64,12 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN run_GeneSet_Enrichment
-        #genelist_file_name = 'gene_list.csv'
-        genelist_file_name = ['gene_list.csv', 'gene_list2.csv']
+       
         result_directory = "/kb/module/work/tmp/"
         
         
         for i in range(len(params['genelist'])):
-           genelist_file = os.path.join(result_directory, genelist_file_name[i])
+           genelist_file = os.path.join(result_directory, "genelist"+str(i))
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
         workspace = params['workspace_name']
@@ -89,7 +88,7 @@ class GeneSet_Enrichment:
            
 
            for feature in featurelist:
-              filename = os.path.join("/kb/module/work/tmp", genelist_file_name[i])
+              filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
               self.gs.run_gsea(feature, filename , gene_set_dir)
               
 
