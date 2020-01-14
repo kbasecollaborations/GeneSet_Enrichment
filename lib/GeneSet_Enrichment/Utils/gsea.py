@@ -21,7 +21,8 @@ class gsea:
 
   
 
-  def run_gsea(self, featurename, gene_file, outdirectory):       #change gene_file later to object from narrative 
+  def run_gsea(self, featurename, gene_file, outdirectory):      
+      
       association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
       #outdirectory='/kb/module/work/tmp/' + str(uuid.uuid1())
       #TODO: Make sure you test for success of creatinga  directory
@@ -29,10 +30,11 @@ class gsea:
 
       #outdirectory='/kb/module/work/tmp/'
       #command = "Rscript /kb/module/lib/kb_gsea/Utils/run_Ath_Kbase.R "+ outdirectory
-
+      
       feature_dict = {}
       gene_feature = {}
       feature_term = {}
+      
       try:
          fassoc = open(association_file, "r")
          
@@ -57,7 +59,7 @@ class gsea:
       except IOError:
             print ('cannot open', association_file)
             fassoc.close()
-
+      
 
       N = len(gene_feature.keys())
 

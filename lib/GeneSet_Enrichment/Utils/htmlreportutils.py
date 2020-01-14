@@ -24,6 +24,7 @@ class htmlreportutils:
         return (htmlstring)
     
     def create_table(self, filename, caption, output_dir):
+        
         id = filename.split(".")[0]
         data = pd.read_csv(output_dir + "/" + filename, sep='\t')
         sorteddf = data.sort_values('pval',ascending=True)
@@ -41,6 +42,7 @@ class htmlreportutils:
         return htmlout
 
     def create_html(self, output_dir):
+        
         output = "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"><link rel=\"stylesheet\" type=\"text/css \"href=\"https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css\"><script src=\"https://code.jquery.com/jquery-3.3.1.js\"></script><script src=\"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js\"></script><script src=\"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js\"></script>"
 
 
@@ -66,7 +68,7 @@ class htmlreportutils:
       
         return output
 
-    def create_html_report(self, callback_url, output_dir , workspace_name):
+    def create_html_report(self, callback_url, output_dir, workspace_name):
         '''
          function for creating html report
         '''

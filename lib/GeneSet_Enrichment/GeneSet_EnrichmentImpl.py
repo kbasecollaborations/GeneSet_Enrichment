@@ -68,8 +68,7 @@ class GeneSet_Enrichment:
         genelist_file_name = ['gene_list.csv', 'gene_list2.csv']
         result_directory = "/kb/module/work/tmp/"
         
-        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
-        os.mkdir(outputdir)
+        
         for i in range(len(params['genelist'])):
            genelist_file = os.path.join(result_directory, genelist_file_name[i])
            self.gu.download_genelist(params['genelist'][i], genelist_file)
@@ -77,24 +76,34 @@ class GeneSet_Enrichment:
         workspace = params['workspace_name']
         featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther']
        
+        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
+        #print(type(outputdir))
+        os.mkdir(outputdir)
+        #print(type(outputdir))
+
+        for i in range(len(params['genelist'])): 
+           gene_set_dir = os.path.join(outputdir, "output"+ str(i))
         
-        for i in range(len(params['genelist'])): 
-           geneset_dir = ""
-           geneset_dir = outputdir + "/output"+ str(i)
-           os.mkdir(geneset_dir)
+           if not os.path.exists(gene_set_dir):
+              os.mkdir(gene_set_dir)
+           
+
            for feature in featurelist:
-             outputdir = self.gs.run_gsea(feature, "/kb/module/work/tmp/"+ genelist_file_name[i], geneset_dir)
-             #output = self.hr.create_html_report(self.callback_url, geneset_dir, workspace)
-          #self.fu.covert_csv_to_excel(feature, outputdir)
-        for i in range(len(params['genelist'])): 
-           geneset_dir = ""
-           geneset_dir = geneset_dir + "/output"+ str(i)
-           output = self.hr.create_html(geneset_dir)
-           foutput = open(geneset_dir + "/output.html", "w")
+              filename = os.path.join("/kb/module/work/tmp", genelist_file_name[i])
+              self.gs.run_gsea(feature, filename , gene_set_dir)
+              
+
+        for i in range(len(params['genelist'])):
+           gene_set_dir = os.path.join(outputdir, "output"+ str(i))
+           output = self.hr.create_html(gene_set_dir)
+           foutput = open(gene_set_dir + "/output.html", "w")
            foutput.write(output+"\n")
            foutput.close()
-
+           
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
+          #self.fu.covert_csv_to_excel(feature, outputdir)
+
+        #output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
         report = KBaseReport(self.callback_url)
         #END run_GeneSet_Enrichment
 
