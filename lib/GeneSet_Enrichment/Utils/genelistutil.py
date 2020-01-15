@@ -18,7 +18,7 @@ class genelistutil:
            for item in geneset['element_ordering']:
                filehandle.write('%s\n' % item)
 
-      #print(geneset['element_ordering'])
+     
      
       
   

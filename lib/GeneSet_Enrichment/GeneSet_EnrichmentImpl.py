@@ -9,6 +9,8 @@ import os
 import uuid
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
+from installed_clients.WorkspaceClient import Workspace
+
 #END_HEADER
 
 
@@ -36,10 +38,11 @@ class GeneSet_Enrichment:
 
     # config contains contents of config file in a hash or None if it couldn't
     # be found
-    def __init__(self, config):
+    def __init__(self):
         #BEGIN_CONSTRUCTOR
         self.callback_url = os.environ['SDK_CALLBACK_URL']
         self.shared_folder = config['scratch']
+        self.ws_url = config['workspace-url']
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
         self.gs = gsea()
@@ -47,6 +50,7 @@ class GeneSet_Enrichment:
         self.gu = genelistutil()
         self.dfu = DataFileUtil(self.callback_url) 
         self.fu = fileutils()
+        
         #END_CONSTRUCTOR
         pass
 
@@ -66,9 +70,13 @@ class GeneSet_Enrichment:
         #BEGIN run_GeneSet_Enrichment
        
         result_directory = "/kb/module/work/tmp/"
-        
-        
+        gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
+        print(gmap)
+
+        self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
+           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, params['genelist'][i])  #using name for id
+           print("*****"+str(phytozyme_name)+"*****")
            genelist_file = os.path.join(result_directory, "genelist"+str(i))
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
@@ -76,9 +84,8 @@ class GeneSet_Enrichment:
         featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther']
        
         outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
-        #print(type(outputdir))
         os.mkdir(outputdir)
-        #print(type(outputdir))
+   
 
         for i in range(len(params['genelist'])): 
            gene_set_dir = os.path.join(outputdir, "output"+ str(i))
@@ -94,7 +101,7 @@ class GeneSet_Enrichment:
 
         for i in range(len(params['genelist'])):
            gene_set_dir = os.path.join(outputdir, "output"+ str(i))
-           output = self.hr.create_html(gene_set_dir)
+           output = self.hr.create_enrichment_report(gene_set_dir)
            foutput = open(gene_set_dir + "/output.html", "w")
            foutput.write(output+"\n")
            foutput.close()
@@ -102,7 +109,6 @@ class GeneSet_Enrichment:
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
           #self.fu.covert_csv_to_excel(feature, outputdir)
 
-        #output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
         report = KBaseReport(self.callback_url)
         #END run_GeneSet_Enrichment
 

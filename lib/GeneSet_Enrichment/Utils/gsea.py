@@ -9,27 +9,46 @@ class gsea:
   def __init__(self):
       pass
 
+  def find_kbase_phytozome_genome_id(self, ws, genome_ref_id):
+    
+    '''
+    Input a KBase genome ref
+    Output: 
+     return Phytozome genome name in KBase
+     return 0 if not a phytozome genome / copy of phytozome genome
+    '''
+    
+    #exit(type(ws))
+    provenance = ws.get_object_provenance([{"ref":genome_ref_id}])
+    original_ws_id = provenance[0]['orig_wsid']
+    original_workspace_name  = ws.get_workspace_info({'id':original_ws_id})[1]
+    print (genome_ref_id + "\t" + original_workspace_name)
+
+    if original_workspace_name != 'Phytozome_Genomes':
+        return 0
+
+    provenance = ws.get_object_provenance([{"ref":genome_ref_id}])
+
+    if 'copied' in provenance[0]:
+        copied = True
+        
+    while (copied==True):
+        provenance = ws.get_object_provenance([{"ref":genome_ref_id}])
+
+        if 'copied' in provenance[0]:
+            copied = True
+            genome_ref_id = provenance[0]['copied']
+            #print genome_ref_id
+        else:
+            copied = False
+
+    phytozome_obj_name = ws.get_object_info3({'objects': [{'ref': genome_ref_id}]})['infos'][0][1]
+
+    return phytozome_obj_name
   
-  def create_index_html(self, outdirectory):
-      htmlstring = "<html><body>";
-      directory_list = os.listdir(outdirectory)
-
-      for file_name in directory_list:
-          htmlstring += "<a href=" + file_name + ">"+file_name+"</a></br>"
-      htmlstring += "</body></html>";
-      return (htmlstring)
-
-  
-
   def run_gsea(self, featurename, gene_file, outdirectory):      
       
       association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
-      #outdirectory='/kb/module/work/tmp/' + str(uuid.uuid1())
-      #TODO: Make sure you test for success of creatinga  directory
-      #os.mkdir(outdirectory)
-
-      #outdirectory='/kb/module/work/tmp/'
-      #command = "Rscript /kb/module/lib/kb_gsea/Utils/run_Ath_Kbase.R "+ outdirectory
       
       feature_dict = {}
       gene_feature = {}
@@ -96,13 +115,6 @@ class gsea:
       except IOError:
               print ('cannot open', gene_file)
               fgene.close()
-      
-      #TODO: Try to fihure out how to put logs 
-      '''htmlstring = self.create_index_html(outdirectory)
-      index_file_path = outdirectory + "/index.html"
-      html_file = open(index_file_path, "wt")
-      n = html_file.write(htmlstring)
-      html_file.close()'''
       
       return (outdirectory)
 
