@@ -71,16 +71,13 @@ class GeneSet_Enrichment:
        
         result_directory = "/kb/module/work/tmp/"
         gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
-        print(gmap)
+        #print(gmap)
 
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
-           print(genome_id)
-           exit(type(genome_id))
            phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
-           exit(phytozyme_name)
-           genelist_file = os.path.join(result_directory, "genelist"+str(i))
+           genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
         workspace = params['workspace_name']
@@ -91,18 +88,25 @@ class GeneSet_Enrichment:
    
 
         for i in range(len(params['genelist'])): 
-           gene_set_dir = os.path.join(outputdir, "output"+ str(i))
+           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
+           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))
+           gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
         
            if not os.path.exists(gene_set_dir):
               os.mkdir(gene_set_dir) 
 
            for feature in featurelist:
-              filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
-              self.gs.run_gsea(feature, filename , gene_set_dir)
+              genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
+              phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
+              genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
+              #filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
+              self.gs.run_gsea(feature, genelist_file , gene_set_dir)
               
 
         for i in range(len(params['genelist'])):
-           gene_set_dir = os.path.join(outputdir, "output"+ str(i))
+           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
+           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))
+           gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
            output = self.hr.create_enrichment_report(gene_set_dir)
            foutput = open(gene_set_dir + "/output.html", "w")
            foutput.write(output+"\n")

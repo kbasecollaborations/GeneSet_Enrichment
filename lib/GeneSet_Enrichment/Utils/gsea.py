@@ -21,7 +21,7 @@ class gsea:
     provenance = ws.get_object_provenance([{"ref":genome_ref_id}])
     original_ws_id = provenance[0]['orig_wsid']
     original_workspace_name  = ws.get_workspace_info({'id':original_ws_id})[1]
-    print (genome_ref_id + "\t" + original_workspace_name)
+    #print (genome_ref_id + "\t" + original_workspace_name)
 
     if original_workspace_name != 'Phytozome_Genomes':
         return 0
