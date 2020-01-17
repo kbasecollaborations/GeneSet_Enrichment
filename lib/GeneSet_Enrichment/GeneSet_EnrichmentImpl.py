@@ -75,7 +75,11 @@ class GeneSet_Enrichment:
 
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
-           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, params['genelist'][i])  #using name for id
+           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
+           print(genome_id)
+           exit(type(genome_id))
+           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
+           exit(phytozyme_name)
            genelist_file = os.path.join(result_directory, "genelist"+str(i))
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
