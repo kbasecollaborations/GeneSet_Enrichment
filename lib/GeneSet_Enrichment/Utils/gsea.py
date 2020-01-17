@@ -1,9 +1,8 @@
 import sys
 import os
 import json
-from scipy.stats import hypergeom
 import uuid
-
+from scipy.stats import hypergeom
 
 class gsea:
   def __init__(self):

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 #BEGIN_HEADER
 import logging
+import os
+import uuid
 from GeneSet_Enrichment.Utils.gsea import gsea
 from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
-import os
-import uuid
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace
@@ -76,7 +76,6 @@ class GeneSet_Enrichment:
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
            phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, params['genelist'][i])  #using name for id
-           print("*****"+str(phytozyme_name)+"*****")
            genelist_file = os.path.join(result_directory, "genelist"+str(i))
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
@@ -91,8 +90,7 @@ class GeneSet_Enrichment:
            gene_set_dir = os.path.join(outputdir, "output"+ str(i))
         
            if not os.path.exists(gene_set_dir):
-              os.mkdir(gene_set_dir)
-           
+              os.mkdir(gene_set_dir) 
 
            for feature in featurelist:
               filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
