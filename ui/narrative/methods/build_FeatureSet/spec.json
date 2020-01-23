@@ -1,0 +1,108 @@
+{
+    "ver": "0.0.1",
+    "authors": [
+        "man4ish_gupta",
+	"pranjan77"
+    ],
+    "contact": "",
+    "categories": ["active"],
+    "widgets": {
+        "input": null,
+        "output": null
+    },
+    "parameters": [ 
+	{
+          "id" : "genome",
+          "optional" : true,
+          "advanced" : false,
+          "allow_multiple" : false,
+          "default_values" : [ "" ],
+          "field_type" : "text",
+          "text_options" : {
+          "valid_ws_types" : [ "KBaseGenomes.Genome" ]
+          }
+	},
+        {
+            "id": "genes",
+            "optional": true,
+            "advanced": false,
+            "allow_multiple": false,
+            "default_values": [ "" ],
+            "field_type": "textarea",
+            "textarea_options" : {
+            "n_rows" : 2
+            }
+        },
+        {
+            "id" : "output_feature_set",
+            "optional" : false,
+            "advanced" : false,
+            "allow_multiple" : false,
+            "default_values" : [ "NewFeatureSet" ],
+            "field_type" : "text",
+            "text_options" : {
+              "valid_ws_types" : [ "KBaseCollections.FeatureSet" ],
+              "is_output_name":true
+             }
+        },	
+	{
+            "id" : "description",
+            "optional" : true,
+            "advanced" : false,
+            "allow_multiple" : false,
+            "default_values" : [ "" ],
+            "field_type" : "textarea",
+            "textarea_options" : {
+            "n_rows" : 2
+            }
+        }
+    ],
+    "behavior": {
+        "service-mapping": {
+            "url": "",
+            "name": "GeneSet_Enrichment",
+            "method": "build_Featureset",
+            "input_mapping": [
+                {
+                    "input_parameter": "genome",
+                    "target_property": "genome",
+                    "target_type_transform": "resolved-ref"
+                },
+                {
+                    "narrative_system_variable": "workspace",
+                    "target_property": "workspace_name"
+                },
+                {
+                    "input_parameter": "description",
+                    "target_property": "description"
+                },
+                {
+                    "input_parameter": "genes",
+                    "target_property": "genes"
+                },
+                {
+                    "input_parameter": "output_feature_set",
+                    "target_property": "output_feature_set"
+                }
+            ],
+            "output_mapping": [
+                {
+                     "service_method_output_path": [0,"output_feature_set"],
+                    "target_property": "output_feature_set"
+                },
+                {
+                    "service_method_output_path": [0,"report_name"],
+                    "target_property": "report_name"
+                },{
+                    "service_method_output_path": [0,"report_ref"],
+                    "target_property": "report_ref"
+                },
+                {
+                    "narrative_system_variable": "workspace",
+                    "target_property": "wsName"
+                }
+            ]
+        }
+    },
+"job_id_output_field": "docker"
+}

@@ -30,7 +30,7 @@ class genelistutil:
       geneset = self.dfu.get_objects(get_objects_params)['data'][0]['data']
       #print(type(geneset['elements'].values()))
       for k, v in geneset['elements'].items():
-        print(self.listToString(v))
+        #print(self.listToString(v))
         genome[self.listToString(v)] = 1
       if (len(genome) != 1):
          exit("source of genome is not unique\n")

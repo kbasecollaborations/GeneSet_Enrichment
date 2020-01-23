@@ -7,11 +7,9 @@ from GeneSet_Enrichment.Utils.gsea import gsea
 from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
-from GeneSet_Enrichment.Utils.buildfeaturesetutils import buildfeaturesetutils
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace
-
 
 #END_HEADER
 
@@ -32,15 +30,15 @@ class GeneSet_Enrichment:
     # the latter method is running.
     ######################################### noqa
     VERSION = "0.0.1"
-    GIT_URL = "https://github.com/kbasecollaborations/GeneSet_Enrichment"
-    GIT_COMMIT_HASH = "d806235a6a09c90d564bb58aaf95cf9be7a3acd9"
+    GIT_URL = ""
+    GIT_COMMIT_HASH = "567bc1b247c97110c9dc9d809d01ded9c24e700a"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
 
     # config contains contents of config file in a hash or None if it couldn't
     # be found
-    def __init__(self, config):
+    def __init__(self):
         #BEGIN_CONSTRUCTOR
         self.callback_url = os.environ['SDK_CALLBACK_URL']
         self.shared_folder = config['scratch']
@@ -52,7 +50,7 @@ class GeneSet_Enrichment:
         self.gu = genelistutil()
         self.dfu = DataFileUtil(self.callback_url) 
         self.fu = fileutils()
-        self.bu = buildfeaturesetutils(config)
+        
         #END_CONSTRUCTOR
         pass
 
@@ -62,7 +60,8 @@ class GeneSet_Enrichment:
         This example function accepts any number of parameters and returns results in a KBaseReport
         :param params: instance of type "gseaparams" -> structure: parameter
            "obj_name" of String, parameter "workspace_name" of String,
-           parameter "genelist" of list of String
+           parameter "expression_matrix" of String, parameter
+           "permutation_number" of Long
         :returns: instance of type "ReportResults" -> structure: parameter
            "report_name" of String, parameter "report_ref" of String
         """
@@ -126,25 +125,6 @@ class GeneSet_Enrichment:
         # return the results
         return [output]
 
-    def build_Featureset(self, ctx, params):
-        """
-        :param params: instance of type "featuresetparams" -> structure:
-           parameter "obj_name" of String, parameter "workspace_name" of
-           String, parameter "genes" of String
-        :returns: instance of type "ReportResults" -> structure: parameter
-           "report_name" of String, parameter "report_ref" of String
-        """
-        # ctx is the context object
-        # return variables are: output
-        #BEGIN build_Featureset
-        #END build_Featureset
-
-        # At some point might do deeper type checking...
-        if not isinstance(output, dict):
-            raise ValueError('Method build_Featureset return value ' +
-                             'output is not type dict as required.')
-        # return the results
-        return [output]
     def status(self, ctx):
         #BEGIN_STATUS
         returnVal = {'state': "OK",

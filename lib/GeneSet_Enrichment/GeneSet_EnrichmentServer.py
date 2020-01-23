@@ -342,6 +342,10 @@ class Application(object):
                              name='GeneSet_Enrichment.run_GeneSet_Enrichment',
                              types=[dict])
         self.method_authentication['GeneSet_Enrichment.run_GeneSet_Enrichment'] = 'required'  # noqa
+        self.rpc_service.add(impl_GeneSet_Enrichment.build_Featureset,
+                             name='GeneSet_Enrichment.build_Featureset',
+                             types=[dict])
+        self.method_authentication['GeneSet_Enrichment.build_Featureset'] = 'required'  # noqa
         self.rpc_service.add(impl_GeneSet_Enrichment.status,
                              name='GeneSet_Enrichment.status',
                              types=[dict])

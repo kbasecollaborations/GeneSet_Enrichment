@@ -7,11 +7,9 @@ from GeneSet_Enrichment.Utils.gsea import gsea
 from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
-from GeneSet_Enrichment.Utils.buildfeaturesetutils import buildfeaturesetutils
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace
-
 
 #END_HEADER
 
@@ -52,7 +50,7 @@ class GeneSet_Enrichment:
         self.gu = genelistutil()
         self.dfu = DataFileUtil(self.callback_url) 
         self.fu = fileutils()
-        self.bu = buildfeaturesetutils(config)
+        
         #END_CONSTRUCTOR
         pass
 
@@ -126,7 +124,7 @@ class GeneSet_Enrichment:
         # return the results
         return [output]
 
-    def build_Featureset(self, ctx, params):
+    def build_featureset(self, ctx, params):
         """
         :param params: instance of type "featuresetparams" -> structure:
            parameter "obj_name" of String, parameter "workspace_name" of
@@ -136,12 +134,12 @@ class GeneSet_Enrichment:
         """
         # ctx is the context object
         # return variables are: output
-        #BEGIN build_Featureset
-        #END build_Featureset
+        #BEGIN build_featureset
+        #END build_featureset
 
         # At some point might do deeper type checking...
         if not isinstance(output, dict):
-            raise ValueError('Method build_Featureset return value ' +
+            raise ValueError('Method build_featureset return value ' +
                              'output is not type dict as required.')
         # return the results
         return [output]

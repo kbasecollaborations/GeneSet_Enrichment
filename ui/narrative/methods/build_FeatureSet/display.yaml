@@ -1,0 +1,60 @@
+#
+# Define basic display information
+#
+name     : Build FeatureSet from gene list
+tooltip  : |
+    Create a new FeatureSet from gene list by selecting features from a Genome.
+screenshots :
+    []
+
+icon: kb-orange.png
+
+replacement-text : Created a new Feature Set with Features from {{{input_genome}}}
+
+#
+# Define the set of other narrative methods that should be suggested to the user.
+#
+suggestions :
+    apps:
+        related :
+            []
+        next :
+            []
+    methods:
+        related :
+            []
+        next :
+            [KButil_Build_GenomeSet_from_FeatureSet, functional_enrichment_go_term, KButil_Logical_Slice_Two_FeatureSets, KButil_Logical_Slice_Two_FeatureSets, KButil_Merge_FeatureSet_Collection, MUSCLE_nuc, MUSCLE_prot, KButil_Slice_FeatureSets_by_Genomes, view_fxn_profile_featureSet, filter_matrix_by_feature_set, functional_enrichment_go_term, view_expression_heatmap, view_expression_profile, view_expression_pairwise_correlation, BLASTn_Search, BLASTp_Search, BLASTx_Search, HMMER_MSA_Search, psiBLAST_msa_start_Search, tBLASTx_Search]
+
+
+#
+# Configure the display and description of the parameters
+#
+parameters :
+    genome:
+        ui-name : |
+            Genome
+        short-hint : |
+            The Genome to select the protein-encoding genes from.
+    output_feature_set :
+        ui-name : |
+            Output FeatureSet Name
+        short-hint : |
+            The name for the new FeatureSet.
+    genes:
+        ui-name : |
+            Genes
+        short-hint : |
+            Free text description of the contents or purpose of this FeatureSet.
+    description:
+        ui-name : |
+            Description
+        short-hint : |
+            Free text description of the contents or purpose of this FeatureSet.
+description : |
+    <p>FeatureSets are useful for grouping a set of proteinencoding gene features and performing some operation on that set of features. For instance, instead of specifying all the features in a list for each App, you can use this App to build a single FeatureSet and then use this as input for other Apps. There are quite a few Apps that accept a FeatureSet as input, including types of BLAST, MUSCLE, and expression analysis. FeatureSets are also shareable, so it allows you to call out or comment on specific features in your Narrative.</p>
+publications :
+    -
+        display-text: |
+            Arkin AP, Cottingham RW, Henry CS, Harris NL, Stevens RL, Maslov S, et al. KBase: The United States Department of Energy Systems Biology Knowledgebase. Nature Biotechnology. 2018;36: 566. doi: 10.1038/nbt.4163
+        link: https://www.nature.com/articles/nbt.4163
