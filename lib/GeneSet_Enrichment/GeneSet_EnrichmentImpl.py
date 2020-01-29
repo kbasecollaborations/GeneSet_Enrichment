@@ -3,11 +3,13 @@
 import logging
 import os
 import uuid
+import json
 from GeneSet_Enrichment.Utils.gsea import gsea
 from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
 from GeneSet_Enrichment.Utils.buildfeaturesetutils import buildfeaturesetutils
+from GeneSet_Enrichment.Utils.FeatureSetBuilder import FeatureSetBuilder
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace
@@ -47,12 +49,14 @@ class GeneSet_Enrichment:
         self.ws_url = config['workspace-url']
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
+        self.config = config
         self.gs = gsea()
         self.hr = htmlreportutils()
         self.gu = genelistutil()
         self.dfu = DataFileUtil(self.callback_url) 
         self.fu = fileutils()
         self.bu = buildfeaturesetutils(config)
+        self.fsb  = FeatureSetBuilder(config)
         #END_CONSTRUCTOR
         pass
 
@@ -69,10 +73,10 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN run_GeneSet_Enrichment
-       
+        
         result_directory = "/kb/module/work/tmp/"
         gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
-        #print(gmap)
+        #exit(gmap)
 
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
@@ -117,6 +121,7 @@ class GeneSet_Enrichment:
           #self.fu.covert_csv_to_excel(feature, outputdir)
 
         report = KBaseReport(self.callback_url)
+      
         #END run_GeneSet_Enrichment
 
         # At some point might do deeper type checking...
@@ -137,6 +142,11 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN build_Featureset
+        print('--->\nRunning FeatureSetUtils.build_feature_set\nparams:')
+        print(json.dumps(params, indent=1))
+        
+        fs_builder = FeatureSetBuilder(self.config)
+        returnVal = fs_builder.build_feature_set(params)
         #END build_Featureset
 
         # At some point might do deeper type checking...
