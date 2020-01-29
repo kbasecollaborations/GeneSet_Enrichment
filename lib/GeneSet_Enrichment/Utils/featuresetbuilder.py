@@ -8,11 +8,10 @@ import time
 import uuid
 
 from installed_clients.DataFileUtilClient import DataFileUtil
-from installed_clients.GenomeSearchUtilClient import GenomeSearchUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace as Workspace
 
-class featureSetBuilder:
+class featuresetbuilder:
 
     def __init__(self, config):
         self.ws_url = config["workspace-url"]
