@@ -70,7 +70,7 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
         } 
 
         #ret = self.serviceImpl.run_GeneSet_Enrichment(self.ctx, params)
-
+    
     def test_build_feature_set(self):
         input_params = {
             'genome': '35540/2/1',
@@ -79,6 +79,7 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
             'workspace_name': 'man4ish_gupta:narrative_1578459434770',
             'output_feature_set': 'new_feature_set',
         }
+        '''
         gene_ids = re.split(r'[\r\n \n \t \s]', input_params['genes']) 
 
         new_feature_set = {
@@ -103,23 +104,11 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
             'elements': elements
         }
         #exit(new_feature_set)
-        
+        '''
 
         
-        result = self.serviceImpl().build_Featureset(self.ctx, input_params)
-      
-        '''self.assertTrue('feature_set_ref' in result)
-        self.assertTrue('report_name' in result)
-        self.assertTrue('report_ref' in result)
-
-        feature_set = self.dfu.get_objects(
-            {'object_refs': [result["feature_set_ref"]]}
-        )['data'][0]['data']
-        pprint(feature_set)
-        expected_elements = ['AT1G29930.TAIR10', 'AT1G29940.TAIR10', 'b1', 'b1_CDS_1',
-                             'b2_CDS_1', 'b2']
-        self.assertCountEqual(feature_set['element_ordering'], expected_elements)
-        self.assertCountEqual(list(feature_set['elements'].keys()), expected_elements)'''
+        result = self.serviceImpl.build_Featureset(self.ctx, input_params)
+     
   
 
    

@@ -8,7 +8,8 @@ from GeneSet_Enrichment.Utils.gsea import gsea
 from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
-from GeneSet_Enrichment.Utils.featuresetbuilder import featuresetbuilder
+from GeneSet_Enrichment.Utils.buildfeaturesetutils import buildfeaturesetutils
+from GeneSet_Enrichment.Utils.FeatureSetBuilder import FeatureSetBuilder
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace
@@ -33,8 +34,8 @@ class GeneSet_Enrichment:
     # the latter method is running.
     ######################################### noqa
     VERSION = "0.0.1"
-    GIT_URL = "https://github.com/kbasecollaborations/GeneSet_Enrichment.git"
-    GIT_COMMIT_HASH = "aa9f06e195dde7407c7b7b54920679a56295a6ae"
+    GIT_URL = "https://github.com/kbasecollaborations/GeneSet_Enrichment"
+    GIT_COMMIT_HASH = "d806235a6a09c90d564bb58aaf95cf9be7a3acd9"
 
     #BEGIN_CLASS_HEADER
     #END_CLASS_HEADER
@@ -54,7 +55,8 @@ class GeneSet_Enrichment:
         self.gu = genelistutil()
         self.dfu = DataFileUtil(self.callback_url) 
         self.fu = fileutils()
-        self.fsb  = featuresetbuilder(config)
+        self.bu = buildfeaturesetutils(config)
+        self.fsb  = FeatureSetBuilder(config)
         #END_CONSTRUCTOR
         pass
 
@@ -74,6 +76,7 @@ class GeneSet_Enrichment:
         
         result_directory = "/kb/module/work/tmp/"
         gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
+        #exit(gmap)
 
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
@@ -131,14 +134,10 @@ class GeneSet_Enrichment:
     def build_Featureset(self, ctx, params):
         """
         :param params: instance of type "featuresetparams" -> structure:
-           parameter "genome" of type "obj_ref" (An X/Y/Z style reference @id
-           ws), parameter "workspace_name" of String, parameter "genes" of
-           String, parameter "description" of String, parameter
-           "output_feature_set" of String
-        :returns: instance of type "BuildFeatureSetResult" -> structure:
-           parameter "feature_set_ref" of type "obj_ref" (An X/Y/Z style
-           reference @id ws), parameter "report_name" of String, parameter
-           "report_ref" of String
+           parameter "obj_name" of String, parameter "workspace_name" of
+           String, parameter "genes" of String
+        :returns: instance of type "ReportResults" -> structure: parameter
+           "report_name" of String, parameter "report_ref" of String
         """
         # ctx is the context object
         # return variables are: output
@@ -146,8 +145,8 @@ class GeneSet_Enrichment:
         print('--->\nRunning FeatureSetUtils.build_feature_set\nparams:')
         print(json.dumps(params, indent=1))
         
-        #fs_builder = FeatureSetBuilder(self.config, self.callback_url)
-        output = self.fsb.build_feature_set(params)
+        fs_builder = FeatureSetBuilder(self.config)
+        returnVal = fs_builder.build_feature_set(params)
         #END build_Featureset
 
         # At some point might do deeper type checking...
