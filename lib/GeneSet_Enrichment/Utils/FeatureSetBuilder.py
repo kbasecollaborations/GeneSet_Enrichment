@@ -50,10 +50,12 @@ class FeatureSetBuilder:
             'elements': {}
         }
         genome_ref = input_params['genome']
-
+     
         element_ordering =[]
         elements = {}
-        
+       
+        gene_ids = re.split(r'[\r\n \n \t \s ,]', params['genes']) 
+
         for ids in gene_ids:
             element_ordering.append(ids)
             geno_ref = []
