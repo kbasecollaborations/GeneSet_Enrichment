@@ -37,7 +37,7 @@ class htmlreportutils:
           files_in_subdir = self.get_subfiles(path)
           for files in files_in_subdir:
              if(files.endswith(".html")):    
-                htmlstring += get_genelist("/home/manish/Desktop/GeneSet_Enrichment/test_local/workdir/tmp/Athaliana_TAIR100") +"\t" + "<a href=" + path + "/"+ files + ">"+files+"</a></br>"
+                htmlstring += self.get_genelist("/home/manish/Desktop/GeneSet_Enrichment/test_local/workdir/tmp/Athaliana_TAIR100") +"\t" + "<a href=" + path + "/"+ files + ">"+files+"</a></br>"
        htmlstring += "</body></html>"         
        return htmlstring  
 
@@ -106,7 +106,8 @@ class htmlreportutils:
         report_name = 'kb_gsea_report_' + str(uuid.uuid4())
         report = KBaseReport(callback_url)
       
-        htmlstring = self.get_subdirs(output_dir)
+        #htmlstring = self.get_subdirs(output_dir)
+        htmlstring = "test"
         #htmlstring = self.format_files_to_html_report(output_dir)
         index_file_path = output_dir + "/index.html"
         html_file = open(index_file_path, "wt")
