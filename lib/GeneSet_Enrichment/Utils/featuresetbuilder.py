@@ -47,7 +47,6 @@ class featuresetbuilder:
     def build_feature_set(self, params):
 
         workspace_id = self.dfu.ws_name_to_id(params['workspace_name'])
-
         new_feature_set = self._build_fs_obj(params)
         save_object_params = {
             'id': workspace_id,
