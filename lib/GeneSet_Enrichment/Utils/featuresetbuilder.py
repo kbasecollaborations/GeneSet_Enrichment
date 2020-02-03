@@ -10,6 +10,7 @@ import uuid
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace as Workspace
+from installed_clients.GenomeSearchUtilClient import GenomeSearchUtil
 
 class featuresetbuilder:
 
@@ -17,6 +18,22 @@ class featuresetbuilder:
         self.ws_url = config["workspace-url"]
         self.callback_url = os.environ['SDK_CALLBACK_URL']
         self.dfu = DataFileUtil(self.callback_url)
+        self.gsu = GenomeSearchUtil(self.callback_url)
+
+    def _get_feature_ids(self, genome_ref, ids):
+        """
+        _get_feature_ids: get feature ids from genome
+        """
+
+        genome_features = self.gsu.search({'ref': genome_ref,
+                                           'limit': len(ids),
+                                           'structured_query': {"$or": [{"feature_id": x}
+                                                                        for x in ids]},
+                                           'sort_by': [['feature_id', True]]})['features']
+
+        features_ids = set((feature.get('feature_id') for feature in genome_features))
+
+        return features_ids 
 
     def _build_fs_obj(self, params):
         new_feature_set = {
@@ -30,6 +47,19 @@ class featuresetbuilder:
         elements = {}
        
         gene_ids = re.split(r'[\r\n \n \t \s ,]', params['genes']) 
+
+        
+        '''new_feature_ids = []
+        new_feature_ids = gene_ids
+        
+        if new_feature_ids:
+            genome_feature_ids = self._get_feature_ids(genome_ref, new_feature_ids)
+        for new_feature in new_feature_ids:
+            if new_feature not in genome_feature_ids:
+                print(new_feature)
+                raise ValueError('Feature ID {} does not exist in the supplied genome {}'.format(
+                    new_feature, genome_ref)) 
+        '''
 
         for ids in gene_ids:
             element_ordering.append(ids)
