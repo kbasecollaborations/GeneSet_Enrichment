@@ -24,7 +24,7 @@ class featuresetbuilder:
         """
         _get_feature_ids: get feature ids from genome
         """
-
+        
         genome_features = self.gsu.search({'ref': genome_ref,
                                            'limit': len(ids),
                                            'structured_query': {"$or": [{"feature_id": x}
@@ -49,7 +49,7 @@ class featuresetbuilder:
         gene_ids = re.split(r'[\r\n \n \t \s ,]', params['genes']) 
 
         
-        '''new_feature_ids = []
+        new_feature_ids = []
         new_feature_ids = gene_ids
         
         if new_feature_ids:
@@ -59,7 +59,7 @@ class featuresetbuilder:
                 print(new_feature)
                 raise ValueError('Feature ID {} does not exist in the supplied genome {}'.format(
                     new_feature, genome_ref)) 
-        '''
+        
 
         for ids in gene_ids:
             element_ordering.append(ids)
