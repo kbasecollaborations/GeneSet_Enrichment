@@ -24,20 +24,16 @@ class GenomeSearchUtil(object):
             password=None, token=None, ignore_authrc=False,
             trust_all_ssl_certificates=False,
             auth_svc='https://ci.kbase.us/services/auth/api/legacy/KBase/Sessions/Login',
-            service_ver='release',
-            async_job_check_time_ms=100, async_job_check_time_scale_percent=150, 
-            async_job_check_max_time_ms=300000):
+            service_ver='release'):
         if url is None:
-            raise ValueError('A url is required')
+            url = 'https://kbase.us/services/service_wizard'
         self._service_ver = service_ver
         self._client = _BaseClient(
             url, timeout=timeout, user_id=user_id, password=password,
             token=token, ignore_authrc=ignore_authrc,
             trust_all_ssl_certificates=trust_all_ssl_certificates,
             auth_svc=auth_svc,
-            async_job_check_time_ms=async_job_check_time_ms,
-            async_job_check_time_scale_percent=async_job_check_time_scale_percent,
-            async_job_check_max_time_ms=async_job_check_max_time_ms)
+            lookup_url=True)
 
     def search(self, params, context=None):
         """
@@ -79,8 +75,8 @@ class GenomeSearchUtil(object):
            Long, parameter "ontology_terms" of mapping from String to String,
            parameter "num_found" of Long
         """
-        return self._client.run_job('GenomeSearchUtil.search',
-                                    [params], self._service_ver, context)
+        return self._client.call_method('GenomeSearchUtil.search',
+                                        [params], self._service_ver, context)
 
     def search_region(self, params, context=None):
         """
@@ -119,8 +115,8 @@ class GenomeSearchUtil(object):
            parameter "ontology_terms" of mapping from String to String,
            parameter "num_found" of Long
         """
-        return self._client.run_job('GenomeSearchUtil.search_region',
-                                    [params], self._service_ver, context)
+        return self._client.call_method('GenomeSearchUtil.search_region',
+                                        [params], self._service_ver, context)
 
     def search_contigs(self, params, context=None):
         """
@@ -146,9 +142,9 @@ class GenomeSearchUtil(object):
            parameter "contig_id" of String, parameter "length" of Long,
            parameter "feature_count" of Long, parameter "num_found" of Long
         """
-        return self._client.run_job('GenomeSearchUtil.search_contigs',
-                                    [params], self._service_ver, context)
+        return self._client.call_method('GenomeSearchUtil.search_contigs',
+                                        [params], self._service_ver, context)
 
     def status(self, context=None):
-        return self._client.run_job('GenomeSearchUtil.status',
-                                    [], self._service_ver, context)
+        return self._client.call_method('GenomeSearchUtil.status',
+                                        [], self._service_ver, context)

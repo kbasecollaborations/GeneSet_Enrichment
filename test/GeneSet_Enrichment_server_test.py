@@ -76,36 +76,10 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
             'genome': '35540/2/1',
             'genes': "AT3G14440\nAT1G20440\nAT4G27520\nAT2G23120\nAT5G58070\nAT1G20450\nAT1G01470\nAT5G52310\nAT1G76180\nAT2G02100\nAT1G73480\nAT4G15480\nAT3G29575",
             'description': "sameple geneset",
-            'workspace_name': 'man4ish_gupta:narrative_1578459434770',
+            #'workspace_name': 'man4ish_gupta:narrative_1578459434770',
+            'workspace_name': 'man4ish_gupta:narrative_1579638904735',
             'output_feature_set': 'new_feature_set',
         }
-        '''
-        gene_ids = re.split(r'[\r\n \n \t \s]', input_params['genes']) 
-
-        new_feature_set = {
-            'description': '',
-            'element_ordering': [],
-            'elements': {}
-        }
-        genome_ref = input_params['genome']
-
-        element_ordering =[]
-        elements = {}
-        
-        for ids in gene_ids:
-            element_ordering.append(ids)
-            geno_ref = []
-            geno_ref.append(genome_ref)
-            elements[ids] = geno_ref
-
-        new_feature_set = {
-            'description': input_params['description'],
-            'element_ordering': element_ordering,
-            'elements': elements
-        }
-        #exit(new_feature_set)
-        '''
-
         
         result = self.serviceImpl.build_Featureset(self.ctx, input_params)
      
