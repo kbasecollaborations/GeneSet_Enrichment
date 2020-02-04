@@ -69,7 +69,7 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
             'genelist' : ['35540/3/1','35540/3/1','35540/3/1','35540/3/1','35540/3/1','35540/3/1']
         } 
 
-        #ret = self.serviceImpl.run_GeneSet_Enrichment(self.ctx, params)
+        ret = self.serviceImpl.run_GeneSet_Enrichment(self.ctx, params)
     
     def test_build_feature_set(self):
         input_params = {
@@ -81,7 +81,7 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
             'output_feature_set': 'new_feature_set',
         }
         
-        result = self.serviceImpl.build_Featureset(self.ctx, input_params)
+        #result = self.serviceImpl.build_Featureset(self.ctx, input_params)
      
   
 
