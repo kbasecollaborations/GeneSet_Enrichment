@@ -75,24 +75,29 @@ class GeneSet_Enrichment:
         result_directory = "/kb/module/work/tmp/"
         gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
 
+        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
+        os.mkdir(outputdir)
+
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
            phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
-           genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
+           
+           #genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
+           genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
         workspace = params['workspace_name']
         featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther']
        
-        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
-        os.mkdir(outputdir)
-   
-
+        #outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
+        #os.mkdir(outputdir)
+       
         for i in range(len(params['genelist'])): 
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
            phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))
            gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
+
         
            if not os.path.exists(gene_set_dir):
               os.mkdir(gene_set_dir) 
@@ -100,8 +105,9 @@ class GeneSet_Enrichment:
            for feature in featurelist:
               genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
               phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
-              genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
+              #genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
               #filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
+              genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
               self.gs.run_gsea(feature, genelist_file , gene_set_dir)
               
 

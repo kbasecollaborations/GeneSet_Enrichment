@@ -29,29 +29,19 @@ class htmlreportutils:
        return next(os.walk(dir))[2]
 
     def get_subdirs(self, dir):
-       "Get a list of immediate subdirectories"
-       htmlstring = "<html><body>"
-       dirs = next(os.walk(dir))[1]
-       for i in range(len(next(os.walk(dir))[1])):
-          path = os.path.join(dir,(next(os.walk(dir))[1])[i])
-          files_in_subdir = self.get_subfiles(path)
-          for files in files_in_subdir:
-             if(files.endswith(".html")):    
-                htmlstring += self.get_genelist("/home/manish/Desktop/GeneSet_Enrichment/test_local/workdir/tmp/Athaliana_TAIR100") +"\t" + "<a href=" + path + "/"+ files + ">"+files+"</a></br>"
-       htmlstring += "</body></html>"         
-       return htmlstring  
+        "Get a list of immediate subdirectories"
+        htmlstring = "<html><body><table><tr><th>Gene List</th><th>Gene Link</th></tr>"
+        dirs = next(os.walk(dir))[1]
+        for i in range(len(next(os.walk(dir))[1])):
+           path = os.path.join(dir,(next(os.walk(dir))[1])[i])
+           files_in_subdir = self.get_subfiles(path)
+           for files in files_in_subdir:
+              if(files.endswith(".html")):    
+                 htmlstring += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + path + "/"+ files + ">"+files+"</a></td></tr>"
+        htmlstring += "</table></body></html>"         
+        return htmlstring  
 
-    '''def format_files_to_html_report(self, outdirectory):
-        htmlstring = "<html><body>";
-        directory_list = os.listdir(outdirectory)
    
-        for file_name in directory_list:
-            subdir_list = os.path.join(outdirectory, os.listdir(os.path.join(outdirectory,file_name)))
-            for htmlfile in subdir_list:
-               htmlstring += "<a href=" + htmlfile + ">"+htmlfile+"</a></br>"
-        htmlstring += "</body></html>";
-        return (htmlstring)'''
-    
     def create_table(self, filename, caption, output_dir):
         
         id = filename.split(".")[0]
@@ -106,9 +96,8 @@ class htmlreportutils:
         report_name = 'kb_gsea_report_' + str(uuid.uuid4())
         report = KBaseReport(callback_url)
       
-        #htmlstring = self.get_subdirs(output_dir)
-        htmlstring = "test"
-        #htmlstring = self.format_files_to_html_report(output_dir)
+        htmlstring = self.get_subdirs(output_dir)
+        #htmlstring = "test"
         index_file_path = output_dir + "/index.html"
         html_file = open(index_file_path, "wt")
         n = html_file.write(htmlstring)
