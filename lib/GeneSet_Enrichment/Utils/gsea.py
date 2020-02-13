@@ -45,9 +45,24 @@ class gsea:
 
     return phytozome_obj_name
   
-  def run_gsea(self, featurename, gene_file, outdirectory):      
+  def get_id_from_phytozome(self, phytozome):
+    id_phytozome_dict = {}
+    file = open('/kb/module/data/mapping_file.txt', 'r') 
+    reclines = file.readlines()
+
+    for line in reclines:
+       line = line.strip()
+       arr = line.split("\t")
+       id_phytozome_dict[arr[0]] = arr[1]
+
+    return id_phytozome_dict[phytozome]
+
       
-      association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
+  def run_gsea(self, featurename, gene_file, outdirectory, phytozyme_name):      
+      
+      id = self.get_id_from_phytozome(phytozyme_name)
+      association_file = "/kb/module/data/"+id+"/"+id+"_" + featurename + ".gmt"
+      #association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
       
       feature_dict = {}
       gene_feature = {}
@@ -106,8 +121,13 @@ class gsea:
              k = frequency
              K = feature_dict[feature_key]
              prb = hypergeom.pmf(k, N, K, n)
-           
-             fout.write (feature_key + "\t"+ (feature_term[feature_key]).split("_")[1] +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k) + "\t" +str(format(prb, '.3g')) + "\n")
+             term = ''
+             if(featurename == "paper"):
+                term = feature_key
+             else:
+                term = (feature_term[feature_key]).split("_")[1]
+             fout.write (feature_key + "\t"+ term +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k) + "\t" +str(format(prb, '.3g')) + "\n")
+             #fout.write (feature_key + "\t"+ (feature_term[feature_key]).split("_")[1] +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k) + "\t" +str(format(prb, '.3g')) + "\n")
          fout.close()
          fgene.close()
     

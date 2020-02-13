@@ -56,11 +56,16 @@ class htmlreportutils:
             matches = row['k']
             pvalue = format(row["pval"], '.3g')
             #print (pvalue)
-            htmlout += "<tr><td>" + feature + "</td><td>" + term + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
+            htmlout += "<tr><td>" + str(feature) + "</td><td>" + str(term) + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
         htmlout += "</tbody><tfoot><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></tfoot></table></div>"
         return htmlout
 
-    def create_enrichment_report(self, output_dir):
+    def create_enrichment_report(self, output_dir, dir):
+
+        dirs = next(os.walk(dir))[1]
+        for i in range(len(next(os.walk(dir))[1])):
+           path = os.path.join(dir,(next(os.walk(dir))[1])[i])
+           
         
         output = "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"><link rel=\"stylesheet\" type=\"text/css \"href=\"https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css\"><script src=\"https://code.jquery.com/jquery-3.3.1.js\"></script><script src=\"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js\"></script><script src=\"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js\"></script>"
 
@@ -74,15 +79,17 @@ class htmlreportutils:
         output += "<script> $(document).ready(function() {$(\'#smart_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#pfam_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#pathway_output\').DataTable();} ); </script>"
+        output += "<script> $(document).ready(function() {$(\'#paper_output\').DataTable();} ); </script>"
+        output += "<br><b>Gene Set:</b>&nbsp;&nbsp;&nbsp;" + self.get_genelist(path+".genelist") + "<br>"
         output += "</head><body><table cellpadding = \"100\" cellspacing = \"100\" >"
 
-
+        
         output += "<tr><td style=\"padding:10px\">" + self.create_table("go_biological_process_output.txt", "GO (Biological Process)", output_dir) + "</td><td style=\"padding:10px\">" + self.create_table("go_molecular_function_output.txt", "GO (Molecular Function)", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("go_cellular_component_output.txt", "GO (Cellular Component)", output_dir) + "</td></tr>"
 
         output += "<tr><td style=\"padding:10px\">" + self.create_table("kegg_enzyme_output.txt", "KEGG Enzyme", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("kog_output.txt", "KOG", output_dir) + "</td><td style=\"padding:10px\">" + self.create_table("panther_output.txt", "Panther", output_dir) + "</td></tr>"
 
         output += "<tr><td style=\"padding:10px\">" + self.create_table("smart_output.txt", "SMART", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("pfam_output.txt", "PFAM", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("pathway_output.txt", "Pathway", output_dir) + "</td></tr>"
-
+        output += "<tr><td style=\"padding:10px\">" + self.create_table("paper_output.txt", "Publication", output_dir) + "</td></tr>"
         output += "</table></body></html>"
       
         return output
