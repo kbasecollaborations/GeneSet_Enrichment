@@ -58,11 +58,9 @@ class gsea:
     return id_phytozome_dict[phytozome]
 
       
-  def run_gsea(self, featurename, gene_file, outdirectory, phytozyme_name):      
-      
+  def run_gsea(self, featurename, gene_file, outdirectory, phytozyme_name):           
       id = self.get_id_from_phytozome(phytozyme_name)
       association_file = "/kb/module/data/"+id+"/"+id+"_" + featurename + ".gmt"
-      #association_file = "/kb/module/data/167/167_" + featurename + ".gmt"
       
       feature_dict = {}
       gene_feature = {}

@@ -65,8 +65,9 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
         # Check returned data with
         # self.assertEqual(ret[...], ...) or other unittest methods
         params = {
-            'workspace_name': 'man4ish_gupta:narrative_1578459434770',
-            'genelist' : ['35540/3/1']
+            #'workspace_name': 'man4ish_gupta:narrative_1578459434770',
+            'workspace_name': 'man4ish_gupta:narrative_1579638904735',
+            'genelist' : ['36575/30/1']
         } 
 
         ret = self.serviceImpl.run_GeneSet_Enrichment(self.ctx, params)
