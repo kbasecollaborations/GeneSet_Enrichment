@@ -89,7 +89,7 @@ class htmlreportutils:
         output += "<tr><td style=\"padding:10px\">" + self.create_table("kegg_enzyme_output.txt", "KEGG Enzyme", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("kog_output.txt", "KOG", output_dir) + "</td><td style=\"padding:10px\">" + self.create_table("panther_output.txt", "Panther", output_dir) + "</td></tr>"
 
         output += "<tr><td style=\"padding:10px\">" + self.create_table("smart_output.txt", "SMART", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("pfam_output.txt", "PFAM", output_dir) + "</td> <td style=\"padding:10px\">" + self.create_table("pathway_output.txt", "Pathway", output_dir) + "</td></tr>"
-        output += "<tr><td style=\"padding:10px\">" + self.create_table("paper_output.txt", "Publication", output_dir) + "</td></tr>"
+        output += "<tr><td colspan=\"3\" style=\"padding:10px\">" + self.create_table("paper_output.txt", "Publication", output_dir) + "</td></tr>"
         output += "</table></body></html>"
       
         return output
