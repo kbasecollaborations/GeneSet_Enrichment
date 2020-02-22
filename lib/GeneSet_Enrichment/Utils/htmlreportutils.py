@@ -8,6 +8,7 @@ import pandas as pd
 
 class htmlreportutils:
     def __init__(self):
+        self.organism_dict = {}
         pass
      
     def listToString(self, s):  
@@ -41,6 +42,19 @@ class htmlreportutils:
         htmlstring += "</table></body></html>"         
         return htmlstring  
 
+    def load_organism_file(self, filename):
+        f = open(filename, "r")
+
+        for x in f:
+           x = x.rstrip()
+           line = x.split("\t")
+           self.organism_dict[line[0]] = line[1]
+       
+    def get_organism (self, pubmed_url):  
+        if pubmed_url in self.organism_dict:
+           return self.organism_dict[pubmed_url]
+        else:
+           return ''
    
     def create_table(self, filename, caption, output_dir):
         
@@ -48,7 +62,12 @@ class htmlreportutils:
         data = pd.read_csv(output_dir + "/" + filename, sep='\t')
         sorteddf = data.sort_values('pval',ascending=True)
         htmlout = "<center><b>Gene Set Enrichment using " + caption +"</b></center>"
-        htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #e9d8f2; padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; overflow: auto;\"><table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\"><thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></thead><tbody>"
+        if(filename == 'paper_output.txt'):
+           htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #e9d8f2; padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; overflow: auto;\"><table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\"><thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th><th>Organism Name</th></tr></thead><tbody>"
+        else:
+           htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #e9d8f2; padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; overflow: auto;\"><table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\"><thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></thead><tbody>"
+
+        #htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #e9d8f2; padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; overflow: auto;\"><table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\"><thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></thead><tbody>"
     
         for index, row in sorteddf.iterrows():
             feature = row['ID']
@@ -56,7 +75,11 @@ class htmlreportutils:
             matches = row['k']
             pvalue = format(row["pval"], '.3g')
             #print (pvalue)
-            htmlout += "<tr><td>" + str(feature) + "</td><td>" + str(term) + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
+            if(filename == 'paper_output.txt'):
+               htmlout += "<tr><td>" + str(feature) + "</td><td>" + str(term) + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td><td>"+self.get_organism(feature) +"</td></tr>"
+            else :
+               htmlout += "<tr><td>" + str(feature) + "</td><td>" + str(term) + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
+            #htmlout += "<tr><td>" + str(feature) + "</td><td>" + str(term) + "</td><td>" + str(matches) + "</td><td>" + str(pvalue) + "</td></tr>"
         htmlout += "</tbody><tfoot><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></tfoot></table></div>"
         return htmlout
 
