@@ -2,6 +2,7 @@ import sys
 import os
 import json
 import uuid
+import gzip
 from scipy.stats import hypergeom
 
 class gsea:
@@ -17,7 +18,6 @@ class gsea:
      return 0 if not a phytozome genome / copy of phytozome genome
     '''
     
-    #exit(type(ws))
     provenance = ws.get_object_provenance([{"ref":genome_ref_id}])
     original_ws_id = provenance[0]['orig_wsid']
     original_workspace_name  = ws.get_workspace_info({'id':original_ws_id})[1]
@@ -61,24 +61,30 @@ class gsea:
   def run_gsea(self, featurename, gene_file, outdirectory, phytozyme_name):           
       id = self.get_id_from_phytozome(phytozyme_name)
       association_file = "/kb/module/data/"+id+"/"+id+"_" + featurename + ".gmt"
-      
+      #if(featurename == "paper"):
+      #   exit(association_file) 
       feature_dict = {}
       gene_feature = {}
       feature_term = {}
-      
+            
       try:
-         fassoc = open(association_file, "r")
+         #fassoc = open(association_file, "r")
+         if(featurename == "paper"):
+            fassoc = gzip.open(association_file + '.gz','rt')
+         else:
+            fassoc = open(association_file, "r")
          
          for line in fassoc:
            line = line.rstrip()
            id = line.split("\t")
            feature_id = id[1]
            num_fields = len(id)
+
            feature_dict[feature_id] = num_fields - 2
            feature_term[feature_id] = id[0]
-           for i in range(3, num_fields):
+           
+           for i in range(2, num_fields):
                gene_id = id[i]
-
                if gene_id not in gene_feature:
                   feature_value = []
                   feature_value.append(feature_id) 
@@ -89,8 +95,7 @@ class gsea:
 
       except IOError:
             print ('cannot open', association_file)
-            fassoc.close()
-      
+            #fassoc.close()
 
       N = len(gene_feature.keys())
 
@@ -103,7 +108,24 @@ class gsea:
            gline = gline.rstrip()
            n += 1
            geneids = gline.split(",")
+           #if(featurename == "paper"):
+           #   exit(geneids)
+           
 
+           '''for gene in geneids:
+               if(featurename == "paper"):
+                     print("*****" + gene) 
+               if gene in gene_feature:
+                  feature_list = gene_feature[gene]
+                  #if(featurename == "paper"):
+                  #   print(gene)
+                  #   print(feature_list)
+
+                  for feature in feature_list: 
+                     if feature in featurefreq:
+                        featurefreq[feature] += 1 
+                     else:
+                        featurefreq[feature] = 1'''
            if geneids[0] in gene_feature:
               feature_list = gene_feature[geneids[0]]
 
@@ -112,7 +134,8 @@ class gsea:
                      featurefreq[feature] += 1 
                   else:
                      featurefreq[feature] = 1
-
+         #if(featurename == "paper"):  
+         #   exit(gene_file)
          fout= open(outdirectory + "/" + featurename + "_output.txt","a")
          fout.write("ID\tTerm\tN\tK\tn\tk\tpval\n")
          for feature_key, frequency in featurefreq.items():
@@ -120,10 +143,10 @@ class gsea:
              K = feature_dict[feature_key]
              prb = hypergeom.pmf(k, N, K, n)
              term = ''
-             if(featurename == "paper"):
-                term = feature_key
-             else:
-                term = (feature_term[feature_key]).split("_")[1]
+             #if(featurename == "paper"):
+             #   term = feature_key
+             #else:
+             term = (feature_term[feature_key]).split("_")[1]
              fout.write (feature_key + "\t"+ term +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k) + "\t" +str(format(prb, '.3g')) + "\n")
              #fout.write (feature_key + "\t"+ (feature_term[feature_key]).split("_")[1] +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k) + "\t" +str(format(prb, '.3g')) + "\n")
          fout.close()

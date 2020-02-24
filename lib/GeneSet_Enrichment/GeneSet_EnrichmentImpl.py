@@ -78,6 +78,8 @@ class GeneSet_Enrichment:
         outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
         os.mkdir(outputdir)
 
+        #self.hr.load_organism_file('/kb/module/data/167/167_paper.names.txt')
+
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
@@ -105,6 +107,8 @@ class GeneSet_Enrichment:
            for feature in featurelist:
               genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
               phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
+              id = self.gs.get_id_from_phytozome(phytozyme_name)
+              self.hr.load_organism_file('/kb/module/data/'+id+'/'+id+'_paper.names.txt')
               #genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
               #filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
               genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
