@@ -2,6 +2,7 @@ import sys
 import os
 import json
 import uuid
+import gzip
 from scipy.stats import hypergeom
 
 class gsea:
@@ -65,9 +66,13 @@ class gsea:
       feature_dict = {}
       gene_feature = {}
       feature_term = {}
-      
+            
       try:
-         fassoc = open(association_file, "r")
+         #fassoc = open(association_file, "r")
+         if(featurename == "paper"):
+            fassoc = gzip.open(association_file + '.gz','rt')
+         else:
+            fassoc = open(association_file, "r")
          
          for line in fassoc:
            line = line.rstrip()
@@ -90,7 +95,7 @@ class gsea:
 
       except IOError:
             print ('cannot open', association_file)
-            fassoc.close()
+            #fassoc.close()
 
       N = len(gene_feature.keys())
 
