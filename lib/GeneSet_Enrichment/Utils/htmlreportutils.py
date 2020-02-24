@@ -31,14 +31,16 @@ class htmlreportutils:
 
     def get_subdirs(self, dir):
         "Get a list of immediate subdirectories"
-        htmlstring = "<html><body><table><tr><th>Gene List</th><th>Gene Link</th></tr>"
+        htmlstring = "<html><body><table><tr><th>Gene List</th><th>Report Link</th></tr>"
         dirs = next(os.walk(dir))[1]
         for i in range(len(next(os.walk(dir))[1])):
            path = os.path.join(dir,(next(os.walk(dir))[1])[i])
            files_in_subdir = self.get_subfiles(path)
            for files in files_in_subdir:
-              if(files.endswith(".html")):    
-                 htmlstring += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + path + "/"+ files + ">"+files+"</a></td></tr>"
+              if(files.endswith(".html")):  
+                 report_dir = path.split("/").pop(-1)
+                 htmlstring += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + report_dir + "/"+ files + ">"+files+"</a></td></tr>"  
+                 #htmlstring += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + path + "/"+ files + ">"+files+"</a></td></tr>"
         htmlstring += "</table></body></html>"         
         return htmlstring  
 

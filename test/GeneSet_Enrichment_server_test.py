@@ -67,8 +67,8 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
         params = {
             #'workspace_name': 'man4ish_gupta:narrative_1578459434770',
             'workspace_name': 'man4ish_gupta:narrative_1579638904735',
-            #'genelist' : ['36575/30/1']
-            'genelist' : ['36575/10/4']
+            'genelist' : ['36575/30/1', '36575/10/4']
+            #'genelist' : ['36575/10/4']
         } 
 
         ret = self.serviceImpl.run_GeneSet_Enrichment(self.ctx, params)
