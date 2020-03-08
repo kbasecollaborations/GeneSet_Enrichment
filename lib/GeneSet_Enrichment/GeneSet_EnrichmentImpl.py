@@ -85,15 +85,12 @@ class GeneSet_Enrichment:
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
            phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
            
-           #genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
            genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
            self.gu.download_genelist(params['genelist'][i], genelist_file)
            
         workspace = params['workspace_name']
         featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther', 'paper']
        
-        #outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
-        #os.mkdir(outputdir)
        
         for i in range(len(params['genelist'])): 
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
@@ -109,8 +106,6 @@ class GeneSet_Enrichment:
               phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
               id = self.gs.get_id_from_phytozome(phytozyme_name)
               self.hr.load_organism_file('/kb/module/data/'+id+'/'+id+'_paper.names.txt')
-              #genelist_file = os.path.join(result_directory, phytozyme_name + str(i))
-              #filename = os.path.join("/kb/module/work/tmp", "genelist"+str(i))
               genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
               self.gs.run_gsea(feature, genelist_file, gene_set_dir, phytozyme_name)
               
@@ -125,7 +120,7 @@ class GeneSet_Enrichment:
            foutput.close()
            
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
-          #self.fu.covert_csv_to_excel(feature, outputdir)
+        #self.fu.covert_csv_to_excel(feature, outputdir)
 
         report = KBaseReport(self.callback_url)
       
