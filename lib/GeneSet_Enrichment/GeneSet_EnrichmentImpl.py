@@ -76,8 +76,6 @@ class GeneSet_Enrichment:
         outputdir = self.shared_folder + '/' + str(uuid.uuid1())
         os.mkdir(outputdir)
 
-        #self.hr.load_organism_file('/kb/module/data/167/167_paper.names.txt')
-
         self.ws = Workspace(self.ws_url, token=ctx['token'])
         for i in range(len(params['genelist'])):
            genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
