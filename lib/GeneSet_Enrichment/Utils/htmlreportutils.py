@@ -39,7 +39,7 @@ class htmlreportutils:
            for files in files_in_subdir:
               if(files.endswith(".html")):  
                  report_dir = path.split("/").pop(-1)
-                 htmlstring += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + report_dir + "/"+ files + ">"+files+"</a></td></tr>"  
+                 htmlstring  += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + report_dir + "/"+ files + ">"+files+"</a></td></tr>"  
                  #htmlstring += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" + path + "/"+ files + ">"+files+"</a></td></tr>"
         htmlstring += "</table></body></html>"         
         return htmlstring  
@@ -129,7 +129,6 @@ class htmlreportutils:
         report = KBaseReport(callback_url)
       
         htmlstring = self.get_subdirs(output_dir)
-        #htmlstring = "test"
         index_file_path = output_dir + "/index.html"
         html_file = open(index_file_path, "wt")
         n = html_file.write(htmlstring)
