@@ -72,10 +72,8 @@ class GeneSet_Enrichment:
         # return variables are: output
         #BEGIN run_GeneSet_Enrichment
         
-        result_directory = "/kb/module/work/tmp/"
         gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
-
-        outputdir = '/kb/module/work/tmp/' + str(uuid.uuid1())
+        outputdir = self.shared_folder + '/' + str(uuid.uuid1())
         os.mkdir(outputdir)
 
         #self.hr.load_organism_file('/kb/module/data/167/167_paper.names.txt')
