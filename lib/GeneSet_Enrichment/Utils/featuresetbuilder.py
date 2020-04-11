@@ -20,6 +20,16 @@ class featuresetbuilder:
         self.dfu = DataFileUtil(self.callback_url)
         self.gsu = GenomeSearchUtil(self.callback_url)
 
+    def validate_params(self, params):
+        if 'genome' not in params:
+            raise ValueError('required genome field was not defined')
+        elif 'genes' not in params:
+            raise ValueError('required genes field was not defined')
+        elif 'description' not in params:
+            raise ValueError('required description field was not defined')
+        elif 'output_feature_set' not in params:
+            raise ValueError('required output_feature_set field was not defined')
+
     def _get_feature_ids(self, genome_ref, ids):
         """
         _get_feature_ids: get feature ids from genome
@@ -81,6 +91,7 @@ class featuresetbuilder:
         save_object_params = {
             'id': workspace_id,
             'objects': [{'type': 'KBaseCollections.FeatureSet',
+                         ''
                          'data': new_feature_set,
                          'name': params['output_feature_set']}]}
 

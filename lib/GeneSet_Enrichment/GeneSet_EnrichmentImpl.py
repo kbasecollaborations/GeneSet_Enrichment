@@ -10,7 +10,6 @@ from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
 from GeneSet_Enrichment.Utils.featuresetbuilder import featuresetbuilder
 from installed_clients.DataFileUtilClient import DataFileUtil
-from installed_clients.KBaseReportClient import KBaseReport
 from installed_clients.WorkspaceClient import Workspace
 
 
@@ -71,55 +70,30 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN run_GeneSet_Enrichment
-        
+
+        self.fu.validate_params(params)
+
         gmap = self.fu.get_biomart_genomemap("/kb/module/data/mapping_file.txt")
+
         outputdir = self.shared_folder + '/' + str(uuid.uuid1())
         os.mkdir(outputdir)
 
         self.ws = Workspace(self.ws_url, token=ctx['token'])
-        for i in range(len(params['genelist'])):
-           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
-           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
-           
-           genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
-           self.gu.download_genelist(params['genelist'][i], genelist_file)
-           
+
+        logging.info('--->\nProcessing genelist')
+        self.gu.process_genelist(params, self.ws, outputdir, self.gs )
+
+        logging.info('--->\nProcessing gsea')
+        self.gs.process_gsea(params, self.ws, outputdir)
+
+        logging.info('--->\nProcessing enrichment')
+        self.hr.process_enrichment(params, self.ws, outputdir, self.gs)
+
         workspace = params['workspace_name']
-        featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam', 'kegg_enzyme', 'kog', 'pathway', 'panther', 'paper']
-       
-       
-        for i in range(len(params['genelist'])): 
-           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
-           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))
-           gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
-
-        
-           if not os.path.exists(gene_set_dir):
-              os.mkdir(gene_set_dir) 
-
-           for feature in featurelist:
-              genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
-              phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))  #using name for id
-              id = self.gs.get_id_from_phytozome(phytozyme_name)
-              self.hr.load_organism_file('/kb/module/data/'+id+'/'+id+'_paper.names.txt')
-              genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
-              self.gs.run_gsea(feature, genelist_file, gene_set_dir, phytozyme_name)
-              
-
-        for i in range(len(params['genelist'])):
-           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
-           phytozyme_name = self.gs.find_kbase_phytozome_genome_id(self.ws, str(genome_id))
-           gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
-           output = self.hr.create_enrichment_report(gene_set_dir, outputdir)
-           foutput = open(gene_set_dir + "/"+phytozyme_name+".html", "w")
-           foutput.write(output+"\n")
-           foutput.close()
-           
+        logging.info('--->\nCreating HTML Report')
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
         #self.fu.covert_csv_to_excel(feature, outputdir)
 
-        report = KBaseReport(self.callback_url)
-      
         #END run_GeneSet_Enrichment
 
         # At some point might do deeper type checking...
@@ -144,10 +118,10 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN build_Featureset
+        fsb.validate_params(params)
         print('--->\nRunning FeatureSetUtils.build_feature_set\nparams:')
         print(json.dumps(params, indent=1))
-        
-        #fs_builder = FeatureSetBuilder(self.config, self.callback_url)
+
         output = self.fsb.build_feature_set(params)
         #END build_Featureset
 

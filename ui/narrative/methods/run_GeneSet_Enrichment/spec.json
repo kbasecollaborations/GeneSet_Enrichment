@@ -2,7 +2,7 @@
     "ver": "0.0.1",
     "authors": [
         "man4ish_gupta",
-	"pranjan77"
+	    "pranjan77"
     ],
     "contact": "",
     "categories": ["active"],
@@ -32,13 +32,11 @@
                 {
                     "narrative_system_variable": "workspace",
                     "target_property": "workspace_name"
-                },{
-                    "narrative_system_variable": "workspace_id",
-                    "target_property": "workspace_id"
-                },{
+                },
+                {
                     "input_parameter": "genelist",
                     "target_property": "genelist",
-		    "target_type_transform": "resolved-ref"
+		            "target_type_transform": "resolved-ref"
                 }
             ],
             "output_mapping": [

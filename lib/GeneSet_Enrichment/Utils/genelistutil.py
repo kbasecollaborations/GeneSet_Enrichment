@@ -1,14 +1,10 @@
-import sys
 import os
-import json
-import uuid
-import csv 
 from installed_clients.DataFileUtilClient import DataFileUtil
 
 class genelistutil:
   def __init__(self):
       self.callback_url = os.environ['SDK_CALLBACK_URL']
-      self.dfu = DataFileUtil(self.callback_url) 
+      self.dfu = DataFileUtil(self.callback_url)
       pass
 
   def download_genelist(self, genelistref, genesetfile):
@@ -28,14 +24,23 @@ class genelistutil:
       genome = {}
       get_objects_params = {'object_refs' : [genelistref]} 
       geneset = self.dfu.get_objects(get_objects_params)['data'][0]['data']
-      #print(type(geneset['elements'].values()))
+
       for k, v in geneset['elements'].items():
-        #print(self.listToString(v))
         genome[self.listToString(v)] = 1
       if (len(genome) != 1):
          exit("source of genome is not unique\n")
       else:
          return (list(genome.keys())[0])
+
+  def process_genelist (self, params, ws, outputdir, gs):
+      for i in range(len(params['genelist'])):
+          genome_id = self.get_genomeid_from_featuresetid(params['genelist'][i])
+          phytozyme_name = gs.find_kbase_phytozome_genome_id(ws, str(genome_id))  # using name for id
+
+          genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
+          self.download_genelist(params['genelist'][i], genelist_file)
+
+
 
 
 
