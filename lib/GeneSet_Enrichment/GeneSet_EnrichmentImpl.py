@@ -4,10 +4,10 @@ import logging
 import os
 import uuid
 import json
-from GeneSet_Enrichment.Utils.gsea import gsea
-from GeneSet_Enrichment.Utils.genelistutil import genelistutil
+
 from GeneSet_Enrichment.Utils.fileutils import fileutils
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
+from GeneSet_Enrichment.Utils.processutils import processutils
 from GeneSet_Enrichment.Utils.featuresetbuilder import featuresetbuilder
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.WorkspaceClient import Workspace
@@ -48,11 +48,12 @@ class GeneSet_Enrichment:
         logging.basicConfig(format='%(created)s %(levelname)s: %(message)s',
                             level=logging.INFO)
         self.config = config
-        self.gs = gsea()
+        #self.gs = gsea()
         self.hr = htmlreportutils()
-        self.gu = genelistutil()
+        #self.gu = genelistutil()
         self.dfu = DataFileUtil(self.callback_url) 
         self.fu = fileutils()
+        self.pr = processutils()
         self.fsb  = featuresetbuilder(config)
         #END_CONSTRUCTOR
         pass
@@ -81,16 +82,17 @@ class GeneSet_Enrichment:
         self.ws = Workspace(self.ws_url, token=ctx['token'])
 
         logging.info('--->\nProcessing genelist')
-        self.gu.process_genelist(params, self.ws, outputdir, self.gs )
+        self.pr.process_genelist(params, self.ws, outputdir)
 
         logging.info('--->\nProcessing gsea')
-        self.gs.process_gsea(params, self.ws, outputdir)
+        self.pr.process_gsea(params, self.ws, outputdir)
 
         logging.info('--->\nProcessing enrichment')
-        self.hr.process_enrichment(params, self.ws, outputdir, self.gs)
+        self.pr.process_enrichment(params, self.ws, outputdir)
 
         workspace = params['workspace_name']
         logging.info('--->\nCreating HTML Report')
+
         output = self.hr.create_html_report(self.callback_url, outputdir, workspace)
         #self.fu.covert_csv_to_excel(feature, outputdir)
 

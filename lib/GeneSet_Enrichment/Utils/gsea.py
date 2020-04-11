@@ -3,15 +3,12 @@ import os
 import json
 import uuid
 import gzip
-
 from scipy.stats import hypergeom
 from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
-from GeneSet_Enrichment.Utils.genelistutil import genelistutil
 
 class gsea:
   def __init__(self):
       self.hr = htmlreportutils()
-      self.gu = genelistutil()
       pass
 
   def find_kbase_phytozome_genome_id(self, ws, genome_ref_id):
@@ -148,29 +145,6 @@ class gsea:
       
       return (outdirectory)
 
-  def process_gsea(self, params, ws, outputdir):
-      featurelist = ['go_biological_process', 'go_molecular_function', 'go_cellular_component', 'smart', 'pfam',
-                     'kegg_enzyme', 'kog', 'pathway', 'panther', 'paper']
-
-      for i in range(len(params['genelist'])):
-          genome_id = self.gu.get_genomeid_from_featuresetid(params['genelist'][i])
-          phytozyme_name = self.find_kbase_phytozome_genome_id(ws, str(genome_id))
-
-          gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
-
-          if not os.path.exists(gene_set_dir):
-              os.mkdir(gene_set_dir)
-
-          for feature in featurelist:
-              genome_id = self.gu.get_genomeid_from_featuresetid(params['genelist'][i])
-              phytozyme_name = self.find_kbase_phytozome_genome_id(ws, str(genome_id))  # using name for id
-
-              id = self.get_id_from_phytozome(phytozyme_name)
-
-              self.hr.load_organism_file('/kb/module/data/' + id + '/' + id + '_paper.names.txt')
-
-              genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
-              self.run_gsea(feature, genelist_file, gene_set_dir, phytozyme_name)
 
       
   

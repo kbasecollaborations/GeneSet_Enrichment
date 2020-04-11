@@ -32,13 +32,6 @@ class genelistutil:
       else:
          return (list(genome.keys())[0])
 
-  def process_genelist (self, params, ws, outputdir, gs):
-      for i in range(len(params['genelist'])):
-          genome_id = self.get_genomeid_from_featuresetid(params['genelist'][i])
-          phytozyme_name = gs.find_kbase_phytozome_genome_id(ws, str(genome_id))  # using name for id
-
-          genelist_file = os.path.join(outputdir, phytozyme_name + str(i) + ".genelist")
-          self.download_genelist(params['genelist'][i], genelist_file)
 
 
 

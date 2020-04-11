@@ -2,15 +2,11 @@ import uuid
 import os
 from installed_clients.DataFileUtilClient import DataFileUtil
 from installed_clients.KBaseReportClient import KBaseReport
-from GeneSet_Enrichment.Utils.genelistutil import genelistutil
-
 import pandas as pd
 
 class htmlreportutils:
     def __init__(self):
         self.organism_dict = {}
-        self.gu = genelistutil()
-        #self.gs = gsea()
         pass
      
     def listToString(self, s):  
@@ -200,22 +196,5 @@ class htmlreportutils:
             'report_ref': report_info['ref']
         }
 
-    def process_enrichment (self, params, ws, outputdir, gs):
-        '''
-                 function for processing enrichment for features
-        '''
-        for i in range(len(params['genelist'])):
-           genome_id = self.gu.get_genomeid_from_featuresetid (params['genelist'][i])
-           phytozyme_name = gs.find_kbase_phytozome_genome_id(ws, str(genome_id))
 
-           gene_set_dir = os.path.join(outputdir, phytozyme_name + str(i))
-
-           output = self.create_enrichment_report(gene_set_dir, outputdir)
-
-           try:
-              with open(gene_set_dir + "/"+phytozyme_name+".html", "w") as foutput:
-                 foutput.write(output+"\n")
-           except IOError:
-               print("cannot open " + gene_set_dir + "/"+phytozyme_name+".html")
-               foutput.close()
 
