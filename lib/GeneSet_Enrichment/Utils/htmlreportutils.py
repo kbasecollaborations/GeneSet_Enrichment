@@ -36,7 +36,7 @@ class htmlreportutils:
 
     def get_subdirs(self, dir):
         "Get a list of immediate subdirectories"
-        htmlstring = "<html><body><table><tr><th>Gene List</th><th>Report Link</th></tr>"
+        htmlstring = "<html><body><table>"
         dirs = next(os.walk(dir))[1]
         for i in range(len(next(os.walk(dir))[1])):
            path = os.path.join(dir,(next(os.walk(dir))[1])[i])
@@ -44,7 +44,7 @@ class htmlreportutils:
            for files in files_in_subdir:
               if(files.endswith(".html")):  
                  report_dir = path.split("/").pop(-1)
-                 htmlstring  += "<tr><td>"+self.get_genelist(path+".genelist") +"</td><td>" + "<a href=" \
+                 htmlstring  += "<tr><td>" + "<a href=" \
                                 + report_dir + "/"+ files + ">"+files+"</a></td></tr>"
         htmlstring += "</table></body></html>"         
         return htmlstring  
@@ -82,7 +82,7 @@ class htmlreportutils:
         htmlout = "<center><b>Gene Set Enrichment using " + caption +"</b></center>"
 
         if(filename == 'paper_output.txt'):
-           htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #e9d8f2; " \
+           htmlout += "<div style=\"height: 850px; width: 1800px; border: 1px ridge; black; background: #e9d8f2; " \
                       "padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; overflow: auto;\">" \
                       "<table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\"><thead><tr>" \
                                             "<th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th><th>Organism Name</th></tr></thead><tbody>"
@@ -132,7 +132,7 @@ class htmlreportutils:
         output += "<script> $(document).ready(function() {$(\'#pfam_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#pathway_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#paper_output\').DataTable();} ); </script>"
-        output += "<br><b>Gene Set:</b>&nbsp;&nbsp;&nbsp;" + self.get_genelist(path+".genelist") + "<br>"
+        #output += "<br><b>Gene Set:</b>&nbsp;&nbsp;&nbsp;" + self.get_genelist(path+".genelist") + "<br>"
         output += "</head><body><table cellpadding = \"100\" cellspacing = \"100\" >"
 
         
