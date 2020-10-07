@@ -44,8 +44,6 @@ class processutils:
 
           output = self.hr.create_enrichment_report(gene_set_dir, outputdir)
 
-
-
           try:
               with open(gene_set_dir + "/" + phytozyme_name + ".html", "w") as foutput:
                   foutput.write(output + "\n")

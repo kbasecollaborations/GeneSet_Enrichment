@@ -8,8 +8,19 @@ class htmlreportutils:
     def __init__(self):
         self.organism_dict = {}
         pass
-     
-    def listToString(self, s):  
+
+    def get_css(self):
+        css = "<style>.dropbtn {background-color: #F8F8F8;color: black;padding: 16px;font-size: 16px;border: none;cursor: pointer;} .dropdown {position: relative;isplay: inline-block;}  .dropdown-content {display: none; position: absolute; right: 0; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; } .dropdown-content a { color: black; padding: 12px 16px; ext-decoration: none; display: block;} .dropdown-content a:hover {background-color: #f1f1f1;} .dropdown:hover .dropdown-content { display: block; } .dropdown:hover .dropbtn { background-color: #F8F8F8;}</style>"
+        return css
+
+    def get_menu_options(self, report_list):
+        dp_menu  = "<div class=\"dropdown\" style=\"float:left;\"><button class=\"dropbtn\">Click to select Feature Set</button><div class=\"dropdown-content\" style=\"left:0;\">"
+        for html_file in report_list:
+            dp_menu += "<a href=" + html_file.replace(".html", "") + "/" +html_file + ">" + html_file + "</a>"
+        dp_menu += "</div></div>"
+        return dp_menu
+
+    def listToString(self, s):
         str1 = " " 
         return (str1.join(s))
 
@@ -36,18 +47,20 @@ class htmlreportutils:
 
     def get_subdirs(self, dir):
         "Get a list of immediate subdirectories"
-        htmlstring = "<html><body><table>"
+
+        report_list = []
         dirs = next(os.walk(dir))[1]
         for i in range(len(next(os.walk(dir))[1])):
            path = os.path.join(dir,(next(os.walk(dir))[1])[i])
            files_in_subdir = self.get_subfiles(path)
            for files in files_in_subdir:
-              if(files.endswith(".html")):  
+              if(files.endswith(".html")):
+                 report_list.append(files)
                  report_dir = path.split("/").pop(-1)
-                 htmlstring  += "<tr><td>" + "<a href=" \
-                                + report_dir + "/"+ files + ">"+files+"</a></td></tr>"
-        htmlstring += "</table></body></html>"         
-        return htmlstring  
+                 #htmlstring  += "<tr><td>" + "<a href=" \
+                 #               + report_dir + "/"+ files + ">"+files+"</a></td></tr>"
+        return report_list
+
 
     def load_organism_file(self, filename):
 
@@ -82,12 +95,12 @@ class htmlreportutils:
         htmlout = "<center><b>Gene Set Enrichment using " + caption +"</b></center>"
 
         if(filename == 'paper_output.txt'):
-           htmlout += "<div style=\"height: 850px; width: 1800px; border: 1px ridge; black; background: #e9d8f2; " \
+           htmlout += "<div style=\"height: 850px; width: 1812px; border: 1px ridge; black; background: #F8F8F8; " \
                       "padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; overflow: auto;\">" \
                       "<table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\"><thead><tr>" \
                                             "<th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th><th>Organism Name</th></tr></thead><tbody>"
         else:
-           htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #e9d8f2; " \
+           htmlout += "<div style=\"height: 850px; width: 590px; border: 1px ridge; black; background: #F8F8F8; " \
                       "padding-top: 20px; padding-right: 0px; padding-bottom: 20px; padding-left: 20px; " \
                       "overflow: auto;\"><table id=\"" + id + "\" class=\"table table-striped table-bordered\" style=\"width:100%\">" \
                                         "<thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></thead><tbody>"
@@ -114,10 +127,12 @@ class htmlreportutils:
         '''
 
         dirs = next(os.walk(dir))[1]
+        #exit(dirs)
+
         for i in range(len(next(os.walk(dir))[1])):
            path = os.path.join(dir,(next(os.walk(dir))[1])[i])
 
-        output = "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap" \
+        output = "<html><head>" + self.get_css() + "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap" \
                  "/3.3.7/css/bootstrap.min.css\"><link rel=\"stylesheet\" type=\"text/css " \
                  "\"href=\"https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css\"><script src=\"https://code.jquery.com/jquery-3.3.1.js\">" \
                  "</script><script src=\"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js\">" \
@@ -133,7 +148,7 @@ class htmlreportutils:
         output += "<script> $(document).ready(function() {$(\'#pathway_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#paper_output\').DataTable();} ); </script>"
         #output += "<br><b>Gene Set:</b>&nbsp;&nbsp;&nbsp;" + self.get_genelist(path+".genelist") + "<br>"
-        output += "</head><body><table cellpadding = \"100\" cellspacing = \"100\" >"
+        output += "</head><body>" + self.get_menu_options(dirs) + "<table cellpadding = \"100\" cellspacing = \"100\" >"
 
         
         output += "<tr><td style=\"padding:10px\">" + self.create_table("go_biological_process_output.txt", "GO (Biological Process)", output_dir) \
@@ -162,7 +177,9 @@ class htmlreportutils:
         report_name = 'kb_gsea_report_' + str(uuid.uuid4())
         report = KBaseReport(callback_url)
       
-        htmlstring = self.get_subdirs(output_dir)
+        report_list = self.get_subdirs(output_dir)
+        htmlstring = "<html><head>" + self.get_css() + "</head><body>" + self.get_menu_options(report_list)
+        htmlstring += "</body></html>"
 
         index_file_path = output_dir + "/index.html"
 
