@@ -10,13 +10,24 @@ class htmlreportutils:
         pass
 
     def get_css(self):
-        css = "<style>.dropbtn {background-color: #F8F8F8;color: black;padding: 16px;font-size: 16px;border: none;cursor: pointer;} .dropdown {position: relative;isplay: inline-block;}  .dropdown-content {display: none; position: absolute; right: 0; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; } .dropdown-content a { color: black; padding: 12px 16px; ext-decoration: none; display: block;} .dropdown-content a:hover {background-color: #f1f1f1;} .dropdown:hover .dropdown-content { display: block; } .dropdown:hover .dropbtn { background-color: #F8F8F8;}</style>"
+        css = "<style>" \
+              ".dropbtn {background-color: #F8F8F8;color: black;padding: 16px;font-size: 16px;" \
+              "border: none;cursor: pointer;} .dropdown {position: relative;isplay: inline-block;}  " \
+              ".dropdown-content {display: none; position: absolute; right: 0; background-color: #f9f9f9; " \
+              "min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; } " \
+              ".dropdown-content a { color: black; padding: 12px 16px; ext-decoration: none; " \
+              "display: block;} .dropdown-content a:hover {background-color: #f1f1f1;} " \
+              ".dropdown:hover .dropdown-content { display: block; } .dropdown:hover .dropbtn { background-color: #F8F8F8;}" \
+              "</style>"
         return css
 
     def get_menu_options(self, report_list):
-        dp_menu  = "<div class=\"dropdown\" style=\"float:left;\"><button class=\"dropbtn\">Click to select Feature Set</button><div class=\"dropdown-content\" style=\"left:0;\">"
+        dp_menu  = "<div class=\"dropdown\" style=\"float:left;\">" \
+                   "<button class=\"dropbtn\">Click to select Feature Set</button>" \
+                   "<div class=\"dropdown-content\" style=\"left:0;\">"
         for html_file in report_list:
-            dp_menu += "<a href=" + html_file.replace(".html", "") + "/" +html_file + ">" + html_file + "</a>"
+            dp_menu += "<a href=" + html_file + ".html" + ">" + html_file + "</a>"
+
         dp_menu += "</div></div>"
         return dp_menu
 
@@ -47,20 +58,7 @@ class htmlreportutils:
 
     def get_subdirs(self, dir):
         "Get a list of immediate subdirectories"
-
-        report_list = []
-        dirs = next(os.walk(dir))[1]
-        for i in range(len(next(os.walk(dir))[1])):
-           path = os.path.join(dir,(next(os.walk(dir))[1])[i])
-           files_in_subdir = self.get_subfiles(path)
-           for files in files_in_subdir:
-              if(files.endswith(".html")):
-                 report_list.append(files)
-                 report_dir = path.split("/").pop(-1)
-                 #htmlstring  += "<tr><td>" + "<a href=" \
-                 #               + report_dir + "/"+ files + ">"+files+"</a></td></tr>"
-        return report_list
-
+        return next(os.walk(dir))[1]
 
     def load_organism_file(self, filename):
 
@@ -121,36 +119,41 @@ class htmlreportutils:
         htmlout += "</tbody><tfoot><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-value</th></tr></tfoot></table></div>"
         return htmlout
 
-    def create_enrichment_report(self, output_dir, dir):
+    def create_enrichment_report(self, output_dir, dir, featureset):
         '''
                 function for adding enrichment score to report
         '''
 
         dirs = next(os.walk(dir))[1]
-        #exit(dirs)
 
-        for i in range(len(next(os.walk(dir))[1])):
-           path = os.path.join(dir,(next(os.walk(dir))[1])[i])
+        #for i in range(len(next(os.walk(dir))[1])):
+        #   path = os.path.join(dir,(next(os.walk(dir))[1])[i])
 
-        output = "<html><head>" + self.get_css() + "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap" \
+        output = "<html><head>" \
+                 + self.get_css() + "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap" \
                  "/3.3.7/css/bootstrap.min.css\"><link rel=\"stylesheet\" type=\"text/css " \
-                 "\"href=\"https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css\"><script src=\"https://code.jquery.com/jquery-3.3.1.js\">" \
-                 "</script><script src=\"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js\">" \
-                 "</script><script src=\"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js\"></script>"
+                 "\"href=\"https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css\">" \
+                 "<script src=\"https://code.jquery.com/jquery-3.3.1.js\"></script>" \
+                 "<script src=\"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js\"></script>" \
+                 "<script src=\"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js\"></script>"
+
         output += "<script> $(document).ready(function() {$(\'#go_biological_process_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#go_molecular_function_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#go_cellular_component_output\').DataTable();} ); </script>"
+
         output += "<script> $(document).ready(function() {$(\'#kegg_enzyme_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#kog_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#panther_output\').DataTable();} ); </script>"
+
         output += "<script> $(document).ready(function() {$(\'#smart_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#pfam_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#pathway_output\').DataTable();} ); </script>"
         output += "<script> $(document).ready(function() {$(\'#paper_output\').DataTable();} ); </script>"
-        #output += "<br><b>Gene Set:</b>&nbsp;&nbsp;&nbsp;" + self.get_genelist(path+".genelist") + "<br>"
-        output += "</head><body>" + self.get_menu_options(dirs) + "<table cellpadding = \"100\" cellspacing = \"100\" >"
+        output += "</head>" \
+                  "<body>" + self.get_menu_options(dirs) \
+                  + "<br><center><b>Geneset Results for " + featureset + "</b></center><br><br>" \
+                    "<table cellpadding = \"100\" cellspacing = \"100\" >"
 
-        
         output += "<tr><td style=\"padding:10px\">" + self.create_table("go_biological_process_output.txt", "GO (Biological Process)", output_dir) \
                   + "</td><td style=\"padding:10px\">" + self.create_table("go_molecular_function_output.txt", "GO (Molecular Function)", output_dir) \
                   + "</td> <td style=\"padding:10px\">" + self.create_table("go_cellular_component_output.txt", "GO (Cellular Component)", output_dir) \
@@ -163,7 +166,9 @@ class htmlreportutils:
         output += "<tr><td style=\"padding:10px\">" + self.create_table("smart_output.txt", "SMART", output_dir) \
                   + "</td> <td style=\"padding:10px\">" + self.create_table("pfam_output.txt", "PFAM", output_dir) \
                   + "</td> <td style=\"padding:10px\">" + self.create_table("pathway_output.txt", "Pathway", output_dir) + "</td></tr>"
+
         output += "<tr><td colspan=\"3\" style=\"padding:10px\">" + self.create_table("paper_output.txt", "Publication", output_dir) + "</td></tr>"
+
         output += "</table></body></html>"
       
         return output

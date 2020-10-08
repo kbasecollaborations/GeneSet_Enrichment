@@ -30,25 +30,24 @@ class processutils:
 
       unique_featureset_object = set(params['genelist'])
 
-      #for i in range(len(params['genelist'])):
       for featureset in unique_featureset_object:
-          genome_id = self.gu.get_genomeid_from_featuresetid(featureset)
-          phytozyme_name = self.gs.find_kbase_phytozome_genome_id(ws, str(genome_id))
+          #genome_id = self.gu.get_genomeid_from_featuresetid(featureset)
+          #phytozyme_name = self.gs.find_kbase_phytozome_genome_id(ws, str(genome_id))
 
           ref = featureset
           obj_info = ws.get_object_info3({"objects": [{"ref": ref}]})
           featureset_name = obj_info['infos'][0][1]
-          phytozyme_name = featureset_name  # quick fix
+          #phytozyme_name = featureset_name  # quick fix
 
-          gene_set_dir = os.path.join(outputdir, phytozyme_name)
+          gene_set_dir = os.path.join(outputdir, featureset_name)
 
-          output = self.hr.create_enrichment_report(gene_set_dir, outputdir)
+          output = self.hr.create_enrichment_report(gene_set_dir, outputdir, featureset_name)
 
           try:
-              with open(gene_set_dir + "/" + phytozyme_name + ".html", "w") as foutput:
+              with open(outputdir + "/" + featureset_name + ".html", "w") as foutput:
                   foutput.write(output + "\n")
           except IOError:
-              print("cannot open " + gene_set_dir + "/" + phytozyme_name + ".html")
+              print("cannot open " + gene_set_dir + "/" + featureset_name + ".html")
               foutput.close()
 
   def process_gsea(self, params, ws, outputdir):
@@ -72,10 +71,10 @@ class processutils:
           ref = featureset
           obj_info = ws.get_object_info3({"objects": [{"ref": ref}]})
           featureset_name = obj_info['infos'][0][1]
-          phytozyme_name = featureset_name  # quick fix
+          #phytozyme_name = featureset_name  # quick fix
 
 
-          gene_set_dir = os.path.join(outputdir, phytozyme_name)
+          gene_set_dir = os.path.join(outputdir, featureset_name)
 
           if not os.path.exists(gene_set_dir):
               os.mkdir(gene_set_dir)
