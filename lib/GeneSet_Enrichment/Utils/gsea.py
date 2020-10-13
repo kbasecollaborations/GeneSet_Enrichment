@@ -8,8 +8,28 @@ from GeneSet_Enrichment.Utils.htmlreportutils import htmlreportutils
 
 class gsea:
   def __init__(self):
+      self.organism_dict = {}
       self.hr = htmlreportutils()
       pass
+
+  def load_organism_file(self, filename):
+
+      try:
+          with open(filename, 'r') as f:
+              for x in f:
+                  x = x.rstrip()
+                  line = x.split("\t")
+                  self.organism_dict[line[0]] = line[1]
+      except IOError as e:
+          print ("I/O error({0}): {1}".format(e.errno, e.strerror))
+      except:  # handle other exceptions such as attribute errors
+          print ("Unexpected error:", sys.exc_info()[0])
+
+  def get_organism(self, pubmed_url):
+      if pubmed_url in self.organism_dict.keys():
+          return self.organism_dict[pubmed_url]
+      else:
+          return ''
 
   def find_kbase_phytozome_genome_id(self, ws, genome_ref_id):
     
@@ -138,6 +158,33 @@ class gsea:
          except IOError:
              print("cannot open" + outdirectory + "/" + featurename + "_output.txt")
              fout.close()
+
+         try:
+            with open(outdirectory + "/" + featurename + "_output.json","a") as fjout:
+               #fout.write("ID\tTerm\tN\tK\tn\tk\tpval\n")
+               out_list = []
+
+               for feature_key, frequency in featurefreq.items():
+                  k = frequency
+                  K = feature_dict[feature_key]
+
+                  prb = hypergeom.pmf(k, N, K, n)
+
+                  term = (feature_term[feature_key]).split("_")[1]
+                  if(featurename == "paper"):
+                      organism = self.get_organism(feature_key)
+                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g')), "Organism:" +organism])
+                  else:
+                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g'))])
+
+                  #fout.write (feature_key + "\t"+ term +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k)
+                  #            + "\t" +str(format(prb, '.3g')) + "\n")
+               fjout.write(json.dumps(out_list))
+
+         except IOError:
+             print("cannot open" + outdirectory + "/" + featurename + "_output.txt")
+             fout.close()
+
 
       except IOError:
          print ('cannot open', gene_file)

@@ -85,7 +85,7 @@ class processutils:
 
               id = self.gs.get_id_from_phytozome(phytozyme_name)
 
-              self.hr.load_organism_file('/kb/module/data/' + id + '/' + id + '_paper.names.txt')
+              self.gs.load_organism_file('/kb/module/data/' + id + '/' + id + '_paper.names.txt')
 
               ref = featureset
               obj_info = ws.get_object_info3({"objects": [{"ref": ref}]})
