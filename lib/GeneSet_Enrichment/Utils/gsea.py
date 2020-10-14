@@ -180,9 +180,9 @@ class gsea:
                   gene_list = feature_gene_dict[feature_key]
                   if(featurename == "paper"):
                       organism = self.get_organism(feature_key)
-                      out_list.append([feature_key, term, str(k),  str(format(prb, '.3g')),  ','.join(gene_list), "Organism:" +organism])
+                      out_list.append([feature_key, term, str(k),  str(format(prb, '.3g')),  ', '.join(gene_list), "Organism:" +organism])
                   else:
-                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g')),  ','.join(gene_list)])
+                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g')),  ', '.join(gene_list)])
 
                   #fout.write (feature_key + "\t"+ term +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k)
                   #            + "\t" +str(format(prb, '.3g')) + "\n")
