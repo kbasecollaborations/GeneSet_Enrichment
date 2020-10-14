@@ -63,18 +63,21 @@ class htmlreportutils:
     def create_table(self, filename, caption, output_dir):
 
         id = filename.split(".")[0]
-        html_out = "<div style=\"height: 600px; width: 1650px; border: 1px ridge; black;\">"
-        html_out += "<center><h3>Gene Set Enrichment using " + caption + "</h3></center>"
+
         if (filename.find('paper') != -1):
-            html_out += "<table id=\"" + id + "\" " + "class=\"display nowrap\" style=\"width:100%\">" \
-                                              "<thead><tr><th>Pubmed Url</th><th>Title</th><th>Matches</th><th>P-Value</th>" \
+            html_out = "<div style=\"height: 1400px; width: 1700px; border: 1px ridge; black;\">"
+            html_out += "<center><h3>Gene Set Enrichment using " + caption + "</h3></center>"
+            html_out += "<table id=\"" + id + "\" " + "class=\"display\" style=\"width:100%\">" \
+                                              "<thead><tr><th>Pubmed Url</th><th>Title</th><th>Matches</th><th>P-Value</th><th>Genes</th>" \
                                               "<th>Organism Name</th></tr></thead><tfoot><tr><th>Pubmed Url</th><th>Title</th>" \
-                                              "<th>Matches</th><th>P-Value</th><th>Organism Name</th></tr></tfoot></table>"
+                                              "<th>Matches</th><th>P-Value</th><th>Genes</th><th>Organism Name</th></tr></tfoot></table>"
         else:
-            html_out += "<table id=\"" + id + "\" " + "class=\"display nowrap\" style=\"width:100%\">" \
-                                              "<thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-Value</th>" \
+            html_out = "<div style=\"height: 630px; width: 1700px; border: 1px ridge; black;\">"
+            html_out += "<center><h3>Gene Set Enrichment using " + caption + "</h3></center>"
+            html_out += "<table id=\"" + id + "\" " + "class=\"display\" style=\"width:100%\">" \
+                                              "<thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-Value</th><th>Genes</th>" \
                                               "</tr></thead><tfoot><tr><th>Feature Id</th><th>Term</th>" \
-                                              "<th>Matches</th><th>P-Value</th></tr></tfoot></table>"
+                                              "<th>Matches</th><th>P-Value</th><th>Genes</th></tr></tfoot></table>"
         html_out += "</div>"
         return html_out
 
@@ -104,43 +107,43 @@ class htmlreportutils:
                                     "<script src=\"https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js\"></script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/go_biological_process_output.json\', function(data){ $(\'#go_biological_process_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/go_molecular_function_output.json\', function(data){ $(\'#go_molecular_function_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/go_cellular_component_output.json\', function(data){ $(\'#go_cellular_component_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/kegg_enzyme_output.json\', function(data){ $(\'#kegg_enzyme_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/kog_output.json\', function(data){ $(\'#kog_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 3 ],visible: false}], deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/panther_output.json\', function(data){ $(\'#panther_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/smart_output.json\', function(data){ $(\'#smart_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/pfam_output.json\', function(data){ $(\'#pfam_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/pathway_output.json\', function(data){ $(\'#pathway_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/paper_output.json\', function(data){ $(\'#paper_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ],visible: false}], data: data, deferRender: true,scrollY: 799, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ], visible: false}], data: data, deferRender: true,scrollY: 799, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
 

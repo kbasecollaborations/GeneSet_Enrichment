@@ -93,6 +93,7 @@ class gsea:
             fassoc = open(association_file, "r")
          
          for line in fassoc:
+
            line = line.rstrip()
            id = line.split("\t")
            feature_id = id[1]
@@ -104,12 +105,12 @@ class gsea:
            for i in range(2, num_fields):
                gene_id = id[i]
 
-               if gene_id not in gene_feature:
+               if gene_id not in gene_feature.keys():
                   feature_value = []
                   feature_value.append(feature_id) 
                   gene_feature[gene_id] = feature_value
                else:
-                  gene_feature[gene_id].append(feature_id)
+                  gene_feature[gene_id].append(feature_id)     # dictionary of gene and feature
 
          fassoc.close()
 
@@ -122,6 +123,8 @@ class gsea:
       n = 0
       featurefreq = {}
 
+      feature_gene_dict = {}
+
       try:
          fgene = open(gene_file, "r")
 
@@ -132,17 +135,20 @@ class gsea:
 
            geneids = gline.split(",")
 
+
            if geneids[0] in gene_feature.keys():
               feature_list = gene_feature[geneids[0]]
 
               for feature in feature_list:
                   if feature in featurefreq:
+                     (feature_gene_dict[feature]).append(geneids[0])
                      featurefreq[feature] += 1 
                   else:
+                     feature_gene_dict[feature] = [geneids[0]]
                      featurefreq[feature] = 1
          try:
             with open(outdirectory + "/" + featurename + "_output.txt","a") as fout:
-               fout.write("ID\tTerm\tN\tK\tn\tk\tpval\n")
+               fout.write("ID\tTerm\tN\tK\tn\tk\tpval\tGene Id\n")
 
                for feature_key, frequency in featurefreq.items():
                   k = frequency
@@ -151,9 +157,9 @@ class gsea:
                   prb = hypergeom.pmf(k, N, K, n)
 
                   term = (feature_term[feature_key]).split("_")[1]
-
+                  gene_list = feature_gene_dict[feature_key]
                   fout.write (feature_key + "\t"+ term +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k)
-                              + "\t" +str(format(prb, '.3g')) + "\n")
+                              + "\t" +str(format(prb, '.3g')) + "\t" + ','.join(gene_list) + "\n")
 
          except IOError:
              print("cannot open" + outdirectory + "/" + featurename + "_output.txt")
@@ -171,11 +177,12 @@ class gsea:
                   prb = hypergeom.pmf(k, N, K, n)
 
                   term = (feature_term[feature_key]).split("_")[1]
+                  gene_list = feature_gene_dict[feature_key]
                   if(featurename == "paper"):
                       organism = self.get_organism(feature_key)
-                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g')), "Organism:" +organism])
+                      out_list.append([feature_key, term, str(k),  str(format(prb, '.3g')),  ','.join(gene_list), "Organism:" +organism])
                   else:
-                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g'))])
+                      out_list.append([feature_key, term, str(k), str(format(prb, '.3g')),  ','.join(gene_list)])
 
                   #fout.write (feature_key + "\t"+ term +"\t" + str(N) + "\t" + str(K) + "\t" + str(n) + "\t" + str(k)
                   #            + "\t" +str(format(prb, '.3g')) + "\n")
