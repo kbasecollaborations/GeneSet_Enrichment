@@ -7,7 +7,6 @@ import pandas as pd
 
 class htmlreportutils:
     def __init__(self):
-        #self.organism_dict = {}
         pass
 
     def get_css(self):
@@ -61,32 +60,11 @@ class htmlreportutils:
         "Get a list of immediate subdirectories"
         return next(os.walk(dir))[1]
 
-    '''
-    def load_organism_file(self, filename):
-
-        try:
-            with open(filename, 'r') as f:
-                for x in f:
-                    x = x.rstrip()
-                    line = x.split("\t")
-                    self.organism_dict[line[0]] = line[1]
-        except IOError as e:
-            print ("I/O error({0}): {1}".format(e.errno, e.strerror))
-        except:  # handle other exceptions such as attribute errors
-            print ("Unexpected error:", sys.exc_info()[0])
-
-    def get_organism(self, pubmed_url):
-        if pubmed_url in self.organism_dict:
-            return self.organism_dict[pubmed_url]
-        else:
-            return ''
-    '''
-
     def create_table(self, filename, caption, output_dir):
 
         id = filename.split(".")[0]
-        html_out = "<div style=\"height: 600px; width: 1700px; border: 1px ridge; black;\">"
-        html_out += "<center><b>Gene Set Enrichment using " + caption + "</b></center>"
+        html_out = "<div style=\"height: 600px; width: 1650px; border: 1px ridge; black;\">"
+        html_out += "<center><h3>Gene Set Enrichment using " + caption + "</h3></center>"
         if (filename.find('paper') != -1):
             html_out += "<table id=\"" + id + "\" " + "class=\"display nowrap\" style=\"width:100%\">" \
                                               "<thead><tr><th>Pubmed Url</th><th>Title</th><th>Matches</th><th>P-Value</th>" \
@@ -121,56 +99,56 @@ class htmlreportutils:
                                     "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js\"></script>" \
                                     "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js\"></script>" \
                                     "<script src=\"https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js\"></script>" \
-                                    "<script src=\"https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js\"></script>"
+                                    "<script src=\"https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js\"></script>" \
+                                    "<script src=\"https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js\"></script>" \
+                                    "<script src=\"https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js\"></script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/go_biological_process_output.json\', function(data){ $(\'#go_biological_process_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/go_molecular_function_output.json\', function(data){ $(\'#go_molecular_function_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/go_cellular_component_output.json\', function(data){ $(\'#go_cellular_component_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/kegg_enzyme_output.json\', function(data){ $(\'#kegg_enzyme_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/kog_output.json\', function(data){ $(\'#kog_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 3 ],visible: false}], deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/panther_output.json\', function(data){ $(\'#panther_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/smart_output.json\', function(data){ $(\'#smart_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/pfam_output.json\', function(data){ $(\'#pfam_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/pathway_output.json\', function(data){ $(\'#pathway_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1],width : \"50%\"},{targets: [ 3 ],visible: false}], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
         output += "<script> $(document).ready(function() { $.getJSON(\'" + featureset + "/paper_output.json\', function(data){ $(\'#paper_output\').DataTable( {" \
-                  "dom: \'Bfrtip\', buttons: [\'csv\'], data: data, deferRender: true,scrollY: 399, scrollCollapse: true, scroller: true });" \
+                  "dom: \'Bfrtip\', lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]], buttons: [\'colvis\', \'csv\', \'pageLength\'], columnDefs : [{targets: [1], width : \"50%\"},{targets: [ 4 ],visible: false}], data: data, deferRender: true,scrollY: 799, scrollCollapse: true, scroller: true });" \
                   "}).fail(function(){ console.log(\"An error has occurred.\");});});</script>"
 
 
         output += "</head>" \
-                  "<body>" + self.get_menu_options(dirs) \
-                  + "<br><center><h1>Geneset Results for " + featureset + "</h1></center><br><br>"
+                  "<body>" + self.get_menu_options(dirs)
 
-
-        output += "<table style=\"width:95%\" cellpadding = \"0\" cellspacing = \"0\" >"
-
+        output += "<table style=\"width:95%\" cellpadding = \"50\" cellspacing = \"50\" >"
+        output += "<caption> <h1> Geneset Results for " + featureset + "</h1> </caption>"
         output += "<tr><td style=\"padding:10px\">" + self.create_table("go_biological_process_output.txt", "GO (Biological Process)", output_dir) + "</td></tr>" \
                   + "<tr><td style=\"padding:10px\">" + self.create_table("go_molecular_function_output.txt",  "GO (Molecular Function)", output_dir) + "</td></tr>" \
                   + "<tr><td style=\"padding:10px\">" + self.create_table("go_cellular_component_output.txt", "GO (Cellular Component)", output_dir) + "</td></tr>"

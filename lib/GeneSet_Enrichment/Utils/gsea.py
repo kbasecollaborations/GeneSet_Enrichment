@@ -132,10 +132,10 @@ class gsea:
 
            geneids = gline.split(",")
 
-           if geneids[0] in gene_feature:
+           if geneids[0] in gene_feature.keys():
               feature_list = gene_feature[geneids[0]]
 
-              for feature in feature_list: 
+              for feature in feature_list:
                   if feature in featurefreq:
                      featurefreq[feature] += 1 
                   else:
