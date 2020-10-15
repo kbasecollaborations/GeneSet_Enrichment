@@ -67,7 +67,7 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
         params = {
             #'workspace_name': 'man4ish_gupta:narrative_1578459434770',
             'workspace_name': 'man4ish_gupta:narrative_1579638904735',
-            'genelist' : ['36575/30/1', '36575/10/4']
+            'genelist' : ['36575/30/1', '36575/10/4', '36575/209/5', '36575/214/1']
             #'genelist' : ['36575/10/4']
         } 
 

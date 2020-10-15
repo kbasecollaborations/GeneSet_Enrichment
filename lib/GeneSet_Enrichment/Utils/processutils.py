@@ -84,8 +84,13 @@ class processutils:
               phytozyme_name = self.gs.find_kbase_phytozome_genome_id(ws, str(genome_id))  # using name for id
 
               id = self.gs.get_id_from_phytozome(phytozyme_name)
+              print("*****" + id)
+              if(id == '444'):
+                  url_to_species_file = '/kb/module/data/' + id + '/' + id + '_paper.names_taxonomy.txt'
+              else:
+                  url_to_species_file = '/kb/module/data/' + id + '/' + id + '_paper.names.txt'
 
-              self.gs.load_organism_file('/kb/module/data/' + id + '/' + id + '_paper.names.txt')
+              self.gs.load_organism_file(url_to_species_file, id)
 
               ref = featureset
               obj_info = ws.get_object_info3({"objects": [{"ref": ref}]})

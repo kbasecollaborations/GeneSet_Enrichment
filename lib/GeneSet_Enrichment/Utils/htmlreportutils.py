@@ -65,14 +65,14 @@ class htmlreportutils:
         id = filename.split(".")[0]
 
         if (filename.find('paper') != -1):
-            html_out = "\n<div style=\"height: 1400px; width: 1700px; border: 1px ridge; black;\">"
+            html_out = "\n<div style=\"height: 550px; width: 1700px; border: 1px ridge; black;\">"
             html_out += "<center><h3>Gene Set Enrichment using " + caption + "</h3></center>"
             html_out += "<table id=\"" + id + "\" " + "class=\"display\" style=\"width:100%\">" \
                                               "<thead><tr><th>Pubmed Url</th><th>Title</th><th>Matches</th><th>P-Value</th><th>Genes</th>" \
-                                              "<th>Organism Name</th></tr></thead><tfoot><tr><th>Pubmed Url</th><th>Title</th>" \
-                                              "<th>Matches</th><th>P-Value</th><th>Genes</th><th>Organism Name</th></tr></tfoot></table>\n"
+                                              "<th>Organism Name</th><th>Taxonomy</th></tr></thead><tfoot><tr><th>Pubmed Url</th><th>Title</th>" \
+                                              "<th>Matches</th><th>P-Value</th><th>Genes</th><th>Organism Name</th><th>Taxonomy</th></tr></tfoot></table>\n"
         else:
-            html_out = "\n<div style=\"height: 630px; width: 1700px; border: 1px ridge; black;\">"
+            html_out = "\n<div style=\"height: 550px; width: 1700px; border: 1px ridge; black;\">"
             html_out += "<center><h3>Gene Set Enrichment using " + caption + "</h3></center>"
             html_out += "<table id=\"" + id + "\" " + "class=\"display\" style=\"width:100%\">" \
                                               "<thead><tr><th>Feature Id</th><th>Term</th><th>Matches</th><th>P-Value</th><th>Genes</th>" \

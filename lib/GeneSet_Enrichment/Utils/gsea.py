@@ -12,14 +12,17 @@ class gsea:
       self.hr = htmlreportutils()
       pass
 
-  def load_organism_file(self, filename):
-
+  #def load_organism_file(self, filename):
+  def load_organism_file(self, filename, id):
       try:
           with open(filename, 'r') as f:
               for x in f:
                   x = x.rstrip()
                   line = x.split("\t")
-                  self.organism_dict[line[0]] = line[1]
+                  if(id == '444'):
+                      self.organism_dict[line[0]] = [line[1], line[2]]  #quick fix for 444
+                  else:
+                      self.organism_dict[line[0]] = line[1]
       except IOError as e:
           print ("I/O error({0}): {1}".format(e.errno, e.strerror))
       except:  # handle other exceptions such as attribute errors
@@ -179,8 +182,17 @@ class gsea:
                   term = (feature_term[feature_key]).split("_")[1]
                   gene_list = feature_gene_dict[feature_key]
                   if(featurename == "paper"):
-                      organism = self.get_organism(feature_key)
-                      out_list.append([feature_key, term, str(k),  str(format(prb, '.3g')),  ', '.join(gene_list), "Organism:" +organism])
+                      species_list = self.get_organism(feature_key)
+                      if(len(species_list) == 2):
+                          organism = species_list[0]
+                          taxonomy = species_list[1]
+                          out_list.append([feature_key, term, str(k), str(format(prb, '.3g')),  ', '.join(gene_list), "Organism:" +organism, taxonomy])
+                      else:
+                          if(len(species_list) != 0):
+                              organism = species_list[0]
+                          else:
+                              organism = ''
+                          out_list.append([feature_key, term, str(k), str(format(prb, '.3g')), ', '.join(gene_list), "Organism:" + organism])
                   else:
                       out_list.append([feature_key, term, str(k), str(format(prb, '.3g')),  ', '.join(gene_list)])
 
