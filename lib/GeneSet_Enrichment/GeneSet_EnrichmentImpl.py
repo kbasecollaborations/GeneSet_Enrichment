@@ -120,7 +120,7 @@ class GeneSet_Enrichment:
         # ctx is the context object
         # return variables are: output
         #BEGIN build_Featureset
-        fsb.validate_params(params)
+        self.fsb.validate_params(params)
         print('--->\nRunning FeatureSetUtils.build_feature_set\nparams:')
         print(json.dumps(params, indent=1))
 

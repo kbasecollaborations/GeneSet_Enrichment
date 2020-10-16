@@ -65,11 +65,9 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
         # Check returned data with
         # self.assertEqual(ret[...], ...) or other unittest methods
         params = {
-            #'workspace_name': 'man4ish_gupta:narrative_1578459434770',
             'workspace_name': 'man4ish_gupta:narrative_1579638904735',
             'genelist' : ['36575/30/1', '36575/10/4', '36575/209/5', '36575/214/1']
-            #'genelist' : ['36575/10/4']
-        } 
+        }
 
         ret = self.serviceImpl.run_GeneSet_Enrichment(self.ctx, params)
     
@@ -78,12 +76,11 @@ class GeneSet_EnrichmentTest(unittest.TestCase):
             'genome': '35540/2/1',
             'genes': "AT3G14440\nAT1G20440\nAT4G27520\nAT2G23120\nAT5G58070\nAT1G20450\nAT1G01470\nAT5G52310\nAT1G76180\nAT2G02100\nAT1G73480\nAT4G15480\nAT3G29575",
             'description': "sameple geneset",
-            #'workspace_name': 'man4ish_gupta:narrative_1578459434770',
             'workspace_name': 'man4ish_gupta:narrative_1579638904735',
             'output_feature_set': 'new_feature_set',
         }
         
-        #result = self.serviceImpl.build_Featureset(self.ctx, input_params)
+        result = self.serviceImpl.build_Featureset(self.ctx, input_params)
      
   
 
